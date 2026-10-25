@@ -6,8 +6,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { DEFS } from "./lib/an.mjs";
 import * as circ from "./circ.mjs";
+import * as head from "./head.mjs";
 
-const FIGS = { circ };
+const FIGS = { circ, head };
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "src/js/31-art.generated.js");

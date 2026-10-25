@@ -144,3 +144,68 @@ figure.xfig{
 .circ .sym.ctxs{border-style:dotted}
 .circ-svg.an-svg{max-width:560px}
 .xfig svg .kd-urc{fill:#cbb07c;stroke:#b89b6a;stroke-width:.5}
+
+/* ---------- capul în secțiune mediosagitală (Î2/Î6) ---------- */
+figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cfe0e3;--an-tooth:#fbf7ea;--an-tongue:#d77b78;--an-gm:#e9c4c0;--an-wm:#f6ebe4;--an-csf:#a9d3ea}
+.xfig svg .hx2-soft{fill:var(--an-soft);stroke:var(--an-soft-d);stroke-width:1}
+.xfig svg .hx2-bone{fill:var(--an-bone);stroke:var(--an-bone-d);stroke-width:.7;stroke-linejoin:round}
+.xfig svg .hx2-diploe{fill:none;stroke:#dccb9f;stroke-width:5.6;stroke-linecap:round;opacity:.8}
+.xfig svg .an-vt path.dipl{opacity:.85}
+.xfig svg .hx2-spong{fill:#e8d9b2;stroke:none}
+.xfig svg .hx2-air{fill:var(--an-air);stroke:#9fb9c6;stroke-width:.6}
+.xfig svg .hx2-turb{fill:#e3a4a4;stroke:#b06d6d;stroke-width:.5}
+.xfig svg .hx2-cart{fill:var(--an-cart);stroke:#8fb0b6;stroke-width:.6}
+.xfig svg .hx2-tooth{fill:var(--an-tooth);stroke:#b7ab88;stroke-width:.6}
+.xfig svg .hx2-tongue{fill:#c9827c;stroke:#94504c;stroke-width:.7}
+.xfig svg .hx2-tfib{fill:none;stroke:#a35d58;stroke-width:.6;opacity:.6}
+.xfig svg .hx2-palate{fill:#d98f8c;stroke:#9d4a49;stroke-width:.6}
+.xfig svg .hx2-vf{fill:#e6b2a9;stroke:#9d4a49;stroke-width:.4}
+.xfig svg .hx2-canal{fill:#d9e8ee;stroke:none}
+.xfig svg .hx2-vert{fill:var(--an-bone);stroke:var(--an-bone-d);stroke-width:.6}
+.xfig svg .hx2-disc{fill:#b9d3df;stroke:#7fa3b3;stroke-width:.4}
+.xfig svg .hx2-cord{fill:#f3e7bf;stroke:#b9a46c;stroke-width:.6}
+.xfig svg .hx2-cer{fill:var(--an-gm)}
+.xfig svg .hx2-sulc{fill:none;stroke:var(--an-sulc);stroke-linecap:round;opacity:.85}
+.xfig svg .hx2-crest{fill:none;stroke:#fff;stroke-width:.7;opacity:.35;stroke-linecap:round}
+.xfig svg .hx2-callo{fill:none;stroke:var(--an-sulc);stroke-width:.9;opacity:.6}
+.xfig svg .hx2-vent{fill:var(--an-csf);opacity:.75}
+.xfig svg .hx2-sept{fill:none;stroke:#7fb2cc;stroke-width:.5}
+.xfig svg .hx2-cc{fill:var(--an-wm);stroke:#bba59a;stroke-width:.7}
+.xfig svg .hx2-forn{fill:none;stroke:var(--an-wm);stroke-width:3.2;stroke-linecap:round}
+.xfig svg .hx2-thal{fill:#dcaaa9;stroke:#a87472;stroke-width:.6}
+.xfig svg .hx2-ita{fill:#e8bcbb;stroke:#a87472;stroke-width:.4}
+.xfig svg .hx2-pin{fill:#c99aa6;stroke:#8f6070;stroke-width:.5}
+.xfig svg .hx2-hypo{fill:#d6979b;stroke:#965358;stroke-width:.7}
+.xfig svg .hx2-pit{fill:#d8908a;stroke:#9a5550;stroke-width:.5}
+.xfig svg .hx2-pit.p{fill:#e2b39e}
+.xfig svg .hx2-nerve{fill:#f2df98;stroke:#b39c4c;stroke-width:.5}
+.xfig svg .hx2-stem{fill:#e4c2bc;stroke:#a87472;stroke-width:.7}
+.xfig svg .hx2-pons{fill:#ead0c9;stroke:#a87472;stroke-width:.5}
+.xfig svg .hx2-coll{fill:none;stroke:#a87472;stroke-width:.6}
+.xfig svg .hx2-aq{fill:none;stroke:var(--an-csf);stroke-width:1.6;stroke-linecap:round}
+.xfig svg .hx2-v4{fill:var(--an-csf);stroke:#7fb2cc;stroke-width:.5}
+.xfig svg .hx2-cbl{fill:#ddaeb0}
+.xfig svg .hx2-fol{fill:none;stroke:#a76f73;stroke-width:.55;opacity:.7}
+.xfig svg .hx2-arbor{fill:none;stroke:var(--an-wm);stroke-linecap:round}
+.xfig svg .hx2-tent{fill:none;stroke:#9b8f86;stroke-width:1.6;stroke-linecap:round}
+.xfig svg .hx2-orbit{fill:#f3de9c;opacity:.55;stroke:#c2a956;stroke-width:.5}
+.xfig svg .hx2-optic{fill:none;stroke:#e6cf78;stroke-width:3.6;stroke-linecap:round;opacity:.9}
+.xfig svg .hx2-globe{fill:#fbfaf6;stroke:#9e9a8e;stroke-width:.7}
+.xfig svg .hx2-cornea{fill:none;stroke:#8fb7cc;stroke-width:1.2}
+.xfig svg .hx2-iris{fill:none;stroke:#4f7f9c;stroke-width:2.2;stroke-linecap:round}
+.xfig svg .hx2-lens{fill:#d8ebf3;stroke:#8fb7cc;stroke-width:.4}
+.xfig svg .hx2-cs{fill:color-mix(in srgb,var(--an-ven) 30%,transparent);stroke:var(--an-ven-d);stroke-width:.8}
+.xfig svg .an-vt path.proj{opacity:.92}
+.xfig svg .hx2-duct{fill:none;stroke:var(--an-sweat-d);stroke-width:.8}
+.xfig svg .hx2-coil{fill:#bfe6f5;stroke:var(--an-sweat-d);stroke-width:.6}
+.xfig svg .hx2-derm{fill:none;stroke:#d9a38a;stroke-width:3.4;opacity:.55;stroke-linejoin:round}
+.xfig svg .hx2-esoph{fill:#d98f8c;stroke:#9d4a49;stroke-width:.6}
+.xfig svg .hx2-lip{fill:#d27a72;stroke:#9d4a49;stroke-width:.6}
+/* temperatura în culoare: venele răcite se deschid spre albastru-cian, sângele arterial trecut prin sinusul cavernos pălește */
+.hd-svg .an-vt.v .an-vb.cool{stroke:color-mix(in srgb,var(--an-ven) calc(100% - var(--cool,0)*42%),#7fd0f0);transition:stroke .9s}
+.hd-svg .an-vt.a .an-vb.cooled{stroke:color-mix(in srgb,var(--an-art) calc(100% - var(--cool,0)*45%),#f2b8b0);transition:stroke .9s}
+.hd-svg .an-vt.v .an-vb.sinus{stroke:color-mix(in srgb,var(--an-ven) calc(100% - var(--cool,0)*25%),#7fd0f0);transition:stroke .9s}
+.hd-svg.an-svg{max-width:540px}
+.hd-svg .cs-g .hx2-cs{fill:color-mix(in srgb,color-mix(in srgb,var(--an-ven) calc(100% - var(--cool,0)*40%),#7fd0f0) 34%,transparent)}
+.hd-svg .drop{fill:color-mix(in srgb,var(--an-sweat) 70%,#fff);stroke:var(--an-sweat-d);stroke-width:.4}
+.hd-svg .hy-lamp{fill-opacity:.85}
