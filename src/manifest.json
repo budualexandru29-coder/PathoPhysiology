@@ -1,10 +1,13 @@
 {
-  "doc": ["src/shell/doc-open.html"],
+  "doc": [
+    "src/shell/doc-open.html"
+  ],
   "page": [
     "src/shell/head.html",
     "src/css/00-app.css",
     "src/css/10-fx.css",
     "src/css/20-anima.css",
+    "src/css/30-atlas.css",
     "src/shell/body.html",
     "src/js/00-core.js",
     "src/js/01-questions.js",
@@ -24,5 +27,7 @@
     "src/js/90-app.js",
     "src/shell/tail.html"
   ],
-  "docEnd": ["src/shell/doc-close.html"]
+  "docEnd": [
+    "src/shell/doc-close.html"
+  ]
 }
