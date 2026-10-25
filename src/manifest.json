@@ -1,0 +1,28 @@
+{
+  "doc": ["src/shell/doc-open.html"],
+  "page": [
+    "src/shell/head.html",
+    "src/css/00-app.css",
+    "src/css/10-fx.css",
+    "src/css/20-anima.css",
+    "src/shell/body.html",
+    "src/js/00-core.js",
+    "src/js/01-questions.js",
+    "src/js/02-flows.js",
+    "src/js/10-ch1-termo.js",
+    "src/js/11-ch2-febra.js",
+    "src/js/12-ch3-inflam.js",
+    "src/js/13-ch4-infect.js",
+    "src/js/14-anexa.js",
+    "src/js/20-figs-static.js",
+    "src/js/30-fx-engine.js",
+    "src/js/31-art.generated.js",
+    "src/js/40-fx-circ.js",
+    "src/js/41-fx-head.js",
+    "src/js/42-fx-cold.js",
+    "src/js/50-links.js",
+    "src/js/90-app.js",
+    "src/shell/tail.html"
+  ],
+  "docEnd": ["src/shell/doc-close.html"]
+}
