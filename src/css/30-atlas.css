@@ -1571,3 +1571,29 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 .xfig svg .ikk.nemo{fill:#f08a7a}
 .xfig svg .pa-arrow{fill:none;stroke:#1d6b46;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
 .xfig svg .pn-nl{fill:#3b2a66}
+/* Î15 în stilul de manual */
+.pyx.pro .pA{transition:opacity .5s}
+.pyx.pro[data-st="3"] .pA,.pyx.pro[data-st="4"] .pA,.pyx.pro[data-st="5"] .pA{opacity:.4}
+.xfig svg .pa-frame{fill:none;stroke:#cfc6bb;stroke-width:.8}
+.xfig svg .pb-slot{stroke:#d9cfc4;stroke-width:.8}
+.xfig svg .pb-slot.neuro{fill:#f3e8ea}.xfig svg .pb-slot.plot,.xfig svg .pb-slot.plain{fill:#fbfaf7}
+.xfig svg .pb-slot.marrow{fill:#f1d9cd}.xfig svg .pb-slot.tissue{fill:#f7e9e0}.xfig svg .pb-slot.liver{fill:#c9917f}
+.xfig svg .gx{fill:none;stroke:#3a434d;stroke-width:.8}
+.xfig svg .gt{fill:none;stroke:#3a434d;stroke-width:.7}
+.xfig svg .gl{font-family:var(--f-body);font-size:7.4px;fill:#4a535d}
+.xfig svg .g-sp{fill:none;stroke:#b8433a;stroke-width:1.3;stroke-dasharray:3.2 2}
+.xfig svg .g-core{fill:none;stroke:#27313b;stroke-width:1.4;stroke-linejoin:round}
+.xfig svg .endo-n{fill:#8d6aa8;stroke:none}
+.xfig svg .cox2.on{fill:#e8c54a}
+.xfig svg .sk path{fill:none;stroke:#3a434d;stroke-width:.75;stroke-linejoin:round;stroke-linecap:round}
+.xfig svg .sk path:first-child{fill:none}
+.xfig svg .sk-o{fill:#d0453b}.xfig svg .sk-p{fill:#e09a2c}.xfig svg .sk-n{fill:#3d6fb0}
+.xfig svg .pv-w.thin{stroke-width:1.2}
+.xfig svg .pyx.pro .pl-sub.mid,.pyx.pro .pl-sub.mid{fill:#7a838d;font-style:italic}
+.xfig svg .sum-b{fill:#fbfaf7;stroke:#cfc6bb;stroke-width:.8}
+.xfig svg .sum-b.src{fill:#fdf3ec}
+.xfig svg .sum-a{fill:none;stroke:#6b7480;stroke-width:.9}
+.xfig svg .sum-ah{fill:#6b7480}
+.xfig svg .pl.b .pl-t{font-weight:700}
+.pyx.pro .sum{transition:opacity .5s}
+.pyx.pro[data-st="0"] .sum,.pyx.pro[data-st="1"] .sum{opacity:.5}

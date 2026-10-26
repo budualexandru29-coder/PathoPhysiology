@@ -51,7 +51,7 @@ figure.xfig{
 .xfig svg .lc-pltg{fill:#7a52a0;stroke:none}
 /* bara de scară */
 .xfig svg .lc-bar path{fill:none;stroke:var(--ink);stroke-width:1.1;stroke-linecap:butt;vector-effect:non-scaling-stroke}
-.xfig svg .lc-bar text{font:600 9px var(--f-mono, ui-monospace, monospace);fill:var(--muted)}
+.xfig svg .lc-bar text{font:500 8px var(--f-body);fill:var(--muted)}
 /* bara pe un desen deschis la culoare (aceeași în ambele teme) */
 .xfig svg .lc-bar.dk path{stroke:#2b313a}.xfig svg .lc-bar.dk text{fill:#3d4652}
 
@@ -81,3 +81,25 @@ figure.xfig{
 .xfig svg .lm-head circle{fill:#d7a24f;stroke:none}
 .xfig svg .lm-tail{fill:none;stroke:#c49a5a;stroke-width:.6;stroke-linecap:round}
 .xfig svg .lm-stalk{fill:none;stroke:#b8902f;stroke-linecap:round}
+
+/* ===================== Stilul de manual (etichete, titluri, pași) — art/lib/label.mjs =====================
+   Planșele sunt deschise la culoare în ambele teme, ca o pagină tipărită; textul și liniile au culori fixe. */
+.xfig svg .pl-t{font-family:var(--f-body);font-weight:500;fill:#27313b;letter-spacing:.005em;paint-order:stroke;stroke:rgba(255,255,255,.82);stroke-width:2.4px;stroke-linejoin:round}
+.xfig svg .pl-ln{fill:none;stroke:#5d6772;stroke-width:.55;vector-effect:non-scaling-stroke}
+.xfig svg .pl-dot{fill:#27313b}
+.xfig svg .pl.cap .pl-t{fill:#6b7480;font-style:italic;font-weight:500}
+.xfig svg .pl-h{font-family:var(--f-body);font-size:9.6px;font-weight:650;fill:#1f2831}
+.xfig svg .pl-hk{font-weight:800}
+.xfig svg .pl-sub{font-family:var(--f-body);font-size:8.4px;font-weight:500;fill:#646d77}
+.xfig svg .fxp:hover .pl-t,.xfig svg .fxp.sel .pl-t{fill:#a8322a}
+.xfig svg .fxp.sel .pl-t{font-weight:700}
+.xfig svg .fxp:hover .pl-ln,.xfig svg .fxp.sel .pl-ln{stroke:#a8322a}
+.xfig svg .fxp .pl-hitb{fill:transparent;stroke:none}
+/* vizibilitatea pe pași: elementul cu .vs .vN se vede doar când rădăcina figurii are data-st="N" */
+.xfig svg .vs{opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s}
+[data-st="0"] .vs.v0,[data-st="1"] .vs.v1,[data-st="2"] .vs.v2,[data-st="3"] .vs.v3,[data-st="4"] .vs.v4,[data-st="5"] .vs.v5,[data-st="6"] .vs.v6{opacity:1;visibility:visible}
+/* planșa: fundalul deschis al figurii, în ambele teme (ca o pagină tipărită), puțin mai stins în tema întunecată */
+figure.xfig{--plate:#fdfcf9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) figure.xfig{--plate:#ecE9e2}}
+:root[data-theme="dark"] figure.xfig{--plate:#ece9e2}
+.xfig svg .plate{fill:var(--plate);stroke:none}
