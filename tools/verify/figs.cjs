@@ -8,7 +8,8 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 
-const FIGS = { circ: 1, head: 2, hyper: 3, hypomech: 4, cold: 5, thermolysis: 7, tgen: 8, coldloc: 9, fever: 11, fevcons: 12, noninf: 13, pyro: 15, hodgkin: 16, strep: 18, inflcause: 21, apr: 22, inflam: 27 };
+// pyro nu mai e în pagină: Î15 are lecția pe tablă (verificată de tools/verify/lesson.mjs și coverage.cjs)
+const FIGS = { circ: 1, head: 2, hyper: 3, hypomech: 4, cold: 5, thermolysis: 7, tgen: 8, coldloc: 9, fever: 11, fevcons: 12, noninf: 13, hodgkin: 16, strep: 18, inflcause: 21, apr: 22, inflam: 27 };
 // diametrul celulei / diametrul hematiei, din manual (fără toleranță); toleranța de ±20% se aplică la capete
 const RATIO = {
   neut: [10 / 7.8, 15 / 7.5, 'neutrofil 10–15 µm (Ross cap. 10; Junqueira cap. 12)'],

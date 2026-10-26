@@ -36,9 +36,9 @@
 (function () {
   const L = Q[22].learn, i = L.findIndex(b => b[0] === 'tbl'); L.splice(i + 1, 0, ['fig', 'apr', { q: 22 }]);
 })();
-/* Î15: figura pirogenilor, după cascada efectelor */
+/* Î15: lecția pe tablă, în stilul Khan Academy (33-lesson.js), în locul figurii animate a pirogenilor */
 (function () {
-  const L = Q[15].learn, i = L.findIndex(b => b[0] === 'flow' && b[1] === 'pyroEffects'); L.splice(i + 1, 0, ['fig', 'pyro', { q: 15 }]);
+  const L = Q[15].learn, i = L.findIndex(b => b[0] === 'flow' && b[1] === 'pyroEffects'); L.splice(i + 1, 0, ['lesson', 15]);
 })();
 /* Î3: figura tipurilor de hipertermie, după tabel */
 (function () {

@@ -17,10 +17,8 @@ for (const f of fs.readdirSync(path.join(root, "src/js")).filter((f) => /^1\d-ch
 const rub = ctx.Q[n] && ctx.Q[n].rub; if (!rub) { console.error("nu găsesc baremul Î" + n); process.exit(2); }
 const refs = []; rub.forEach(([sec, pts], i) => pts.forEach((p, j) => refs.push({ ref: `${i}:${j}`, sec, label: p[0] })));
 
-const GAP = 0.5, TITLE = 2.5;                                  // pauza dintre fraze și titlul capitolului, în secunde
-const words = (t) => t.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w));
-const inner = (d) => (d.match(/«([^»]+)»/) || [, ""])[1];
-const actDur = ([type, desc]) => type === "trace" ? 4 : type === "arrow" ? 2.4 : type === "circle" ? 2.2 : type === "strike" ? 2 : Math.min(6, Math.max(2, inner(desc).length * 0.12));
+// modelul de timp e cel al playerului (art/lessons/timing.mjs)
+const { GAP, TITLE, words, actDur, kwIndex } = await import(pathToFileURL(path.join(root, "art/lessons/timing.mjs")).href);
 const out = { q: n, wpm: S.WPM, chapters: [], problems: [], cover: {} };
 let T = 0;
 for (const ch of S.CH) {
@@ -28,7 +26,7 @@ for (const ch of S.CH) {
   T += TITLE;
   ch.lines.forEach((l, i) => {
     const w = words(l.t), dur = w.length / S.WPM * 60;
-    const ki = w.findIndex((x) => x.toLowerCase().replace(/[^\p{L}\p{N}-]/gu, "").startsWith(l.kw.toLowerCase().replace(/[^\p{L}\p{N}-]/gu, "")));
+    const ki = kwIndex(l.t, l.kw);
     if (!Array.isArray(l.a) || l.a.length !== 3 || typeof l.a[0] !== "string") out.problems.push(`${ch.id}.${i + 1}: nu are exact o acțiune`);
     if (ki < 0) out.problems.push(`${ch.id}.${i + 1}: cuvântul-cheie „${l.kw}” nu e în frază`);
     const a0 = T + (Math.max(0, ki) / w.length) * dur, ad = actDur(l.a), a1 = a0 + ad, end = T + dur;

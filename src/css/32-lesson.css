@@ -1,0 +1,95 @@
+/* ===== Lecția în stilul Khan Academy (src/js/33-lesson.js) =====
+   Tabla, subtitlul și bara de comenzi au același aspect întunecat în ambele teme, ca un player video; capitolele și
+   textul lecției, de sub player, urmează tema aplicației. Culorile cernelii vin din date (--k-alb, --k-rosu …). */
+figure.kl{--k-board:#1d2125;--k-deck:#15181b;--k-track:#363c43;--k-mute:#A9B1B9;margin:18px 0;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--sheet);outline:none}
+.kl-scr{position:relative;background:var(--k-board)}
+.kl-board{display:block;width:100%;height:auto;aspect-ratio:16/9;max-width:100%;cursor:pointer;user-select:none;-webkit-user-select:none}
+.kl .ink{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.kl .kt{font-family:'Caveat','Mynerve',cursive;font-weight:600}
+.kl .kl-ln path,.kl .kl-ln text{visibility:hidden}
+.kl .c-alb{stroke:var(--k-alb)} .kl text.c-alb{fill:var(--k-alb);stroke:none}
+.kl .c-rosu{stroke:var(--k-rosu)} .kl text.c-rosu{fill:var(--k-rosu);stroke:none}
+.kl .c-albastru{stroke:var(--k-albastru)} .kl text.c-albastru{fill:var(--k-albastru);stroke:none}
+.kl .c-verde{stroke:var(--k-verde)} .kl text.c-verde{fill:var(--k-verde);stroke:none}
+.kl .c-galben{stroke:var(--k-galben)} .kl text.c-galben{fill:var(--k-galben);stroke:none}
+
+/* subtitlul: o bucată scurtă din fraza spusă, sub tablă (nu acoperă desenul) */
+.kl-cap{margin:0;background:var(--k-deck);color:var(--k-alb);text-align:center;font:500 1.06rem/1.45 var(--f-body);padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));min-height:calc(2 * 1.45em + 20px);display:flex;align-items:center;justify-content:center;text-wrap:balance}
+.kl-cap span{max-width:52ch}
+
+/* bara de comenzi */
+.kl-bar{display:flex;align-items:center;gap:4px;padding:6px max(10px,env(safe-area-inset-right,0px)) 8px max(10px,env(safe-area-inset-left,0px));background:var(--k-deck);color:var(--k-alb);border-top:1px solid #262b31}
+.kl-b{appearance:none;border:0;background:transparent;color:inherit;min-width:40px;height:40px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font:600 1rem/1 var(--f-body);cursor:pointer;padding:0 8px}
+.kl-b:hover{background:#262b31}
+.kl-b:focus-visible,.kl-seg:focus-visible,.kl-big:focus-visible{outline:2px solid var(--k-albastru);outline-offset:2px}
+.kl-b:disabled{color:var(--k-mute);cursor:default;background:transparent}
+.kl-t{font-size:.86rem;font-weight:650;letter-spacing:.01em}
+.kl-b[data-kl="voice"][aria-pressed="false"]{color:var(--k-mute);text-decoration:line-through}
+.kl-ico{display:block;width:0;height:0;border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent currentColor}
+.kl-pp.on .kl-ico{width:12px;height:15px;border:0;border-left:4px solid currentColor;border-right:4px solid currentColor;box-sizing:border-box}
+.kl-tl{flex:1 1 120px;min-width:0;display:flex;gap:3px;margin:0 6px}
+.kl-seg{position:relative;height:28px;border:0;padding:0;background:none;cursor:pointer;min-width:0}
+.kl-seg::before,.kl-seg i{content:"";position:absolute;left:0;top:11px;height:6px;border-radius:3px}
+.kl-seg::before{right:0;background:var(--k-track)}
+.kl-seg i{width:0;background:var(--k-alb)}
+.kl-seg:hover::before{background:#4a525a}
+.kl-time{font:500 .82rem/1 var(--f-mono);color:var(--k-mute);white-space:nowrap;padding:0 4px}
+
+/* peste tablă: pornirea, sfârșitul de capitol și de lecție */
+.kl-ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(21,24,27,.55);padding:16px}
+.kl-ov[hidden]{display:none}
+.kl-big{appearance:none;display:flex;align-items:center;gap:14px;text-align:left;max-width:min(92%,560px);background:var(--k-deck);color:var(--k-alb);border:2px solid var(--k-alb);border-radius:14px;padding:14px 20px;cursor:pointer;font:inherit}
+.kl-big:hover{background:#20252a}
+.kl-big b{display:block;font:700 1.12rem/1.3 var(--f-display)}
+.kl-big small{display:block;margin-top:4px;color:var(--k-mute);font-size:.86rem;line-height:1.4}
+.kl-big small i{font-style:normal}
+.kl-tri{flex:none;width:0;height:0;border-style:solid;border-width:13px 0 13px 21px;border-color:transparent transparent transparent var(--k-alb)}
+.kl-endbox{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;background:var(--k-deck);color:var(--k-alb);border:2px solid var(--k-alb);border-radius:14px;padding:16px 20px;max-width:min(92%,520px)}
+.kl-endbox b{font:700 1.15rem/1.3 var(--f-display)}
+.kl-endbox span{color:var(--k-mute)}
+.kl-endbox div{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.kl-endbox .btn{min-height:40px;padding:8px 14px}
+
+/* sub player: capitolele, culorile, textul lecției */
+.kl-chs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px;padding:10px 12px 4px}
+.kl-chs button{appearance:none;display:flex;align-items:baseline;gap:8px;text-align:left;border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:10px;padding:8px 10px;font:600 .9rem/1.3 var(--f-body);cursor:pointer;min-height:44px}
+.kl-chs button:hover{background:var(--sheet2)}
+.kl-chs i{font-style:normal;flex:none;width:1.6em;height:1.6em;border-radius:50%;display:inline-grid;place-items:center;background:var(--pen-soft);color:var(--pen);font-size:.8rem;align-self:center}
+.kl-chs small{margin-left:auto;color:var(--muted);font:500 .78rem/1 var(--f-mono);flex:none}
+.kl-more{display:flex;flex-direction:column;gap:6px;padding:6px 12px 12px}
+.kl-test{margin:4px 0;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.kl-test a{font-weight:700;color:var(--pen)}
+.kl-test span{color:var(--muted);font-size:.88rem}
+.kl-more summary{cursor:pointer;font-weight:650;padding:6px 0;color:var(--ink)}
+.kl-leg ul{list-style:none;margin:4px 0 6px;padding:10px 12px;display:grid;gap:8px;background:var(--k-board);border-radius:10px}
+.kl-leg li{display:flex;gap:10px;align-items:baseline;color:var(--k-alb);font-size:.92rem;line-height:1.4}
+.kl-leg li b{flex:none;width:22px;height:4px;border-radius:2px;transform:translateY(-3px)}
+.kl-leg strong{font-family:'Caveat','Mynerve',cursive;font-size:1.2rem;font-weight:600;margin-right:4px}
+.kl-scp h4{margin:12px 0 4px;font-size:.95rem}
+.kl-scp ol{margin:0;padding-left:1.4em;display:grid;gap:6px}
+.kl-scp li span{display:block;line-height:1.45}
+.kl-scp li small{display:block;color:var(--muted);font-size:.8rem;line-height:1.4}
+
+/* ecranul complet: tabla cât mai mare, subtitlul și comenzile jos */
+html.kl-open{overflow:hidden}
+figure.kl.kl-fs,figure.kl.kl-max{display:flex;flex-direction:column;margin:0;border:0;border-radius:0;background:var(--k-deck);width:100vw;height:100vh;height:100dvh;max-width:none}
+figure.kl.kl-max{position:fixed;inset:0;z-index:3000}
+.kl-fs .kl-scr,.kl-max .kl-scr{flex:1 1 0;min-height:0;display:flex;padding-top:env(safe-area-inset-top,0px)}
+.kl-fs .kl-board,.kl-max .kl-board{flex:1 1 0;min-height:0;width:100%;height:100%;aspect-ratio:auto}
+.kl-fs .kl-cap,.kl-max .kl-cap{font-size:1.24rem}
+.kl-fs .kl-bar,.kl-max .kl-bar{padding-bottom:max(8px,env(safe-area-inset-bottom,0px))}
+.kl-fs .kl-chs,.kl-fs .kl-more,.kl-max .kl-chs,.kl-max .kl-more{display:none}
+
+@media (max-width:560px){
+  .kl-bar{flex-wrap:wrap;row-gap:0}
+  .kl-tl{order:-1;flex:1 1 100%;margin:0 2px}
+  .kl-time{margin-right:auto}
+  .kl-cap{font-size:.98rem}
+  .kl-big{padding:10px 14px;gap:10px}
+  .kl-big b{font-size:1rem}
+}
+@media (max-height:520px) and (orientation:landscape){
+  .kl-fs .kl-cap,.kl-max .kl-cap{font-size:1.02rem;min-height:calc(2 * 1.4em + 12px);padding-block:6px}
+  .kl-fs .kl-bar,.kl-max .kl-bar{padding-top:2px}
+  .kl-fs .kl-b,.kl-max .kl-b{height:34px}
+}

@@ -2,7 +2,7 @@
 // Fiecare frază are exact o acțiune de desen; cuvântul-cheie (kw) e momentul în care începe desenul.
 // rub: punctele din baremul Î15 (src/js/11-ch2-febra.js, Q[15].rub, „secțiune:punct”); src: de unde vine afirmația.
 // Acțiuni: trace = un contur trasat, arrow = o săgeată, write = un cuvânt sau un rând scris, circle = un cerc de semnalizare,
-// strike = o linie peste ceva (tăiere). Culorile au sens fix (COLORS). Desenul e o schemă de tablă: nu e la scară, cu o excepție
+// strike = o linie peste ceva (tăiere). clear: tabla se șterge înaintea frazei (recapitularea începe pe tablă curată). Culorile au sens fix (COLORS). Desenul e o schemă de tablă: nu e la scară, cu o excepție
 // declarată, membrana din capitolul 1, unde receptorii (~10–13 nm) sunt desenați proporțional cu membrana (~4 nm).
 export const COLORS = {
   alb: { hex: "#F3F1EA", rol: "structurile (celule, membrane, organe, axe) și textul obișnuit" },
@@ -23,15 +23,16 @@ export const CH = [
       { t: "La bacteriile Gram-pozitive, pirogenii sunt acidul lipoteicoic și peptidoglicanii din peretele gros.", a: ["trace", "o bacterie Gram-pozitivă (coc) cu peretele gros și firele de acid lipoteicoic", "rosu"], kw: "Gram-pozitive", src: "Febra LP, slide 6 (le numește «exotoxine»); Janeway p. 252" },
       { t: "Să mărim membrana unui macrofag, celula care le întâlnește prima.", a: ["trace", "cercul de mărire și linia membranei (dublu strat, ~4 nm)", "alb"], kw: "mărim", src: "Janeway p. 258–259" },
       { t: "În sânge, o proteină numită LBP preia molecula de LPS și o duce la CD14, de pe suprafața macrofagului.", a: ["arrow", "săgeata LPS → CD14, cu «LBP» scris pe ea", "albastru"], kw: "LBP", src: "Janeway p. 259" },
-      { t: "CD14 o predă complexului TLR4 cu MD-2, iar două astfel de complexe se unesc în jurul lipidului A.", a: ["trace", "dimerul TLR4–MD-2, în formă de «m», ~13 nm", "albastru"], kw: "TLR4", src: "Janeway p. 258; PDB 3FXI" },
+      { t: "CD14 o predă complexului TLR4 cu MD-2, iar două astfel de complexe se unesc în jurul lipidului A.", a: ["trace", "dimerul TLR4:MD-2, în formă de «m», ~13 nm", "albastru"], kw: "TLR4", src: "Janeway p. 258; PDB 3FXI" },
       { t: "TLR2 și TLR6, o altă pereche de receptori, recunosc acidul lipoteicoic.", a: ["trace", "heterodimerul TLR2:TLR6, ~12 nm, cu acidul lipoteicoic legat", "albastru"], kw: "TLR2", src: "Janeway p. 252; PDB 3A79" },
       { t: "Macrofagul înconjoară bacteria acoperită de complement și o fagocitează.", a: ["trace", "pseudopodele macrofagului care înconjoară bacteria (fagozomul)", "alb"], kw: "înconjoară", src: "Febra LP, slide 7" },
-      { t: "Receptorii recunosc un tipar comun al microbilor, nu o bacterie anume; de aceea răspunsul vine repede.", a: ["circle", "un cerc în jurul celor doi receptori, cu «tipar microbian» scris lângă", "galben"], kw: "tipar", src: "Cursul 2, slide 41–42" },
+      { t: "Receptorii recunosc un tipar comun al microbilor, nu o bacterie anume; de aceea răspunsul vine repede.", a: ["circle", "un cerc în jurul celor doi receptori, cu «recunosc tipare microbiene» scris deasupra", "galben"], kw: "tipar", src: "Cursul 2, slide 41–42" },
     ],
   },
   {
     id: "c2", title: "2. Macrofagul face pirogenii endogeni",
     lines: [
+      { t: "Desenăm acum macrofagul întreg: membrana cu receptorii, citoplasma și nucleul.", a: ["trace", "conturul macrofagului, cu receptorii pe membrană și nucleul", "alb"], kw: "macrofagul", src: "Junqueira p. 113 (macrofagul, nucleu excentric)" },
       { t: "Odată legați, receptorii trimit semnalul în celulă, prin MyD88 și o cascadă de kinaze, până la NF-κB.", a: ["arrow", "săgeata în trepte: receptor → MyD88 → kinaze → NF-κB", "galben"], kw: "semnalul", src: "Janeway p. 260–262" },
       { t: "NF-κB intră în nucleu și pornește genele citokinelor.", a: ["arrow", "săgeata NF-κB → nucleu, cu «gene» scris în nucleu", "galben"], kw: "nucleu", src: "Janeway p. 261–262" },
       { t: "Macrofagul eliberează astfel pirogenii endogeni: interleukina 1, TNF-α și interleukina 6.", a: ["write", "«IL-1, TNF-α, IL-6» ieșind din celulă", "verde"], kw: "pirogenii", rub: ["0:1"], src: "Janeway p. 321; Febra LP, slide 7" },
@@ -71,12 +72,12 @@ export const CH = [
       { t: "Doi: crește mobilizarea leucocitelor din măduva hematogenă.", a: ["arrow", "«2.» săgeata din măduvă spre vas, cu leucocite", "alb"], kw: "mobilizarea", rub: ["3:1"], src: "Febra LP, slide 19" },
       { t: "Trei: pe endoteliu crește expresia moleculelor de adeziune, iar leucocitele se lipesc de perete.", a: ["trace", "«3.» moleculele de adeziune pe peretele vasului", "albastru"], kw: "adeziune", rub: ["3:2"], src: "Febra LP, slide 19" },
       { t: "Patru: se sintetizează IL-8, care atrage monocitele și neutrofilele spre focar.", a: ["arrow", "«4.» săgeata din vas spre focar, cu «IL-8»", "verde"], kw: "IL-8", rub: ["3:3"], src: "Febra LP, slide 19" },
-      { t: "Cinci: fagocitoza e activată, iar fagocitul înconjoară bacteria.", a: ["trace", "«5.» un fagocit care înconjoară o bacterie", "alb"], kw: "fagocitoza", rub: ["3:4"], src: "Febra LP, slide 19" },
+      { t: "Cinci: fagocitoza e activată, iar fagocitul înconjoară bacteria.", a: ["trace", "«5. fagocitoză»: un fagocit care înconjoară o bacterie", "alb"], kw: "fagocitoza", rub: ["3:4"], src: "Febra LP, slide 19" },
       { t: "Șase: ficatul crește sinteza proteinelor de fază acută, ca proteina C reactivă și fibrinogenul.", a: ["write", "«6. ficat → proteine de fază acută (PCR, fibrinogen)»", "alb"], kw: "ficatul", rub: ["3:5"], src: "Febra LP, slide 19; Janeway p. 322" },
       { t: "Șapte: scad fierul și zincul, de care bacteriile au nevoie ca să se înmulțească.", a: ["write", "«7. Fe ↓, Zn ↓»", "galben"], kw: "fierul", rub: ["3:6"], src: "Febra LP, slide 19" },
       { t: "Opt: interferonii antivirali cresc, iar limfocitele B și T sunt activate.", a: ["write", "«8. LB, LT, IFN antivirali»", "verde"], kw: "interferonii", rub: ["3:7"], src: "Febra LP, slide 19" },
 
-      { t: "Pe scurt: LPS sau acidul lipoteicoic sunt recunoscute de receptorii Toll ai macrofagului.", a: ["write", "recapitularea, sus: «pirogen exogen → TLR»", "rosu"], kw: "LPS", src: "capitolul 1" },
+      { clear: true, t: "Pe scurt: LPS sau acidul lipoteicoic sunt recunoscute de receptorii Toll ai macrofagului.", a: ["write", "recapitularea, sus: «pirogen exogen → TLR»", "rosu"], kw: "LPS", src: "capitolul 1" },
       { t: "Macrofagul eliberează pirogenii endogeni: IL-1, TNF-α și IL-6.", a: ["arrow", "săgeata spre «IL-1, TNF-α, IL-6»", "verde"], kw: "eliberează", src: "capitolul 2" },
       { t: "Central, ei cresc PGE2 în OVLT și pragul termoreglator, pe calea AMPc: apare febra.", a: ["arrow", "săgeata spre «central: PGE₂ → prag ↑ → febra»", "galben"], kw: "Central", src: "capitolul 3" },
       { t: "Periferic, cresc apărarea specifică și nespecifică, iar efectul proinflamator are cele opt puncte.", a: ["arrow", "o săgeată care se ramifică spre «periferic» și «proinflamator (8)»", "alb"], kw: "Periferic", src: "capitolele 4–5" },

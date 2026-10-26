@@ -1,6 +1,8 @@
-// Acoperirea baremului de către figurile interactive.
+// Acoperirea baremului de către figurile interactive și lecțiile pe tablă.
 // Pentru fiecare întrebare Î1–Î38, fiecare punct din barem (Q[n].rub) trebuie să fie legat de cel puțin o parte
-// a unei figuri interactive (FX.specs[k].parts[id].q[n] conține „secțiune:punct”). Scriptul raportează:
+// a unei figuri interactive (FX.specs[k].parts[id].q[n] conține „secțiune:punct”) sau de o frază a unei lecții
+// (ART.lessonN, fraza cu rub: [„secțiune:punct”]). Contează doar figurile și lecțiile puse efectiv în pagina unei întrebări.
+// Scriptul raportează:
 //  - punctele acoperite și figura/partea care le acoperă;
 //  - punctele neacoperite (cu justificarea din JUSTIFY, dacă există);
 //  - trimiterile stricate (o parte trimite la un punct care nu există în barem).
@@ -24,10 +26,12 @@ const JUSTIFY = {};
   const data = await p.evaluate(() => {
     const qs = {};
     for (let n = 1; n <= 38; n++) if (Q[n]) qs[n] = { s: Q[n].s, rub: Q[n].rub.map(([sec, pts]) => [sec, pts.map(pt => [pt[0], pt[2] || 1])]) };
-    const refs = [];
-    Object.entries(FX.specs).forEach(([key, spec]) => Object.entries(spec.parts).forEach(([id, part]) => {
+    const refs = [], placed = new Set(), lessons = new Set();
+    for (let n = 1; n <= 41; n++) if (Q[n]) Q[n].learn.forEach(b => { if (b[0] === 'fig') placed.add(b[1]); if (b[0] === 'lesson') lessons.add(b[1]); });
+    Object.entries(FX.specs).forEach(([key, spec]) => { if (!placed.has(key)) return; Object.entries(spec.parts).forEach(([id, part]) => {
       Object.entries(part.q || {}).forEach(([n, list]) => list.forEach(r => refs.push({ key, id, n: +n, r, t: part.t })));
-    }));
+    }); });
+    lessons.forEach(n => { const D = ART['lesson' + n]; if (D) D.chapters.forEach((c, ci) => c.lines.forEach((l, li) => (l.rub || []).forEach(r => refs.push({ key: 'lesson' + n, id: `${ci + 1}.${li + 1}`, n: +n, r, t: l.t })))); });
     return { qs, refs };
   });
   await b.close();

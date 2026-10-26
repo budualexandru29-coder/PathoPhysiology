@@ -84,6 +84,7 @@ function block(b) {
     case 'h': return `<h3 class="blk-h">${b[1]}</h3>`;
     case 'flow': return flowHTML(b[1]);
     case 'fig': return FIGS[b[1]] ? FIGS[b[1]](b[2]) : '';
+    case 'lesson': return LESSON.html(b[1]);
     case 'tbl': return `<div class="blk"><div class="tblw"><table class="t">${b[1] ? `<caption>${b[1]}</caption>` : ''}<thead><tr>${b[2].map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${b[3].map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`;
     case 'cols': return `<div class="blk cols">${b[1].map(([t, items]) => `<div class="col"><h4>${t}</h4><ul>${items.map(i => `<li>${i}</li>`).join('')}</ul></div>`).join('')}</div>`;
     case 'box': {
@@ -192,7 +193,7 @@ function pager(n, tab) {
 }
 function viewQ(n) {
     const q = Q[n];
-    const isFx = b => b[0] === 'fig' && FX.specs[b[1]];
+    const isFx = b => (b[0] === 'fig' && FX.specs[b[1]]) || b[0] === 'lesson';
     const figs = q.learn.filter(isFx), rest = q.learn.filter(b => !isFx(b));
     const secs = [['s-sum', 'Pe scurt'], ...(figs.length ? [['s-fig', 'Mecanismul în desen']] : []), ['s-exp', 'Explicația'], ['s-plan', 'Cum răspunzi']];
     const head = (i, id, t, sub) => `<h2 class="qsec-h"><i>${i}</i>${t}${sub ? `<small>${sub}</small>` : ''}</h2>`;
@@ -200,7 +201,7 @@ function viewQ(n) {
     app.innerHTML = frame('invata', qHeader(n, '') + `
     <nav class="qmap" aria-label="Secțiunile paginii">${secs.map(([id, t], i) => `<a href="#${id}" aria-current="${i === 0}"><i>${i + 1}</i>${t}</a>`).join('')}</nav>
     <section class="qsec" id="s-sum">${head(++k, 's-sum', 'Pe scurt')}<div class="sum">${q.sum}</div></section>
-    ${figs.length ? `<section class="qsec" id="s-fig">${head(++k, 's-fig', 'Mecanismul în desen', 'pas cu pas')}${blocks(figs)}</section>` : ''}
+    ${figs.length ? `<section class="qsec" id="s-fig">${head(++k, 's-fig', 'Mecanismul în desen', figs.some(b => b[0] === 'lesson') ? 'lecție pe tablă' : 'pas cu pas')}${blocks(figs)}</section>` : ''}
     <section class="qsec" id="s-exp">${head(++k, 's-exp', 'Explicația')}${blocks(rest)}</section>
     <section class="qsec" id="s-plan">${head(++k, 's-plan', 'Cum construiești răspunsul')}
       <ol class="plan">${q.plan.map(p => `<li><span>${p}</span></li>`).join('')}</ol>
