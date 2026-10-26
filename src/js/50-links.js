@@ -66,6 +66,10 @@
 (function () {
   const L = Q[21].learn, i = L.findIndex(b => b[0] === 'fig' && b[1] === 'inflamCauses'); L.splice(i + 1, 0, ['fig', 'inflcause', { q: 21 }]);
 })();
+/* Î4: figura mecanismelor generale ale hipotermiei, după fluxul „hypoMech” */
+(function () {
+  const L = Q[4].learn, i = L.findIndex(b => b[0] === 'flow' && b[1] === 'hypoMech'); L.splice(i + 1, 0, ['fig', 'hypomech', { q: 4 }]);
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });
