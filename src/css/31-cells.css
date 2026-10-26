@@ -106,12 +106,18 @@ figure.xfig{--plate:#fdfcf9}
 /* mișcarea între pași (src/js/32-fx-anim.js): cât se mișcă piesele, etichetele pasului stau ascunse */
 .xfig svg .act{transition:none}
 [data-st].animating .fxp.vs,[data-st].animating .lbls.vs{opacity:0;visibility:hidden}
-.fx-narrw{margin:10px 0 2px}
-.fx-narrh{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.fx-narrh .sl{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.fx-replay{min-height:36px;padding:6px 12px;font-size:.88rem}
+.fx-narrw{margin:12px 0 4px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--sheet)}
+.fx-beat{margin:0;font-size:1.02rem;line-height:1.5;min-height:3em;color:var(--ink)}
+.fx-bn{display:inline-block;margin-right:10px;padding:1px 8px;border-radius:6px;background:var(--sheet2);font-family:var(--f-mono);font-size:.78rem;font-weight:600;color:var(--muted);vertical-align:1px}
+.fx-bctl{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.fx-bctl .btn{min-height:40px;padding:7px 14px;font-size:.92rem}
+.fx-bctl [data-bnext]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.fx-bctl [data-bnext]:disabled{opacity:.45;cursor:default}
+.fx-bctl .fx-bstart{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.fx-ball{margin-top:10px}
+.fx-ball summary{cursor:pointer;font-size:.86rem;color:var(--muted)}
 .fx-narr{margin:8px 0 0;padding-left:1.4em;font-size:.9rem;line-height:1.45}
-.fx-narr li{color:var(--muted);transition:color .3s;margin:2px 0}
+.fx-narr li{color:var(--muted);margin:2px 0}
 .fx-narr li.done{color:var(--ink)}
 .fx-narr li.now{color:var(--ink);font-weight:650}
 .fx-narr li.now::marker{color:var(--red)}

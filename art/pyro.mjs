@@ -76,26 +76,26 @@ export function build() {
   const memL = C.bilayer(cA.x, 72, MY, k, { step: 1.2 }) + C.bilayer(104, cA.x + cA.w, MY, k, { step: 1.2 });
   // gasdermina D: subunitățile care căptușesc porul, în secțiune (Janeway p. 273)
   const gsd = [74, 102].map((x) => Array.from({ length: 5 }, (_, i) => `<rect class="gsd" x="${f1(x - 2.2)}" y="${f1(MY - 2.5 + i * 4.2)}" width="4.4" height="3.8" rx="1.2"/>`).join("")).join("");
-  const mem0 = act("mem0", C.bilayer(72, 104, MY, k, { step: 1.2 }), [0, 0, 0, 1], { 2: fade(6200, 6600, 1, 0) });
-  const pore = act("pore", C.bilayer(72, 74, MY, k, { step: 1.2 }) + C.bilayer(102, 104, MY, k, { step: 1.2 }) + gsd, [0, 0, 0, 0], { 2: fade(6200, 6600) });
+  const mem0 = act("mem0", C.bilayer(72, 104, MY, k, { step: 1.2 }), [0, 0, 0, 1], { 2: fade(6900, 7300, 1, 0) });
+  const pore = act("pore", C.bilayer(72, 74, MY, k, { step: 1.2 }) + C.bilayer(102, 104, MY, k, { step: 1.2 }) + gsd, [0, 0, 0, 0], { 2: fade(6900, 7300) });
   // membrana externă a unei bacterii Gram-negative (stânga sus): periplasma, peptidoglicanul subțire, dublul strat cu LPS
   const om = `<rect class="bg-peri" x="${cA.x}" y="${cA.y}" width="150" height="8"/><path class="bg-pgl" d="M${cA.x} 14H160"/>` + C.bilayer(cA.x, 160, 18, k, { step: 1.2, cls: "om" });
   const lpsOM = [20, 36, 52, 68, 84, 100, 116, 132].map((x, i) => lps(x, 34, k, { dir: 1, nO: 2 + (i * 7) % 4, lean: ((i * 5) % 3 - 1) * 0.04 })).join("");
   // molecula de LPS care face drumul: membrana bacteriei → LBP → CD14 → MD-2 (lipidul A întâi; întoarsă când intră în CD14)
-  const lpsA = act("lps", lps(0, 0, k, { dir: 1, nO: 2 }), [148, 34, 0, 1], { 1: [[0, 148, 34, 0, 1], [900, 148, 34, 0, 1], [1700, 160, 104, 0, 1], [2500, 160, 104, 0, 1], [3500, 186, 129, 180, 1], [4300, 186, 129, 180, 1], [5300, 240, 127, 180, 1], [5700, 240, 127, 180, 1], [6800, 260, 127, 180, 1]] });
+  const lpsA = act("lps", lps(0, 0, k, { dir: 1, nO: 2 }), [148, 34, 0, 1], { 1: [[0, 148, 34, 0, 1], [900, 148, 34, 0, 1], [1800, 160, 104, 0, 1], [2000, 160, 104, 0, 1], [3200, 186, 129, 180, 1], [3300, 186, 129, 180, 1], [4500, 240, 127, 180, 1], [5000, 240, 127, 180, 1], [6000, 260, 127, 180, 1]] });
   // chenarul cu o moleculă de LPS mărită (10 px/nm), cu bara ei de 2 nm
   const ins = { x: 184, y: 14, w: 84, h: 94 };
   const lpsBig = `<rect class="pa-ins" x="${ins.x}" y="${ins.y}" width="${ins.w}" height="${ins.h}" rx="4"/>` + lps(244, 32, 10, { dir: 1, nO: 1 }) + C.scaleBar(190, 100, 10, 2, "2 nm", { cls: "dk" });
   const insLab = [["lipid A", 35], ["miez", 56], ["antigen O", 80]].map(([t, y]) => callout(t, null, [232, y + DA], { anchor: "end", fs: 7.6 }).s).join("");
   // LBP (bumerang), desenată cu vârful în origine: vine, scoate LPS din membrană, îl duce lângă CD14, apoi pleacă (pasul 2)
   const lbpP = [[112, 112], [124, 104], [138, 98], [152, 96], [164, 99], [162, 106], [150, 104], [137, 106], [124, 112], [114, 118]].map(([x, y]) => [x - 162, y - 102]);
-  const lbp = act("lbp", `<path class="lbp" d="${smooth(lbpP, true)}"/>`, [130, 90, -40, 0], { 1: [[0, 128, 92, -50, 0], [400, 136, 70, -55, 1], [900, 150, 38, -60, 1], [1700, 162, 102, 0, 1]], 2: [[0, 162, 102, 0, 1], [700, 150, 96, 0, 0]] });
+  const lbp = act("lbp", `<path class="lbp" d="${smooth(lbpP, true)}"/>`, [130, 90, -40, 0], { 1: [[0, 128, 92, -50, 0], [400, 136, 70, -55, 1], [900, 150, 38, -60, 1], [1800, 162, 102, 0, 1]], 2: [[0, 162, 102, 0, 1], [700, 150, 96, 0, 0]] });
   // CD14 (potcoavă ancorată prin GPI)
   const cd14 = `<path class="gpi" d="M186 ${MY}V146"/><path class="cd14b" d="${smooth([[176, 146], [173, 134], [180, 124], [192, 124], [199, 134], [196, 146], [190, 140], [186, 132], [182, 140]], true)}"/>`;
   // TLR4–MD-2: doi monomeri care se apropie în dimer; al doilea lipid A apare în MD-2 din dreapta
-  const tlrL = act("tlrL", C.tlr(0, MY, k, { tone: "t4", md2: true }), [214, 0, 0, 1], { 1: [[0, 214, 0, 0, 1], [5700, 214, 0, 0, 1], [6800, 234, 0, 0, 1]] });
-  const tlrR = act("tlrR", C.tlr(0, MY, k, { tone: "t4", flip: true, md2: true }), [318, 0, 0, 1], { 1: [[0, 318, 0, 0, 1], [5700, 318, 0, 0, 1], [6800, 298, 0, 0, 1]] });
-  const lipB = act("lipB", lipidA(0, 0, k, -1), [292, 127, 0, 0], { 1: [[0, 292, 127, 0, 0], [5300, 292, 127, 0, 0], [5700, 292, 127, 0, 1], [6800, 272, 127, 0, 1]] });
+  const tlrL = act("tlrL", C.tlr(0, MY, k, { tone: "t4", md2: true }), [214, 0, 0, 1], { 1: [[0, 214, 0, 0, 1], [5000, 214, 0, 0, 1], [6000, 234, 0, 0, 1]] });
+  const tlrR = act("tlrR", C.tlr(0, MY, k, { tone: "t4", flip: true, md2: true }), [318, 0, 0, 1], { 1: [[0, 318, 0, 0, 1], [5000, 318, 0, 0, 1], [6000, 298, 0, 0, 1]] });
+  const lipB = act("lipB", lipidA(0, 0, k, -1), [292, 127, 0, 0], { 1: [[0, 292, 127, 0, 0], [4600, 292, 127, 0, 0], [5000, 292, 127, 0, 1], [6000, 272, 127, 0, 1]] });
   // peretele Gram-pozitiv (dreapta sus): lanțuri de glican legate prin punți peptidice; acidul lipoteicoic
   let gp = `<rect class="gp-wall" x="300" y="${cA.y}" width="110" height="30"/>`;
   for (let y = 14; y <= 36; y += 7) gp += `<path class="gp-gly iso-line" d="M300 ${y}H410"/>`;
@@ -103,9 +103,9 @@ export function build() {
   const lta = (x, y0, n) => { let s = `<g class="lta1">`; for (let i = 0; i < n; i++) s += `<circle class="lta-b" cx="${f1(x + (i % 2 ? 0.9 : -0.9))}" cy="${f1(y0 + i * 2.6)}" r="1.15"/>`; return s + "</g>"; };
   gp += lta(318, 34, 7) + lta(334, 36, 6) + lta(398, 34, 7);
   // o moleculă de acid lipoteicoic se desprinde din perete și coboară pe TLR2, care se unește cu TLR6
-  const ltaA = act("lta", lta(0, 0, 9) + `<path class="lp-acyl" d="M-1.4 23l-.6 5l.6 5M1.4 23l.6 5l-.6 5"/>`, [374, 40, 0, 0], { 1: [[0, 374, 40, 0, 0], [2500, 374, 40, 0, 0], [2900, 374, 42, 0, 1], [4000, 374, 104, 0, 1]] });
-  const tlr2 = act("tlr2", C.tlr(0, MY, k, { tone: "t2" }), [330, 0, 0, 1], { 1: [[0, 330, 0, 0, 1], [4000, 330, 0, 0, 1], [4800, 342, 0, 0, 1]] });
-  const tlr6 = act("tlr6", C.tlr(0, MY, k, { tone: "t6", flip: true }), [410, 0, 0, 1], { 1: [[0, 410, 0, 0, 1], [4000, 410, 0, 0, 1], [4800, 406, 0, 0, 1]] });
+  const ltaA = act("lta", lta(0, 0, 9) + `<path class="lp-acyl" d="M-1.4 23l-.6 5l.6 5M1.4 23l.6 5l-.6 5"/>`, [374, 40, 0, 0], { 1: [[0, 374, 40, 0, 0], [8800, 374, 40, 0, 0], [9100, 374, 42, 0, 1], [9900, 374, 104, 0, 1]] });
+  const tlr2 = act("tlr2", C.tlr(0, MY, k, { tone: "t2" }), [330, 0, 0, 1], { 1: [[0, 330, 0, 0, 1], [9900, 330, 0, 0, 1], [10500, 342, 0, 0, 1]] });
+  const tlr6 = act("tlr6", C.tlr(0, MY, k, { tone: "t6", flip: true }), [410, 0, 0, 1], { 1: [[0, 410, 0, 0, 1], [9900, 410, 0, 0, 1], [10500, 406, 0, 0, 1]] });
   // sub membrană: lanțul TIR (receptor) → MyD88 (TIR + domeniul morții) → IRAK4 → IRAK1 → TRAF6 → TAK1 → IKK (α, β, NEMO), adunat pe rând
   const dm = (x, y, rx, ry, cls) => `<ellipse class="${cls}" cx="${f1(x)}" cy="${f1(y)}" rx="${f1(rx)}" ry="${f1(ry)}"/>`;
   const chain = [
@@ -116,37 +116,37 @@ export function build() {
     ["traf6", `<path class="traf" d="${smooth(lumpy(280, 230, 7, 9, 0.12, 4), true)}"/>`],
     ["tak1", `<path class="tak" d="${smooth(lumpy(293, 234, 5.6, 9, 0.12, 6), true)}"/>`],
     ["ikk", dm(307.6, 238, 6.4, 5.6, "ikk") + dm(320, 238, 6.4, 5.6, "ikk") + dm(314, 247, 6.4, 3.6, "ikk nemo")],
-  ].map(([n, s], i) => act(n, s, [0, -6, 0, 0], { 1: [[0, 0, -6, 0, 0], [6900 + i * 380, 0, -6, 0, 0], [7300 + i * 380, 0, 0, 0, 1]] })).join("")
-    + act("myd2", dm(354, 194, 6, 4.6, "myd") + dm(394, 194, 6, 4.6, "myd"), [0, -6, 0, 0], { 1: [[0, 0, -6, 0, 0], [4800, 0, -6, 0, 0], [5200, 0, 0, 0, 1]] });
+  ].map(([n, s], i) => act(n, s, [0, -6, 0, 0], { 1: [[0, 0, -6, 0, 0], [6100 + i * 380, 0, -6, 0, 0], [6500 + i * 380, 0, 0, 0, 1]] })).join("")
+    + act("myd2", dm(354, 194, 6, 4.6, "myd") + dm(394, 194, 6, 4.6, "myd"), [0, -6, 0, 0], { 1: [[0, 0, -6, 0, 0], [10500, 0, -6, 0, 0], [10900, 0, 0, 0, 1]] });
   // un val care trece prin lanț, cât se adună proteinele (doar în animație)
-  const pulse = act("pulse", `<circle class="pa-pulse" r="5"/>`, [240, 186, 0, 0], { 1: [[0, 240, 186, 0, 0], [6900, 240, 186, 0, 0], [7100, 240, 188, 0, .9], [7700, 252, 204, 0, .9], [8100, 266, 222, 0, .9], [8700, 293, 234, 0, .9], [9300, 314, 240, 0, .9], [9600, 314, 240, 0, 0]] });
+  const pulse = act("pulse", `<circle class="pa-pulse" r="5"/>`, [240, 186, 0, 0], { 1: [[0, 240, 186, 0, 0], [6100, 240, 186, 0, 0], [6300, 240, 188, 0, .9], [6900, 252, 204, 0, .9], [7400, 266, 222, 0, .9], [8000, 293, 234, 0, .9], [8600, 314, 240, 0, .9], [8800, 314, 240, 0, 0]] });
   // IκB ține NF-κB; IKK îl fosforilează (P), IκB se degradează, NF-κB pleacă spre nucleu
   const nfkb = (x, y) => `<g class="nfkb">${dm(x - 5.6, y, 6, 4.8, "p50")}${dm(x + 5.6, y, 6, 4.8, "p65")}</g>`;
-  const ikb = act("ikb", `<path class="ikb" d="M368 219Q380 211 392 219"/>`, [0, 0, 0, 1], { 2: fade(800, 1500, 1, 0) });
-  const ikbP = act("ikbP", `<circle class="ph-p" cx="392" cy="216" r="2.4"/><text class="ph-t" x="392" y="217.6" text-anchor="middle">P</text>`, [0, 0, 0, 0], { 2: [[0, 0, 0, 0, 0], [400, 0, 0, 0, 1], [1100, 0, 0, 0, 1], [1500, 0, 0, 0, 0]] });
-  const ikbf = act("ikbf", [[350, 222], [356, 218], [362, 221]].map(([x, y]) => `<circle class="ikbf" cx="${x}" cy="${y}" r="1.5"/>`).join(""), [18, -4, 0, 0], { 2: [[0, 18, -4, 0, 0], [900, 18, -4, 0, 0], [1600, 0, 0, 0, 1]] });
-  const nf = act("nfkb", nfkb(0, 0), [380, 226, 0, 1], { 2: [[0, 380, 226, 0, 1], [1500, 380, 226, 0, 1], [2700, 390, 244, 0, 1]] });
-  const nfArr = act("nfArr", `<path class="pa-arrow" d="M398 248L406 252M406 252l-4.6 .2M406 252l-2 -4"/>`, [0, 0, 0, 0], { 2: fade(2500, 2900) });
+  const ikb = act("ikb", `<path class="ikb" d="M368 219Q380 211 392 219"/>`, [0, 0, 0, 1], { 2: fade(1000, 1600, 1, 0) });
+  const ikbP = act("ikbP", `<circle class="ph-p" cx="392" cy="216" r="2.4"/><text class="ph-t" x="392" y="217.6" text-anchor="middle">P</text>`, [0, 0, 0, 0], { 2: [[0, 0, 0, 0, 0], [500, 0, 0, 0, 1], [1000, 0, 0, 0, 1], [1300, 0, 0, 0, 0]] });
+  const ikbf = act("ikbf", [[350, 222], [356, 218], [362, 221]].map(([x, y]) => `<circle class="ikbf" cx="${x}" cy="${y}" r="1.5"/>`).join(""), [18, -4, 0, 0], { 2: [[0, 18, -4, 0, 0], [1100, 18, -4, 0, 0], [1800, 0, 0, 0, 1]] });
+  const nf = act("nfkb", nfkb(0, 0), [380, 226, 0, 1], { 2: [[0, 380, 226, 0, 1], [2000, 380, 226, 0, 1], [3000, 390, 244, 0, 1]] });
+  const nfArr = act("nfArr", `<path class="pa-arrow" d="M398 248L406 252M406 252l-4.6 .2M406 252l-2 -4"/>`, [0, 0, 0, 0], { 2: fade(2900, 3300) });
   // citokinele, pe căile lor: TNF-α urcă în membrană ca trimer ancorat, TACE îl taie, trimerul solubil pleacă; porul de gasdermină;
   // IL-1β iese prin por; IL-6 apare afară (secreție obișnuită)
-  const tnfSt = act("tnfSt", `<path class="tnf-st" d="M24 ${MY}V150M30 ${MY}V150M36 ${MY}V150"/>`, [0, 30, 0, 0], { 2: [[0, 0, 30, 0, 0], [3200, 0, 30, 0, 0], [3400, 0, 30, 0, 1], [4100, 0, 0, 0, 1]] });
-  const tnfC = act("tnfC", [[24, 145], [36, 145], [30, 138]].map(([x, y]) => `<circle class="tnf-c" cx="${x}" cy="${y}" r="6"/>`).join(""), [0, 30, 0, 0], { 2: [[0, 0, 30, 0, 0], [3200, 0, 30, 0, 0], [3400, 0, 30, 0, 1], [4100, 0, 0, 0, 1], [5000, 0, 0, 0, 1], [5100, 0, 0, 0, 0]] });
-  const tace = act("tace", `<path class="tace" d="${smooth([[44, MY], [42, 150], [46, 140], [52, 136], [58, 142], [56, 152], [54, MY]], true)}"/>`, [0, 0, 0, 0], { 2: fade(4100, 4500) });
-  const cut = act("cut", `<path class="tace-cut iso-line" d="M43 150l-5 -1.5M43 150l-4.6 2.6"/>`, [0, 0, 0, 0], { 2: [[0, 0, 0, 0, 0], [4600, 0, 0, 0, 0], [4800, 0, 0, 0, 1], [5300, 0, 0, 0, 1], [5600, 0, 0, 0, .55]] });
-  const tnfS = act("tnfS", [[58, 112], [70, 112], [64, 104]].map(([x, y]) => `<circle class="tnf-c" cx="${x}" cy="${y}" r="6"/>`).join(""), [-34, 30, 0, 0], { 2: [[0, -34, 30, 0, 0], [5000, -34, 30, 0, 0], [5100, -34, 30, 0, 1], [6100, 0, 0, 0, 1]] });
+  const tnfSt = act("tnfSt", `<path class="tnf-st" d="M24 ${MY}V150M30 ${MY}V150M36 ${MY}V150"/>`, [0, 30, 0, 0], { 2: [[0, 0, 30, 0, 0], [3700, 0, 30, 0, 0], [3900, 0, 30, 0, 1], [4600, 0, 0, 0, 1]] });
+  const tnfC = act("tnfC", [[24, 145], [36, 145], [30, 138]].map(([x, y]) => `<circle class="tnf-c" cx="${x}" cy="${y}" r="6"/>`).join(""), [0, 30, 0, 0], { 2: [[0, 0, 30, 0, 0], [3700, 0, 30, 0, 0], [3900, 0, 30, 0, 1], [4600, 0, 0, 0, 1], [5900, 0, 0, 0, 1], [6000, 0, 0, 0, 0]] });
+  const tace = act("tace", `<path class="tace" d="${smooth([[44, MY], [42, 150], [46, 140], [52, 136], [58, 142], [56, 152], [54, MY]], true)}"/>`, [0, 0, 0, 0], { 2: fade(5000, 5400) });
+  const cut = act("cut", `<path class="tace-cut iso-line" d="M43 150l-5 -1.5M43 150l-4.6 2.6"/>`, [0, 0, 0, 0], { 2: [[0, 0, 0, 0, 0], [5500, 0, 0, 0, 0], [5700, 0, 0, 0, 1], [6200, 0, 0, 0, 1], [6500, 0, 0, 0, .55]] });
+  const tnfS = act("tnfS", [[58, 112], [70, 112], [64, 104]].map(([x, y]) => `<circle class="tnf-c" cx="${x}" cy="${y}" r="6"/>`).join(""), [-34, 30, 0, 0], { 2: [[0, -34, 30, 0, 0], [5900, -34, 30, 0, 0], [6000, -34, 30, 0, 1], [6800, 0, 0, 0, 1]] });
   const trefoil = (x, y) => `<g class="il1b">${[0, 1, 2].map((i) => { const a = -Math.PI / 2 + i * 2.094; return `<circle cx="${f1(x + Math.cos(a) * 3.6)}" cy="${f1(y + Math.sin(a) * 3.6)}" r="3.6"/>`; }).join("")}</g>`;
-  const il1a = act("il1a", trefoil(88, 150), [0, 40, 0, 0], { 2: [[0, 0, 40, 0, 0], [6600, 0, 40, 0, 0], [6800, 0, 40, 0, 1], [7600, 0, 0, 0, 1]] });
-  const il1b = act("il1b", trefoil(92, 122), [-4, 68, 0, 0], { 2: [[0, -4, 68, 0, 0], [6900, -4, 68, 0, 0], [7100, -4, 68, 0, 1], [7700, -4, 28, 0, 1], [8500, 0, 0, 0, 1]] });
-  const il6 = act("il6", `<g class="il6m">${[0, 1, 2, 3].map((i) => `<rect x="${f1(107 + i * 2.6)}" y="${f1(136 + (i % 2) * 1.2)}" width="2.3" height="9" rx="1.1"/>`).join("")}</g>`, [0, 8, 0, 0], { 2: [[0, 0, 8, 0, 0], [8300, 0, 8, 0, 0], [9100, 0, 0, 0, 1]] });
+  const il1a = act("il1a", trefoil(88, 150), [0, 40, 0, 0], { 2: [[0, 0, 40, 0, 0], [7300, 0, 40, 0, 0], [7500, 0, 40, 0, 1], [8200, 0, 0, 0, 1]] });
+  const il1b = act("il1b", trefoil(92, 122), [-4, 68, 0, 0], { 2: [[0, -4, 68, 0, 0], [7700, -4, 68, 0, 0], [7900, -4, 68, 0, 1], [8400, -4, 28, 0, 1], [9100, 0, 0, 0, 1]] });
+  const il6 = act("il6", `<g class="il6m">${[0, 1, 2, 3].map((i) => `<rect x="${f1(107 + i * 2.6)}" y="${f1(136 + (i % 2) * 1.2)}" width="2.3" height="9" rx="1.1"/>`).join("")}</g>`, [0, 8, 0, 0], { 2: [[0, 0, 8, 0, 0], [9300, 0, 8, 0, 0], [10100, 0, 0, 0, 1]] });
   // macrofagul întreg (2,4 px/µm): o bacterie opsonizată (C3b) intră în fagozom; de la pasul 2, ARNm în citoplasmă
   const th = { x: 14, y: 182, w: 90, h: 70 };
   const macShape = blob(44, 215, 25, 23, 0.3, 21, 0.1);
   const bact = `<rect class="fagb" x="-4" y="-1.25" width="8" height="2.5" rx="1.25"/>` + [[-3, -1.6], [0, -2], [3, -1.4]].map(([x, y]) => `<circle class="c3b" cx="${x}" cy="${y}" r=".65"/>`).join("");
   const thumb = `<rect class="pa-ins" x="${th.x}" y="${th.y}" width="${th.w}" height="${th.h}" rx="4"/>` + C.macrophage(44, 215, KC, { shape: macShape, seed: 21, rot: 0, eat: `<circle class="lc-lys" cx="48" cy="231" r="1.3"/>` })
-    + act("fagm", `<circle class="fagm" cx="54" cy="224" r="5.4"/>`, [0, 0, 0, 0], { 1: fade(9300, 9900) }) + act("bact", bact, [84, 204, -20, 1], { 1: [[0, 84, 204, -20, 1], [9300, 84, 204, -20, 1], [10200, 54, 224, 0, 1]] })
+    + act("fagm", `<circle class="fagm" cx="54" cy="224" r="5.4"/>`, [0, 0, 0, 0], { 1: fade(11800, 12200) }) + act("bact", bact, [84, 204, -20, 1], { 1: [[0, 84, 204, -20, 1], [11100, 84, 204, -20, 1], [12000, 54, 224, 0, 1]] })
     + `<rect class="fagb" x="${80 - 2.6}" y="${194 - 1}" width="5.2" height="2" rx="1" transform="rotate(23 80 194)"/>`
     + `<circle class="pa-zoom" cx="67" cy="206" r="2.6"/>` + C.scaleBar(100, 247, KC, 10, "10 µm", { cls: "dk", anchor: "end" });
-  const thMrna = act("mrna", [[34, 210], [40, 206], [30, 220]].map(([x, y]) => `<path class="mrna" d="M${x} ${y}q2 -2 0 -4"/>`).join(""), [0, 0, 0, 0], { 2: fade(2700, 3200) });
+  const thMrna = act("mrna", [[34, 210], [40, 206], [30, 220]].map(([x, y]) => `<path class="mrna" d="M${x} ${y}q2 -2 0 -4"/>`).join(""), [0, 0, 0, 0], { 2: fade(3000, 3600) });
   // drumurile, ca săgeți punctate (rămân după animație): LPS din membrană → LBP → CD14 → MD-2; IL-1β prin por; TNF-α tăiat
   const mk = (d) => `<path class="pa-path" d="${d}" marker-end="url(#__U__-ar)"/>`;
   const pathA = mk("M150 46C158 64 160 80 161 94") + mk("M170 110C177 113 181 117 183 121") + mk("M200 126C216 120 234 118 252 122");
@@ -158,15 +158,16 @@ export function build() {
     + `<g class="${vis([1])}">${lpsBig}</g>${thumb}${thMrna}`
     + `${C.scaleBar(112, 252, k, 10, "10 nm", { cls: "dk" })}</g><rect class="pa-frame" x="${cA.x}" y="${cA.y}" width="${cA.w}" height="${cA.h}" rx="4"/></g>`;
   const insLabels = `<g class="lbls ${vis([1])}">${insLab}</g>`;
-  AN.dur[1] = 10400; AN.dur[2] = 9300;
-  AN.cap[1] = [[0, "LBP vine la membrana externă a bacteriei și scoate o moleculă de LPS."], [1700, "LBP duce LPS spre membrana macrofagului și îl predă lui CD14."],
-    [2600, "Între timp, o moleculă de acid lipoteicoic se desprinde din peretele Gram-pozitiv și se leagă de TLR2; TLR2 se unește cu TLR6."],
-    [4300, "CD14 predă LPS lui MD-2, proteina lipită de TLR4; lanțurile lipidului A intră în buzunarul MD-2."], [5700, "Două complexe TLR4–MD-2 cu LPS se apropie și se unesc într-un dimer."],
-    [6900, "Domeniile TIR ale dimerului adună MyD88; semnalul trece din proteină în proteină: IRAK4, IRAK1, TRAF6, TAK1, IKK."],
-    [9300, "În macrofagul întreg (colțul din stânga), o bacterie acoperită de C3b e înglobată într-un fagozom."]];
-  AN.cap[2] = [[0, "IKK fosforilează IκB (P)."], [900, "IκB se degradează și eliberează NF-κB."], [1600, "NF-κB pleacă spre nucleu; se transcriu genele IL-1β, TNF-α, IL-6 (ARNm roșii, în macrofagul din colț)."],
-    [3200, "TNF-α ajunge în membrană ca trimer ancorat."], [4100, "Proteaza TACE îl taie, iar trimerul solubil pleacă."],
-    [6200, "Gasdermina D face pori în membrană; IL-1β, care nu are peptid semnal, iese prin ei."], [8300, "IL-6 iese prin secreția obișnuită. Toate trei trec în sânge."]];
+  AN.dur[1] = 12200; AN.dur[2] = 10600;
+  AN.cap[1] = [[0, "LBP vine la membrana externă a bacteriei și scoate o moleculă de LPS."], [1800, "LBP duce molecula de LPS la CD14, ancorat în membrana macrofagului."],
+    [3200, "CD14 predă LPS lui MD-2, proteina lipită de TLR4; lanțurile lipidului A intră în buzunarul MD-2."],
+    [4600, "Al doilea complex TLR4–MD-2 leagă și el LPS; cele două complexe se apropie și se unesc într-un dimer."],
+    [6000, "Sub membrană, domeniile TIR ale dimerului adună MyD88; semnalul trece din proteină în proteină: IRAK4, IRAK1, TRAF6, TAK1, IKK."],
+    [8800, "La fel pentru Gram-pozitivi: acidul lipoteicoic se desprinde din perete și se leagă de TLR2, care se unește cu TLR6; și acest dimer adună MyD88."],
+    [11000, "În macrofagul întreg (colțul din stânga), o bacterie acoperită de C3b e înglobată într-un fagozom."]];
+  AN.cap[2] = [[0, "IKK fosforilează IκB (P)."], [1000, "IκB fosforilat se degradează și eliberează NF-κB."], [2000, "NF-κB pleacă spre nucleu; acolo pornește genele IL-1β, TNF-α, IL-6 (ARNm roșii, în macrofagul din colț)."],
+    [3600, "TNF-α ajunge în membrană ca trimer ancorat."], [5000, "Proteaza TACE îl taie, iar trimerul solubil pleacă."],
+    [6800, "Gasdermina D face pori în membrană; IL-1β, care nu are peptid semnal, iese prin ei."], [9200, "IL-6 iese prin secreția obișnuită. Toate trei citokinele trec în sânge."]];
 
   // etichetele panoului A, pe pași
   LA("exo", [0], "bacterie\nGram-negativă", [60, 26], [14, 104]);
@@ -327,7 +328,7 @@ export function build() {
   let vessel = `<rect class="pv-l" x="10" y="${VY0}" width="400" height="${VY1 - VY0}"/><path class="pv-w thin" d="M10 ${VY0 - 0.8}H410M10 ${VY1 + 0.8}H410"/>`;
   for (let i = 0; i < 8; i++) { const x = 70 + i * 46; vessel += i % 3 === 1 ? C.rbc(x, 427, q * 0.8) : C.rbc(x, 427 + (i % 2 ? 2 : -2), q * 0.8, { edge: true, angle: (i % 2 ? 0.3 : -0.25) }); }
   const ckV0 = ["il1", "tnf", "il6", "il1", "tnf", "il6", "il1"].map((kk, i) => cytokine(kk, 92 + i * 46, 427 + (i % 2 ? -4 : 4), 0.7, `v${i}`)).join("");
-  const ckV = act("ckv", `<g class="ckflow">${ckV0}</g>`, [0, 0, 0, 0], { 2: fade(8600, 9300) });
+  const ckV = act("ckv", `<g class="ckflow">${ckV0}</g>`, [0, 0, 0, 0], { 2: fade(9800, 10500) });
   const blood = callout("sânge", null, [16, 430], { fs: 7.6, cls: "cap" }).s;
 
   const plate = `<rect class="plate" x="0" y="0" width="${W}" height="${H}" rx="6"/>`;
@@ -345,6 +346,7 @@ export function build() {
   const panelB = `${B0}<g class="${vis([3])}">${B.s3a}${B.s3b}${B.s3c}</g><g class="${vis([4])}">${B.s4a}${B.s4b}${B.s4c}</g><g class="${vis([5])}">${B.s5a}${B.s5b}${B.s5c}</g>`
     + `${vessel}${ckV}${blood}${C.scaleBar(404, 443, q, 10, "10 µm", { cls: "dk", anchor: "end" })}`;
 
+  AN.note = { 0: "Macrofagul în repaus. În membrana lui, TLR4 (cu MD-2) și TLR2, TLR6 stau separați, iar în citoplasmă NF-κB e ținut de IκB. Deasupra, peretele unei bacterii Gram-negative (stânga, cu LPS) și al uneia Gram-pozitive (dreapta, cu acid lipoteicoic)." };
   AN.dur[3] = 7800; AN.dur[4] = 9800; AN.dur[5] = 7800;
   AN.cap[3] = [[0, "În OVLT, citokinele din sânge induc COX-2 în celulele endoteliale, care fac PGE₂."], [2200, "PGE₂ ajunge la neuronii ariei preoptice și se leagă de receptorii EP3; în neuron crește AMPc."],
     [4300, "Punctul de reglare urcă brusc la 39 °C; temperatura centrală îl urmează în timp (frisonul și vasoconstricția produc și rețin căldura): febra."]];
