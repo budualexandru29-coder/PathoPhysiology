@@ -8,6 +8,7 @@
     "src/css/10-fx.css",
     "src/css/20-anima.css",
     "src/css/30-atlas.css",
+    "src/css/31-cells.css",
     "src/shell/body.html",
     "src/js/00-core.js",
     "src/js/01-questions.js",

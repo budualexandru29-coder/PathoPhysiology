@@ -1,0 +1,81 @@
+/* ===================== Biblioteca de celule și molecule (art/parts/cells.mjs) =====================
+   Culorile celulelor imită colorația May-Grünwald-Giemsa a frotiului și a amprentei (nucleii violet, granulele
+   neutrofilului fine și liliachii, ale eozinofilului roșu-portocalii, ale bazofilului și mastocitului violet închis,
+   citoplasma limfocitului și plasmocitului albastră); sunt ale obiectului, deci aceleași în ambele teme. */
+figure.xfig{
+  --lc-edge:rgba(48,26,60,.55);
+  --lc-rbc:#e39a92;--lc-rbc-c:#f3c7bf;--lc-rbc-d:#a95a57;
+  --lc-nuc:#5d3f91;--lc-nuc-d:#36215f;--lc-hc:#2d1b52;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) figure.xfig{--lc-edge:rgba(12,6,18,.8)}}
+:root[data-theme="dark"] figure.xfig{--lc-edge:rgba(12,6,18,.8)}
+
+.xfig svg .lc path,.xfig svg .lc circle,.xfig svg .lc ellipse{vector-effect:non-scaling-stroke}
+/* hematia */
+.xfig svg .lc-rbcb{fill:var(--lc-rbc);stroke:var(--lc-rbc-d);stroke-width:.6}
+.xfig svg .lc-rbcc{fill:var(--lc-rbc-c);stroke:none;opacity:.85}
+.xfig svg .lc-rbc.e .lc-rbcb{fill:var(--lc-rbc)}
+/* citoplasma, pe tipuri */
+.xfig svg .lc-cyt{stroke:var(--lc-edge);stroke-width:.7}
+.xfig svg .lc-cyt.n{fill:#f1e4ec}
+.xfig svg .lc-cyt.e{fill:#f6e1d6}
+.xfig svg .lc-cyt.b{fill:#e6dcef}
+.xfig svg .lc-cyt.l{fill:#b5cfec}
+.xfig svg .lc-cyt.m{fill:#d4d9e6}
+.xfig svg .lc-cyt.mac{fill:#eadccb}
+.xfig svg .lc-cyt.ms{fill:#e7d6ee}
+.xfig svg .lc-cyt.p{fill:#7e9dd0}
+/* nucleii */
+.xfig svg .lc-nuc{fill:var(--lc-nuc);stroke:var(--lc-nuc-d);stroke-width:.45}
+.xfig svg .lc-nuc.dense{fill:#3f2b70}
+.xfig svg .lc-mono .lc-nuc,.xfig svg .lc-mac .lc-nuc{fill:#7a62aa}
+.xfig svg .lc-mast .lc-nuc{fill:#8d70ba}
+.xfig svg .lc-nuc.pl{fill:#55408a}
+.xfig svg .lc-hc{fill:var(--lc-hc);stroke:none;opacity:.8}
+.xfig svg .lc-br{fill:none;stroke:var(--lc-nuc-d);stroke-width:1;stroke-linecap:round}
+/* granulele și organitele */
+.xfig svg .lc-gn{fill:#c79fc6;stroke:none;opacity:.8}
+.xfig svg .lc-ge{fill:#e3673d;stroke:#b4442a;stroke-width:.3}
+.xfig svg .lc-gb{fill:#36205f;stroke:none;opacity:.92}
+.xfig svg .lc-gm{fill:#6a3a8e;stroke:#45225f;stroke-width:.25}
+.xfig svg .lc-gm.out{opacity:.85}
+.xfig svg .lc-vac{fill:#f8f6f1;stroke:rgba(90,70,60,.35);stroke-width:.35}
+.xfig svg .lc-az{fill:#c4a2cc;stroke:none}
+.xfig svg .lc-lys{fill:#c2876a;stroke:#8b5639;stroke-width:.3}
+.xfig svg .lc-golgi{fill:#dce6f6;stroke:none;opacity:.6}
+.xfig svg .lc-rec{fill:none;stroke-width:.9;stroke-linecap:round}
+.xfig svg .lc-rec.b{stroke:#2f5ca6}.xfig svg .lc-rec.t{stroke:#2d8a6a}
+.xfig svg .lc-ly.act .lc-cyt{fill:#8eb3e2}
+/* trombocitul */
+.xfig svg .lc-pltb{fill:#d6bce2;stroke:#8e6aa8;stroke-width:.4}
+.xfig svg .lc-pltg{fill:#7a52a0;stroke:none}
+/* bara de scară */
+.xfig svg .lc-bar path{fill:none;stroke:var(--ink);stroke-width:1.1;stroke-linecap:butt;vector-effect:non-scaling-stroke}
+.xfig svg .lc-bar text{font:600 9px var(--f-mono, ui-monospace, monospace);fill:var(--muted)}
+
+/* moleculele: lanțurile grele albastru închis, cele ușoare albastru deschis; domeniile variabile mai deschise */
+.xfig svg .lm-d{stroke:rgba(20,30,60,.55);stroke-width:.4;vector-effect:non-scaling-stroke}
+.xfig svg .lm-d.h{fill:#3f6fbf}.xfig svg .lm-d.hv{fill:#6f9be0}
+.xfig svg .lm-d.l{fill:#9fc3ee}.xfig svg .lm-d.lv{fill:#c9dff7}
+.xfig svg .lm-ab{fill:none;stroke:#3f6fbf;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.xfig svg .lm-ab.E{stroke:#6a5bc0}.xfig svg .lm-ab.M{stroke:#2f8a8f}.xfig svg .lm-ab.A{stroke:#b06a2f}
+.xfig svg .lm-j{fill:#e8c35a;stroke:#9c7a1f;stroke-width:.4}
+.xfig svg .lm-sc{fill:none;stroke:#c4893f;stroke-width:1.6;stroke-linecap:round}
+.xfig svg .lm-col{fill:none;stroke:#b8902f;stroke-width:1;stroke-linecap:round}
+.xfig svg .lm-c1qh{fill:#e9b84a;stroke:#9c7a1f;stroke-width:.4}
+.xfig svg .lm-c1rs{fill:#d47b4c;stroke:#94492a;stroke-width:.4;opacity:.85}
+.xfig svg .lm-crp{fill:#e2809a;stroke:#9e4760;stroke-width:.45}
+.xfig svg .lm-mhc .lm-a{fill:#5fa266;stroke:#34703b;stroke-width:.45}
+.xfig svg .lm-mhc .lm-bb{fill:#3c8a7c;stroke:#22584f;stroke-width:.45}
+.xfig svg .lm-b2m{fill:#b9dba1;stroke:#6e9a55;stroke-width:.45}
+.xfig svg .lm-pep{fill:#e0574a;stroke:none}
+.xfig svg .lm-tlr .lm-ecto{stroke:rgba(30,20,40,.55);stroke-width:.45}
+.xfig svg .lm-tlr.t4 .lm-ecto{fill:#c46a9b}.xfig svg .lm-tlr.t2 .lm-ecto{fill:#4f9fa8}.xfig svg .lm-tlr.t6 .lm-ecto{fill:#8a78c8}.xfig svg .lm-tlr.t1 .lm-ecto{fill:#c99a3e}
+.xfig svg .lm-tm{fill:#8d8d96}.xfig svg .lm-tir{fill:#a7a7b2;stroke:rgba(30,20,40,.5);stroke-width:.4}
+.xfig svg .lm-hinge{fill:none;stroke:#3f6fbf;stroke-width:1.2;stroke-linecap:round}
+.xfig svg .lm-helix{fill:none;stroke:rgba(20,60,30,.6);stroke-width:.8;stroke-linecap:round}
+.xfig svg .lm-md2{fill:#e2b25a;stroke:#93701f;stroke-width:.4}
+.xfig svg .lm-memb{fill:#f0dcb2;stroke:none;opacity:.55}
+.xfig svg .lm-head circle{fill:#d7a24f;stroke:none}
+.xfig svg .lm-tail{fill:none;stroke:#c49a5a;stroke-width:.6;stroke-linecap:round}
+.xfig svg .lm-stalk{fill:none;stroke:#b8902f;stroke-linecap:round}

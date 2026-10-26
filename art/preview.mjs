@@ -13,7 +13,7 @@ const light = args.includes("--light");
 const st = (args[args.indexOf("--state") + 1] || "");
 const state = args.includes("--state") ? Object.fromEntries(st.split(",").map((kv) => kv.split("="))) : {};
 const { svg, viewBox, style = "", attrs = "" } = mod.preview(state);
-const css = ["src/css/00-app.css", "src/css/10-fx.css", "src/css/20-anima.css", "src/css/30-atlas.css"].map((p) => fs.readFileSync(path.join(root, p), "utf8")).join("\n");
+const css = ["src/css/00-app.css", "src/css/10-fx.css", "src/css/20-anima.css", "src/css/30-atlas.css", "src/css/31-cells.css"].map((p) => fs.readFileSync(path.join(root, p), "utf8")).join("\n");
 const html = `<!doctype html><html${light ? ' data-theme="light"' : ' data-theme="dark"'}><head><meta charset="utf-8"><style>${css}
 body{padding:16px} .pv{max-width:900px;margin:0 auto}</style></head><body>${DEFS}
 <div class="pv"><figure class="fig xfig" data-anim="1"><div class="pvs" style="${Object.entries(state).map(([k, v]) => `--${k}:${v}`).join(";")};${style}" ${attrs} ${Object.entries(state).map(([k, v]) => `data-${k}="${v}"`).join(" ")}><svg class="iso-svg" viewBox="${viewBox}">${svg}</svg></div></figure></div></body></html>`;
