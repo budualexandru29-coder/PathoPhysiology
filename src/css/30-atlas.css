@@ -845,3 +845,115 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 @media (prefers-reduced-motion:reduce){.ap-svg *{animation:none!important}}
 .ap-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
 .ap-rows .row[data-ch="1"] .ar{color:var(--red)}
+
+/* ---------- Î15: pirogenii exogeni și efectele pirogenilor endogeni ---------- */
+.xfig svg .pa-card{fill:var(--sheet);stroke:var(--line);stroke-width:1}
+.xfig svg .pa-cardl{fill:none;stroke:var(--line);stroke-width:1}
+.xfig svg .pa-ex{fill:#fbeee6}
+.xfig svg .pa-cy{fill:#e4ecf2}
+.xfig svg .pm-core{fill:#f3dfa6}
+.xfig svg .pm-h{fill:#e6b46a;stroke:#9a6b00;stroke-width:.3}
+.xfig svg .bg-om{fill:#ef8f8a;stroke:#9d3b36;stroke-width:1}
+.xfig svg .bg-pg{fill:none;stroke:#c9a26a;stroke-width:1.6}
+.xfig svg .bg-im{fill:none;stroke:#9d3b36;stroke-width:.9}
+.xfig svg .bg-cy{fill:#f6c7c2}
+.xfig svg .bg-lps{fill:none;stroke:#9d3b36;stroke-width:.7}
+.xfig svg .bg-omv{fill:#ef8f8a;stroke:#9d3b36;stroke-width:.8}
+.xfig svg .lp-acyl{fill:none;stroke:#8a6a2a;stroke-width:.8;stroke-linejoin:round}
+.xfig svg .lp-g{fill:#f2c230;stroke:#9a6b00;stroke-width:.5}
+.xfig svg .lp-p{fill:#e05a3a}
+.xfig svg .lp-link{fill:none;stroke:#7a6a40;stroke-width:.8}
+.xfig svg .lp-core{fill:#7fc3e6;stroke:#2b7ea6;stroke-width:.5}
+.xfig svg .lp-o{fill:#9bd09a;stroke:#3a7d3a;stroke-width:.5}.xfig svg .lp-o2{fill:#cfe8b8;stroke:#3a7d3a;stroke-width:.4}
+.xfig svg .lbp{fill:#f29a3a;stroke:#a35a10;stroke-width:.6}
+.xfig svg .cd14{fill:none;stroke:#2f6fd0;stroke-width:3.4;stroke-linecap:round}
+.xfig svg .gpi{fill:none;stroke:#2f6fd0;stroke-width:.8;stroke-dasharray:1.5 1.2}
+.xfig svg .tl-e{fill:#b57fd4;stroke:#6a3f94;stroke-width:.5}
+.xfig svg .tlr2 .tl-e{fill:#7fb8e0;stroke:#2b6ea6}.xfig svg .tlr1 .tl-e{fill:#9fd0c9;stroke:#2b7a6e}
+.xfig svg .tl-r{fill:none;stroke:#fff;stroke-width:.5;opacity:.6}
+.xfig svg .md2{fill:#e9b44c;stroke:#8a6200;stroke-width:.4}
+.xfig svg .tl-tm{fill:none;stroke:#6a3f94;stroke-width:1.8}
+.xfig svg .tir{fill:#b57fd4;stroke:#6a3f94;stroke-width:.5}
+.xfig svg .myd{fill:#f2c230;stroke:#9a6b00;stroke-width:.5}
+.xfig svg .kin{fill:#e07a3a;stroke:#8a3f10;stroke-width:.5}
+.xfig svg .ikk{fill:#d9473f;stroke:#7d1c22;stroke-width:.5}
+.xfig svg .p50{fill:#2fa36a;stroke:#1d6b46;stroke-width:.5}.xfig svg .p65{fill:#3fb8a8;stroke:#1d7469;stroke-width:.5}
+.xfig svg .ikb{fill:none;stroke:#7a5fb0;stroke-width:2.6;stroke-linecap:round}
+.xfig svg .ikbf{fill:#7a5fb0;opacity:.7}
+.xfig svg .nucl{fill:#d8d0ea;stroke:#6e5a9e;stroke-width:1.2}
+.xfig svg .npore{fill:#e4ecf2;stroke:#6e5a9e;stroke-width:.6}
+.xfig svg .dna{fill:none;stroke:#4b3a8a;stroke-width:1}
+.xfig svg .dnar{fill:none;stroke:#8f80b8;stroke-width:.6}
+.xfig svg .mrna{fill:none;stroke:#c2325a;stroke-width:1.1;stroke-linecap:round}
+.xfig svg .ves{fill:#f4e3b2;stroke:#b89a4a;stroke-width:.6}
+.xfig svg .fagm{fill:#f7eef2;stroke:#7f8aa8;stroke-width:.8}
+.xfig svg .fagb{fill:#ef8f8a;stroke:#9d3b36;stroke-width:.6}
+.xfig svg .lyso{fill:#b8d36e;stroke:#6f8a2c;stroke-width:.5}
+.xfig svg .gp-pg{fill:none;stroke:#c9a26a;stroke-width:9;stroke-linecap:round}
+.xfig svg .gp-pg2{fill:none;stroke:#e6cf98;stroke-width:4;stroke-dasharray:3 2}
+.xfig svg .lta{fill:none;stroke:#5a3aa0;stroke-width:.8}
+.xfig svg .lta-b{fill:#7a5fb0}
+.xfig svg .pc-ifn path{fill:none;stroke:#2b7ea6;stroke-width:1.3;stroke-linecap:round}.xfig svg .pc-ifn circle{fill:#2b7ea6}
+/* B */
+.xfig svg .pv-l{fill:#f7d7cc}
+.xfig svg .pv-w{fill:none;stroke:#b4687a;stroke-width:2.2}
+.xfig svg .pv-n{fill:#8d6aa8}
+.xfig svg .pv-fen{fill:none;stroke:#f7d7cc;stroke-width:2}
+.xfig svg .pv-fe{fill:#b5651d;stroke:#6a3a10;stroke-width:.4}
+.xfig svg .pv-zn{fill:#8a96a8;stroke:#4a5566;stroke-width:.4}
+.xfig svg .pn-bg{fill:#f1e4e6}
+.xfig svg .pn-bg2{fill:#f6e6dc}
+.xfig svg .pl-bg{fill:#c98f7d}
+.xfig svg .pm-bg{fill:#f3d6c9}
+.xfig svg .cox2{fill:#e8dfb8;stroke:#9a6b00;stroke-width:.5;transition:fill .8s}
+.xfig svg .pn-d{fill:#c9b8d6;stroke:#7a6a96;stroke-width:.4}
+.xfig svg .pn-s{fill:#c9b8d6;stroke:#7a6a96;stroke-width:.6}
+.xfig svg .pn-nu{fill:#6e5a9e}
+.xfig svg .ep3{fill:none;stroke:#2f6fd0;stroke-width:.9}
+.xfig svg .camp path{fill:#f29a3a;stroke:#a35a10;stroke-width:.4}.xfig svg .camp circle{fill:#d8463c}
+.xfig svg .ph{fill:#e3a48f;stroke:#a8664f;stroke-width:.6}
+.xfig svg .phn{fill:#7a5a9c}
+.xfig svg .kup{fill:#cfe0ea;stroke:#5c7f96;stroke-width:.6}
+.xfig svg .ferr{fill:#b5651d;stroke:#6a3a10;stroke-width:.4}
+.xfig svg .pc-crp circle{fill:#e05a8a;stroke:#8f1f4a;stroke-width:.4}
+.xfig svg .pbone{fill:#efe4cc;stroke:#b8a57b;stroke-width:.8}
+.xfig svg .pm-c circle{fill:#e9d1e3;stroke:#a77fa6;stroke-width:.3}.xfig svg .pm-c .n{fill:#7d68ac;stroke:none}
+.xfig svg .pm-f{fill:#f6e8b0;stroke:#d1bf7c;stroke-width:.4}
+.xfig svg .pm-mk path{fill:#e3c8df;stroke:#a77fa6;stroke-width:.5}.xfig svg .pm-mk .n{fill:#6e5a9e}
+.xfig svg .pc-nt .c{fill:#eef1f7;stroke:#7f8aa8;stroke-width:.6}.xfig svg .pc-nt .n{fill:#7b5fb0}.xfig svg .pc-nt .br{fill:none;stroke:#5a4290;stroke-width:1}
+.xfig svg .plt{fill:#d9a3c9;stroke:#9a5a86;stroke-width:.5}
+.xfig svg .pc-tx path{fill:none;stroke:#7a2a26;stroke-width:.8}.xfig svg .pc-tx circle{fill:#d8463c}
+.xfig svg .pc-paf circle{fill:#3fb8a8;stroke:#1d7469;stroke-width:.4}.xfig svg .pc-paf path{fill:none;stroke:#7a6a40;stroke-width:1}
+.xfig svg .pc-ly .c{fill:#cdc3e0;stroke:#8f80b8;stroke-width:.4}.xfig svg .pc-ly .n{fill:#3e2f6e}
+.xfig svg .pc-ly.b .c{fill:#c7e0f2;stroke:#2b6ea6}.xfig svg .pc-ly.t .c{fill:#cfeee0;stroke:#2b7a5a}
+.xfig svg .pc-ab{fill:none;stroke:#1f8a6a;stroke-width:1.1;stroke-linecap:round}
+.xfig svg .pc-pl .c{fill:#a68ccb;stroke:#6c56a0;stroke-width:.5}.xfig svg .pc-pl .hof{fill:#e4daf0}.xfig svg .pc-pl .n{fill:#3f2f72}
+.xfig svg .pc-div{fill:none;stroke:#2b7a5a;stroke-width:1}
+.xfig svg .pc-bac{fill:#ef8f8a;stroke:#9d3b36;stroke-width:.6}
+.xfig svg .pc-pseudo{fill:none;stroke:#7f8aa8;stroke-width:2.4;stroke-linecap:round}
+.xfig svg .ep-c{fill:#f2cdd2;stroke:#b98591;stroke-width:.7}
+.xfig svg .ep-n{fill:#8d78b2;stroke:#5b4788;stroke-width:.5}
+.xfig svg .pc-vi{fill:#2e8f86;stroke:#1b5f59;stroke-width:.4}
+.xfig svg .isg{fill:#2b7ea6}
+.xfig svg .isgh{fill:none;stroke:#2b7ea6;stroke-width:1.2;stroke-dasharray:2 2}
+/* stările */
+.pyx .pa-s0,.pyx .pa-s1,.pyx .pa-s2,.pyx .pa-s2b,.pyx .py-ckv,.pyx .py-c3,.pyx .py-c4,.pyx .py-fe{transition:opacity .8s}
+.pyx .pa-s1,.pyx .pa-s2,.pyx .pa-s2b,.pyx .py-ckv,.pyx .py-c3,.pyx .py-c4{opacity:0}
+.pyx:not([data-st="0"]) .pa-s0{opacity:0}
+.pyx:not([data-st="0"]) .pa-s1{opacity:1}
+.pyx[data-st="2"] .pa-s2,.pyx[data-st="3"] .pa-s2,.pyx[data-st="4"] .pa-s2,.pyx[data-st="2"] .pa-s2b,.pyx[data-st="3"] .pa-s2b,.pyx[data-st="4"] .pa-s2b,.pyx[data-st="2"] .py-ckv,.pyx[data-st="3"] .py-ckv,.pyx[data-st="4"] .py-ckv{opacity:1}
+.pyx[data-st="3"] .py-c3,.pyx[data-st="4"] .py-c3,.pyx[data-st="4"] .py-c4{opacity:1}
+.pyx[data-st="4"] .py-fe .pv-fe,.pyx[data-st="4"] .py-fe .pv-zn{opacity:.12}
+.pyx .py-fe .pv-fe,.pyx .py-fe .pv-zn{transition:opacity .8s}
+.pyx[data-st="3"] .cox2,.pyx[data-st="4"] .cox2{fill:#ffd23a}
+.pyx .pc-vir{opacity:1}
+.pyx .py-ckv .ck,.pyx .pa-s2b .ck{animation:fv-pulse 1.6s ease-in-out infinite}
+.pyx .py-needle{transition:transform .8s}
+.py-svg.an-svg{max-width:580px}
+.xfig[data-anim="0"] .py-svg *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.py-svg *{animation:none!important}}
+.xfig svg .plt-g{fill:#7a3a6a}
+.xfig svg .pa-ln{fill:none;stroke:#e1bfa8;stroke-width:.6}
+.pyx .py-needle{transform-box:view-box}
+.py-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
+.py-rows .row[data-ch="1"] .ar{color:var(--red)}

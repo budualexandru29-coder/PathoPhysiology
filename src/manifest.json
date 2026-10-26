@@ -29,6 +29,7 @@
     "src/js/46-fx-hodgkin.js",
     "src/js/47-fx-strep.js",
     "src/js/48-fx-apr.js",
+    "src/js/49-fx-pyro.js",
     "src/js/50-links.js",
     "src/js/90-app.js",
     "src/shell/tail.html"

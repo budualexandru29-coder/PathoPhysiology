@@ -36,6 +36,10 @@
 (function () {
   const L = Q[22].learn, i = L.findIndex(b => b[0] === 'tbl'); L.splice(i + 1, 0, ['fig', 'apr', { q: 22 }]);
 })();
+/* Î15: figura pirogenilor, după cascada efectelor */
+(function () {
+  const L = Q[15].learn, i = L.findIndex(b => b[0] === 'flow' && b[1] === 'pyroEffects'); L.splice(i + 1, 0, ['fig', 'pyro', { q: 15 }]);
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });
