@@ -407,3 +407,59 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 .fv-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
 .fv-rows .row[data-ch="1"] .ar{color:var(--red)}
 @media (prefers-reduced-motion:reduce){.fvr .fv-flow .ck,.fvr .fv-spike{animation:none!important}}
+
+/* ---------- Î27/Î22: inflamația acută, venula și leucocitele ---------- */
+.xfig svg .in-bg{fill:#f6e6dc}
+.xfig svg .in-edema{fill:#9fd0ec;opacity:0;transition:opacity 1s}
+.xfig svg .in-coll{fill:none;stroke:#e1bfa8;stroke-width:1.6;opacity:.7}
+.xfig svg .in-fib{fill:#ead2c2;stroke:#b98d74;stroke-width:.6}.xfig svg .in-fibn{fill:#9a7fb8}
+.xfig svg .lu-bg{fill:#f7d7cc}
+.xfig svg .lu-p{fill:#e8b5a6;opacity:.6}
+.xfig svg .en-cell{fill:#e49d8e;stroke:#9d4f43;stroke-width:.6}
+.xfig svg .en-nuc{fill:#8f6aa8;stroke:#5b3f7d;stroke-width:.4}
+.xfig svg .en-bm{fill:none;stroke:#b98a70;stroke-width:1.2}
+.xfig svg .en-peri{fill:#d9a08f;stroke:#9d5f4f;stroke-width:.5}
+.xfig svg .en-gap{fill:#f7d7cc;stroke:none;opacity:0;transition:opacity .8s}
+.xfig svg .exu{fill:#4a9bd0;opacity:0;transition:opacity 1s}
+.xfig svg .nt-cell{fill:#eef1f7;stroke:#7f8aa8;stroke-width:.8}
+.xfig svg .nt-gr{fill:#d4a6c0}
+.xfig svg .nt-lobe{fill:#7b5fb0;stroke:#4c357f;stroke-width:.5}
+.xfig svg .nt-br{fill:none;stroke:#5a4290;stroke-width:1.4;stroke-linecap:round}
+.xfig svg .nt-mv{fill:none;stroke:#7f8aa8;stroke-width:1.1;stroke-linecap:round}
+.xfig svg .sel{fill:none;stroke:#c2408f;stroke-width:.9}.xfig svg .sel-h{fill:#e169ad}
+.xfig svg .itg{fill:none;stroke:#2f6fd0;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.xfig svg .icam{fill:none;stroke:#e08a1e;stroke-width:1.4;stroke-linecap:round}
+.xfig svg .chk{fill:#2fa36a}
+.xfig svg .ms-cell{fill:#e9c6dd;stroke:#9a5a86;stroke-width:.8}
+.xfig svg .ms-g{fill:#8d3f7c}
+.xfig svg .ms-nuc{fill:#6e5a9e;opacity:.85}
+.xfig svg .hist{fill:#8d3f7c;opacity:0;transition:opacity .8s}
+.xfig svg .in-bac{fill:none;stroke:#7a2a26;stroke-width:4.6;stroke-linecap:round}
+.xfig svg .in-grad{fill:none;stroke:#2fa36a;stroke-width:1;stroke-dasharray:2 4;opacity:0;transition:opacity 1s}
+.xfig svg .ros{fill:none;stroke:#e0a300;stroke-width:1.2;stroke-linecap:round}
+.xfig svg .ly-tube{fill:#e6f2e6;stroke:#6f9a6f;stroke-width:.9}
+.xfig svg .ly-flap{fill:none;stroke:#6f9a6f;stroke-width:1.1;stroke-linecap:round}
+.xfig svg .ly-flow{fill:none;stroke:#6f9a6f;stroke-width:1.3;stroke-dasharray:3 5;opacity:.7}
+/* etapele inflamației */
+.inf-svg.an-svg{max-width:580px}
+.infl .if-n,.infl .if-sel,.infl .if-icam,.infl .if-chk,.infl .if-itg,.infl .if-rbcx,.infl .if-hist .hist,.infl .if-exu .exu,.infl .if-gaps .en-gap,.infl .in-edema,.infl .in-grad{transition:opacity .8s}
+.infl .if-n,.infl .if-sel,.infl .if-icam,.infl .if-chk,.infl .if-itg,.infl .if-rbcx{opacity:0}
+.infl[data-st="0"] .if-n.s1{opacity:.0}
+.infl:not([data-st="0"]) .if-hist .hist{opacity:.85}
+.infl:not([data-st="0"]) .if-rbcx{opacity:1}
+.infl:not([data-st="0"]):not([data-st="1"]) .if-exu .exu{opacity:.85}
+.infl:not([data-st="0"]):not([data-st="1"]) .if-gaps .en-gap{opacity:1}
+.infl:not([data-st="0"]):not([data-st="1"]) .in-edema{opacity:.16}
+.infl[data-st="3"] .if-n.s1,.infl[data-st="3"] .if-n.s2,.infl[data-st="3"] .if-sel,
+.infl[data-st="4"] .if-n.s1,.infl[data-st="4"] .if-n.s2,.infl[data-st="4"] .if-n.s3,.infl[data-st="4"] .if-n.s4,.infl[data-st="4"] .if-sel,.infl[data-st="4"] .if-icam,.infl[data-st="4"] .if-chk,.infl[data-st="4"] .if-itg,
+.infl[data-st="5"] .if-n:not(.s7),.infl[data-st="5"] .if-sel,.infl[data-st="5"] .if-icam,.infl[data-st="5"] .if-chk,.infl[data-st="5"] .if-itg,
+.infl[data-st="6"] .if-n,.infl[data-st="6"] .if-sel,.infl[data-st="6"] .if-icam,.infl[data-st="6"] .if-chk,.infl[data-st="6"] .if-itg{opacity:1}
+.infl[data-st="5"] .in-grad,.infl[data-st="6"] .in-grad{opacity:.55}
+.infl .if-flow{fill:none;stroke:#fff;stroke-opacity:.7;stroke-width:1.6;stroke-dasharray:.1 14;stroke-linecap:round;animation:circ-flow 1.2s linear infinite}
+.infl:not([data-st="0"]) .if-flow{animation-duration:3.4s}
+.infl .ly-flow{animation:circ-flow 2.4s linear infinite;opacity:0}
+.infl[data-st="6"] .ly-flow{opacity:.8}
+.infl .if-n.s2{animation:if-roll 2.4s ease-in-out infinite}
+@keyframes if-roll{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.xfig[data-anim="0"] .inf-svg *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.inf-svg *{animation:none!important}}

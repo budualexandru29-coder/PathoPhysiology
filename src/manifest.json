@@ -25,6 +25,7 @@
     "src/js/42-fx-cold.js",
     "src/js/43-fx-thermo.js",
     "src/js/44-fx-fever.js",
+    "src/js/45-fx-inflam.js",
     "src/js/50-links.js",
     "src/js/90-app.js",
     "src/shell/tail.html"

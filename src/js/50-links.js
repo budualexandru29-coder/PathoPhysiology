@@ -14,6 +14,11 @@
   const i = Q[11].learn.findIndex(b => b[0] === 'flow' && b[1] === 'feverCascade');
   Q[11].learn.splice(i + 1, 0, ['fig', 'fever', { q: 11 }]);
 })();
+/* Î27 și Î22: figura inflamației acute (vasul și leucocitele) */
+(function () {
+  const put = (n) => { const L = Q[n].learn, i = L.findIndex(b => b[0] === 'flow'); L.splice(i >= 0 ? i + 1 : 1, 0, ['fig', 'inflam', { q: n }]); };
+  put(27); put(22);
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });
