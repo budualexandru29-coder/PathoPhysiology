@@ -32,10 +32,28 @@ Progresul (scoruri, completări) se ține în browser, în `localStorage`.
 Pagina se reface cu:
 
 ```sh
-node build.mjs
+node art/build.mjs   # redesenează figurile și scrie src/js/31-art.generated.js
+node build.mjs       # lipește aplicația
 ```
 
-`build.mjs` lipește bucățile din `src/` în ordinea din `src/manifest.json` și scrie `index.html` (pagina completă) și `dist/artifact.html` (aceeași pagină, pentru artifactul de pe claude.ai).
+`build.mjs` lipește bucățile din `src/` în ordinea din `src/manifest.json` și scrie `index.html` (pagina completă) și `dist/artifact.html` (aceeași pagină, pentru artifactul de pe claude.ai). Dacă ai schimbat doar texte din `src/js/1*`, ajunge `node build.mjs`.
+
+Un singur desen se poate vedea separat, fără aplicație: `node art/preview.mjs art/fever.mjs` scrie `shots/preview.html` (`--light` pentru tema deschisă, `--state ph=3` pentru o anumită stare).
+
+## Figurile interactive
+
+Toate sunt desenate ca planșe de atlas: organe cu volum, vase cu perete și lumen care își schimbă calibrul, structuri la scară acolo unde scara contează. Fiecare are un tur ghidat, piese pe care apeși ca să vezi ce spune cursul despre ele (cu numărul slide-ului), un exercițiu de predicție și, unde se potrivește, un joc de ordonare sau sortare. Explicațiile care nu sunt în curs apar pe un chip punctat, cu sursa.
+
+| Întrebarea | Figura | Ce se vede |
+|---|---|---|
+| Î1 | Circulația în termoreglare | Inima, aorta cu ramurile, creierul, rinichiul și un bloc de piele; vasodilatația cutanată mută debitul cardiac spre piele, iar monitorul arată unda de puls |
+| Î2, Î6 | Capul în secțiune mediosagitală | Craniul cu diploe, sinusurile venoase, venele emisare și oftalmice, glandele sudoripare; răcirea selectivă a creierului și limitele ei la om |
+| Î5 | Stadiile hipotermiei | Creier, ochi cu reflexul pupilar, inimă cu ECG (bradicardie, unda J), plămâni, cadranul consumului de O₂ (×1–×6), glicemia, pielea cu piloerecție și celula cu cristale de gheață |
+| Î7 | Termoliza | Radiația, convecția, conducția și evaporarea la suprafața pielii, în cinci situații: aer liniștit, vânt, apă rece, mediu peste 35 °C, căldură umedă |
+| Î11, Î10 | Febra | Bacterii și macrofag în țesut, citokinele IL-1, TNF-α, IL-6, OVLT, COX-2 și PGE₂ pe neuronul hipotalamic, cu curba punctului de reglare în cele trei faze |
+| Î27, Î22 | Inflamația acută | Capilarul în secțiune: vasodilatație, exudat, marginație, rulare pe selectine, aderare prin integrine, diapedeză, chemotaxie și fagocitoză |
+
+Figurile sunt construite după Cursul 1 (Starea de boală), Cursul 2 (Inflamația) și Cursul 3 (Termoreglarea) ale disciplinei.
 
 ## Notă
 
