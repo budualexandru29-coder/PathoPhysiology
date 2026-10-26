@@ -44,6 +44,11 @@
 (function () {
   const L = Q[3].learn, i = L.findIndex(b => b[0] === 'tbl'); L.splice(i + 1, 0, ['fig', 'hyper', { q: 3 }]);
 })();
+/* Î8: balanța statică e înlocuită de figura interactivă a termogenezei */
+(function () {
+  Q[8].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'balance') { b[1] = 'tgen'; b[2] = { q: 8 }; } });
+  delete FIGS.balance; delete FIGMETA.balance;
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });

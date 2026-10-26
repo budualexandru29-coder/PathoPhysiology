@@ -16,8 +16,9 @@ import * as strep from "./strep.mjs";
 import * as apr from "./apr.mjs";
 import * as pyro from "./pyro.mjs";
 import * as hyper from "./hyper.mjs";
+import * as tgen from "./tgen.mjs";
 
-const FIGS = { circ, head, cold, thermo, fever, inflam, hodgkin, strep, apr, pyro, hyper };
+const FIGS = { circ, head, cold, thermo, fever, inflam, hodgkin, strep, apr, pyro, hyper, tgen };
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "src/js/31-art.generated.js");

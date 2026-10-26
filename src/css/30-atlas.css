@@ -1071,3 +1071,89 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 @media (prefers-reduced-motion:reduce){.hm-svg *{animation:none!important}}
 .hm-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
 .hm-rows .row[data-ch="1"] .ar{color:var(--red)}
+
+/* ---------- Î8: termogeneza ---------- */
+.xfig svg .tg-card,.xfig svg .tg-cd{fill:var(--sheet);stroke:var(--line);stroke-width:1}
+.xfig svg .tg-cy{fill:#f3e6ea}
+.xfig svg .tg-ex{fill:#eef4f8}
+.xfig svg .tg-ct{fill:#f6e6dc}
+.xfig svg .tg-glu{fill:#f2c230;stroke:#9a6b00;stroke-width:.6}
+.xfig svg .tg-pyr{fill:none;stroke:#8a6a2a;stroke-width:1}
+.xfig svg .tg-pyro{fill:#d8463c}
+.xfig svg .tg-path{fill:none;stroke:#b8a090;stroke-width:.8;stroke-dasharray:2 2}
+.xfig svg .tg-mo{fill:#f2b8a8;stroke:#a8564a;stroke-width:1.2}
+.xfig svg .tg-mi{fill:#fbe3d8;stroke:#a8564a;stroke-width:.9}
+.xfig svg .tg-cr{fill:#f2b8a8;stroke:#a8564a;stroke-width:.8}
+.xfig svg .tg-kn{fill:none;stroke:#a8564a;stroke-width:.6}
+.xfig svg .tg-knb{fill:#e9b44c}
+.xfig svg .tg-krebs circle{fill:none;stroke:#c2325a;stroke-width:1.4;stroke-dasharray:4 2}.xfig svg .tg-krebs path{fill:none;stroke:#c2325a;stroke-width:1.4}
+.xfig svg .tg-ims{fill:#f6d6cc}
+.xfig svg .tg-mat{fill:#fbe9e2}
+.xfig svg .tg-ph{fill:#e6b46a;stroke:#9a6b00;stroke-width:.3}
+.xfig svg .tg-memc{fill:#f3dfa6}
+.xfig svg .tg-c1{fill:#7fb8e0;stroke:#2b6ea6;stroke-width:.6}
+.xfig svg .tg-q{fill:#f2c230;stroke:#9a6b00;stroke-width:.4}
+.xfig svg .tg-c3{fill:#9bd09a;stroke:#3a7d3a;stroke-width:.6}
+.xfig svg .tg-cc{fill:#d8463c;stroke:#7b1a14;stroke-width:.4}
+.xfig svg .tg-c4{fill:#b57fd4;stroke:#6a3f94;stroke-width:.6}
+.xfig svg .tg-as .f0{fill:#e08a1e;stroke:#8a4a00;stroke-width:.5}.xfig svg .tg-as .st{fill:none;stroke:#8a4a00;stroke-width:2}.xfig svg .tg-as .f1{fill:#f2c230;stroke:#9a6b00;stroke-width:.5}
+.xfig svg .tg-h{fill:#f29a3a;stroke:#a35a10;stroke-width:.3}
+.xfig svg .tg-mt{font:500 6px var(--f-mono);fill:#6a4a40}
+.xfig svg .tg-atp .ad{fill:#7fc3e6;stroke:#2b7ea6;stroke-width:.4}.xfig svg .tg-atp .rb{fill:#f2c230;stroke:#9a6b00;stroke-width:.4}.xfig svg .tg-atp .p{fill:#d8463c}
+.xfig svg .tg-heat{fill:#ff9f43;opacity:0;transition:opacity .8s}
+.xfig svg .tg-call{fill:none;stroke:var(--ink);stroke-width:.7;opacity:.5}
+.xfig svg .tg-spot{fill:none;stroke:var(--ink);stroke-width:1}
+.xfig svg .tg-nak .a{fill:#b57fd4;stroke:#6a3f94;stroke-width:.6}.xfig svg .tg-nak .b{fill:#e9b44c;stroke:#8a6200;stroke-width:.5}.xfig svg .tg-nak .gly{fill:none;stroke:#3a7d3a;stroke-width:.8}
+.xfig svg .tg-ion circle{stroke-width:.5}.xfig svg .tg-ion path{fill:none;stroke:#fff;stroke-width:.8}
+.xfig svg .tg-ion.na circle{fill:#4f9fd6;stroke:#1f5f8a}.xfig svg .tg-ion.k circle{fill:#9b6fc4;stroke:#5a3a84}
+.xfig svg .tg-pi{fill:#d8463c}
+.xfig svg .tg-fib{fill:#c96b62;stroke:#8d3e37;stroke-width:.6}
+.xfig svg .tg-str{fill:none;stroke:#a3524a;stroke-width:.6}.xfig svg .tg-str.d{stroke:#7e3a34;stroke-width:1}
+.xfig svg .tg-fn{fill:#6a4c8c}
+.xfig svg .tg-mn{fill:none;stroke:#d9a62e;stroke-width:2;stroke-linecap:round}
+.xfig svg .tg-nmj{fill:#d9a62e}
+.xfig svg .tg-ba{fill:#c98a5a;stroke:#7a4a26;stroke-width:.8}
+.xfig svg .tg-lip{fill:#f6e7a6;stroke:#c9b35a;stroke-width:.5}
+.xfig svg .tg-lips{fill:#fff;opacity:.5}
+.xfig svg .tg-bm{fill:#8a4a2a}.xfig svg .tg-bmc{fill:none;stroke:#f2b8a8;stroke-width:.4}
+.xfig svg .tg-ban{fill:#6e5a9e}
+.xfig svg .tg-ucp circle{fill:#3fb8a8;stroke:#1d7469;stroke-width:.4}
+.xfig svg .tg-capb{fill:none;stroke:#9d4f43;stroke-width:6;stroke-linecap:round}
+.xfig svg .tg-capl{fill:none;stroke:#cf3b30;stroke-width:3.6;stroke-linecap:round}
+.xfig svg .tg-sy{fill:none;stroke:#d9a62e;stroke-width:1.6;stroke-linecap:round}
+.xfig svg .tg-var{fill:#d9a62e}
+.xfig svg .tg-na{fill:#2f6fd0}
+.xfig svg .tg-bal{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round}
+.xfig svg .tg-pan{fill:var(--muted);opacity:.45}
+.xfig svg .tg-flame{fill:#ff8c3a;stroke:#c2501a;stroke-width:.5}
+.xfig svg .tg-wave{fill:none;stroke:#3d8fd0;stroke-width:1}
+.xfig svg .tg-pivot{fill:var(--ink)}
+.xfig svg .tg-t{font:500 6.5px var(--f-mono);fill:var(--muted)}
+.xfig svg .tg-t.l{font-weight:600;fill:var(--ink)}
+.xfig svg .tg-t.s{font-size:6px}
+.xfig svg .tg-bar.liv{fill:#b0574d}.xfig svg .tg-bar.org{fill:#e3a48f}.xfig svg .tg-bar.oth{fill:var(--sheet2)}.xfig svg .tg-bar.mus{fill:#c96b62}
+.xfig svg .tg-barf{fill:none;stroke:var(--line);stroke-width:.8}
+.xfig svg .tg-bt{font:600 5.6px var(--f-mono);fill:#fff}
+.xfig svg .tg-thy{fill:#d98c8f;stroke:#9d4f55;stroke-width:.6;transition:fill .8s}
+.xfig svg .tg-kid{fill:#a8473c}
+.xfig svg .tg-adr{fill:#e9b44c;stroke:#8a6200;stroke-width:.6;transition:fill .8s}
+/* stările: 0 repaus, 1 efort, 2 frison, 3 adipos brun, 4 hormoni tiroidieni */
+.tgx .tg-mheat .tg-heat{opacity:.35}.tgx .tg-heat.c{opacity:.4}.tgx .tg-pheat .tg-heat{opacity:.4}
+.tgx[data-st="1"] .tg-mheat .tg-heat,.tgx[data-st="2"] .tg-mheat .tg-heat,.tgx[data-st="3"] .tg-mheat .tg-heat{opacity:.6}
+.tgx[data-st="4"] .tg-mheat .tg-heat,.tgx[data-st="4"] .tg-heat.c,.tgx[data-st="4"] .tg-pheat .tg-heat{opacity:.85}
+.tgx[data-st="1"] .tg-mheat2 .tg-heat{opacity:.9}.tgx[data-st="2"] .tg-mheat2 .tg-heat{opacity:.7}
+.tgx[data-st="3"] .tg-bheat .tg-heat{opacity:.85}
+.tgx .tg-musg{transition:transform .8s;transform-box:fill-box;transform-origin:20% 50%}
+.tgx[data-st="1"] .tg-musg{transform:scaleX(.9)}
+.tgx[data-st="2"] .tg-musg{animation:tg-shiver .14s linear infinite}
+@keyframes tg-shiver{0%,100%{transform:translateX(0)}25%{transform:translateX(-.8px)}75%{transform:translateX(.8px)}}
+.tgx .tg-ucpg,.tgx .tg-syg{opacity:.25;transition:opacity .8s}
+.tgx[data-st="3"] .tg-ucpg,.tgx[data-st="3"] .tg-syg{opacity:1}
+.tgx[data-st="2"] .tg-adr,.tgx[data-st="3"] .tg-adr{fill:#ff8c3a}
+.tgx[data-st="4"] .tg-thy{fill:#e8553e}
+.tgx .tg-hflow .tg-h{animation:fv-pulse 1.6s ease-in-out infinite}
+.tg-svg.an-svg{max-width:580px}
+.xfig[data-anim="0"] .tg-svg *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.tg-svg *{animation:none!important}}
+.tg-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
+.tg-rows .row[data-ch="1"] .ar{color:var(--red)}
