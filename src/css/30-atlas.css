@@ -290,3 +290,48 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 .cd-ctx{margin-top:10px}
 .cd[data-st="3"] .cd-svg .lg-lobe{fill:#bfa3a8;transition:fill 1s}
 .cd-svg .lg-lobe{transition:fill 1s}
+
+/* ---------- Î7: termoliza la interfața piele–mediu ---------- */
+.xfig svg .rw{fill:none;stroke:#d2552a;stroke-width:1.5;stroke-linecap:round;stroke-dasharray:5 3;animation:th-rad 1.4s linear infinite}
+.xfig svg .rh{fill:none;stroke:#d2552a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@keyframes th-rad{to{stroke-dashoffset:-16}}
+.xfig svg .sun{fill:#ffcf3a;stroke:#d99a00;stroke-width:1}
+.xfig svg .sun-g{fill:#ffcf3a;opacity:.25;filter:blur(5px)}
+.xfig svg .sun-r{fill:none;stroke:#e0a300;stroke-width:1.6;stroke-linecap:round}
+.xfig svg .cv-line{fill:none;stroke:#7ea7c2;stroke-width:1.2;stroke-dasharray:10 6;animation:th-cv 2.2s linear infinite}
+.xfig svg .cv-head{fill:none;stroke:#7ea7c2;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+@keyframes th-cv{to{stroke-dashoffset:-32}}
+.xfig svg .air{stroke-width:.6}
+.xfig svg .air.c{fill:#bcd8ea;stroke:#5f89a8}
+.xfig svg .air.w{fill:#f0a08a;stroke:#b4513a}
+.xfig svg .cd-plate .iso-fill{fill:#c3ccd6}.xfig svg .cd-plate .iso-top{fill:#e2e8ef}
+.xfig svg .cd-plate .iso-shade[data-shade="0"]{fill:#8d99a8}.xfig svg .cd-plate .iso-shade[data-shade="1"]{fill:#9fabb9}.xfig svg .cd-plate .iso-shade[data-shade="2"]{fill:#b1bcc8}.xfig svg .cd-plate .iso-shade[data-shade="3"]{fill:#c3ccd6}
+.xfig svg .cd-plate .iso-line{stroke:#56606e}
+.xfig svg .cond path,.xfig svg g.cond{fill:none;stroke:#2f7fb0;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.xfig svg .heat,.xfig svg g.heat path{fill:none;stroke:#e0503c;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.xfig svg .im-water{fill:#7cc7ee;opacity:.2}
+.xfig svg .im-top{fill:#a8dcf5;opacity:.28;stroke:#2f7fb0;stroke-width:.8}
+.xfig svg .im-wave{fill:none;stroke:#2f7fb0;stroke-width:.8;opacity:.7}
+.xfig svg .h2o .hb{fill:none;stroke:#9aa5b2;stroke-width:1}
+.xfig svg .h2o .o{fill:#d94a3d;stroke:#8f1f18;stroke-width:.4}
+.xfig svg .h2o .h{fill:#f4f6f8;stroke:#7a8590;stroke-width:.4}
+/* scenariile termolizei */
+.tl-svg.an-svg{max-width:560px}
+.tl [class^="tl-"]{transition:opacity .8s}
+.tl .tl-sun,.tl .tl-radin,.tl .tl-water,.tl .tl-hum,.tl .tl-gain{opacity:0}
+.tl[data-sc="3"] .tl-sun,.tl[data-sc="4"] .tl-sun,.tl[data-sc="3"] .tl-radin,.tl[data-sc="4"] .tl-radin,.tl[data-sc="3"] .tl-gain,.tl[data-sc="4"] .tl-gain{opacity:1}
+.tl[data-sc="3"] .tl-radout,.tl[data-sc="4"] .tl-radout{opacity:0}
+.tl[data-sc="2"] .tl-water{opacity:1}
+.tl[data-sc="2"] .tl-plate,.tl[data-sc="2"] .tl-vap,.tl[data-sc="2"] .tl-radout{opacity:0}
+.tl[data-sc="2"] .tl-water .cond{stroke-width:2}
+.tl[data-sc="4"] .tl-hum{opacity:1}
+.tl[data-sc="4"] .tl-vap{opacity:.1}
+.tl[data-sc="2"] .sb-wisp,.tl[data-sc="4"] .sb-wisp{display:none}
+.tl[data-sc="1"] .cv-line{animation-duration:.8s}
+.tl[data-sc="3"] .air.c,.tl[data-sc="4"] .air.c{fill:#f0a08a;stroke:#b4513a}
+.tl[data-sc="3"] .tl-plate .cond,.tl[data-sc="4"] .tl-plate .cond{opacity:0}
+.tl .h2o.v{animation:tl-vap 3s ease-out infinite}
+.tl .h2o.v1{animation-delay:1s}.tl .h2o.v2{animation-delay:2s}
+@keyframes tl-vap{0%{opacity:0;transform:translateY(8px)}25%{opacity:1}100%{opacity:0;transform:translateY(-14px)}}
+.tl-rows .rd .pct{font-style:normal;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.tl .h2o.v{animation:none}}

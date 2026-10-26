@@ -23,6 +23,7 @@
     "src/js/40-fx-circ.js",
     "src/js/41-fx-head.js",
     "src/js/42-fx-cold.js",
+    "src/js/43-fx-thermo.js",
     "src/js/50-links.js",
     "src/js/90-app.js",
     "src/shell/tail.html"

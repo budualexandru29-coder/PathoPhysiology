@@ -9,6 +9,11 @@
   Q[2].learn = Q[2].learn.filter(b => !(b[0] === 'fig' && b[1] === 'braincool'));
   delete FIGS.braincool; delete FIGMETA.braincool;
 })();
+/* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
+(function () {
+  Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });
+  delete FIGS.termoliza; delete FIGMETA.termoliza;
+})();
 /* scala veche a temperaturii (statică) e înlocuită peste tot de figurile interactive circ / head / cold */
 (function () { delete FIGS.thermo; delete FIGMETA.thermo; })();
 /* ===== pagina întrebării: secțiuni numerotate + hartă fixă; antet compact la derulare ===== */

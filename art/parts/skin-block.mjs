@@ -177,7 +177,7 @@ export function skinBlock({ origin, scale, uid = "__U__", az = 72, el = 30 }) {
   const defs = `<clipPath id="${uid}-cf"><path d="M0 0H${W}V${H}H0Z"/></clipPath><clipPath id="${uid}-cs"><path d="M0 0H${D}V${H}H0Z"/></clipPath><clipPath id="${uid}-sbt"><path d="M0 0H${W}V${D}H0Z"/></clipPath><clipPath id="${uid}-sbf"><path d="${poly([C.ftl, C.ftr, C.fbr, C.fbl], true)}"/></clipPath>`;
 
   return {
-    defs,
+    proj: PR, defs,
     halo: `<path class="sb-halo" d="${poly([S(-6, D + 8, -H), S(W + 8, D + 8, -H), S(W + 8, -6, -H), S(-6, -6, -H)], true)}"/>`,
     body: `${faceS}${faceT}${faceF}`,
     vess: `<g class="skinv" clip-path="url(#${uid}-sbf)">${skinVess}${glandSvg}${follicle}</g>`,

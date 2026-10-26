@@ -8,8 +8,9 @@ import { DEFS } from "./lib/an.mjs";
 import * as circ from "./circ.mjs";
 import * as head from "./head.mjs";
 import * as cold from "./cold.mjs";
+import * as thermo from "./thermo.mjs";
 
-const FIGS = { circ, head, cold };
+const FIGS = { circ, head, cold, thermo };
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "src/js/31-art.generated.js");
