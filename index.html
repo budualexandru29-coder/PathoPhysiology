@@ -2921,6 +2921,50 @@ figure.xfig{--plate:#fdfcf9}
 .fx-narr li.done{color:var(--ink)}
 .fx-narr li.now{color:var(--ink);font-weight:650}
 .fx-narr li.now::marker{color:var(--red)}
+/* ===== ecranul complet al unei figuri-planșă: desenul cât mai mare, explicația jos, ca un subtitlu ===== */
+.fx-tbar{display:none}
+html.fx-th-open{overflow:hidden}
+figure.xfig.theater{position:fixed;inset:0;z-index:3000;margin:0;width:100vw;max-width:none;height:100vh;height:100dvh;border-radius:0;border:0;padding:0;background:var(--paper);display:flex;flex-direction:column;box-shadow:none}
+figure.xfig.theater:fullscreen{width:100vw;height:100vh}
+figure.xfig.theater > .fx-head,figure.xfig.theater > .fx-note,figure.xfig.theater > .fx-nav,figure.xfig.theater > figcaption,figure.xfig.theater .fx-side,figure.xfig.theater .fx-tnav{display:none!important}
+figure.xfig.theater .fx-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:0}
+figure.xfig.theater .fx-view{position:static;flex:1;min-height:0;display:flex;flex-direction:column;margin:0;padding:0;border:0;box-shadow:none;background:transparent}
+figure.xfig.theater .fx-stage{flex:1;min-height:0;display:flex;flex-direction:column;margin:0}
+figure.xfig.theater .fx-stage > [data-st]{flex:1;min-height:0;display:flex;flex-direction:column}
+figure.xfig.theater .fx-stage svg{flex:1 1 0;min-height:0;width:100%;max-width:none;max-height:none;height:auto;padding:10px max(12px,env(safe-area-inset-left,0px)) 6px max(12px,env(safe-area-inset-right,0px));box-sizing:border-box}
+figure.xfig.theater .fx-tbar{order:-1;flex:none;display:flex;align-items:center;gap:12px;padding:8px max(14px,env(safe-area-inset-right,0px)) 8px max(14px,env(safe-area-inset-left,0px));padding-top:max(8px,env(safe-area-inset-top,0px));border-bottom:1px solid var(--line);background:var(--sheet)}
+.fx-tstep{flex:1;min-width:0;font-size:.95rem;line-height:1.3;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fx-tstep b{margin-right:6px}
+.fx-tdots{display:flex;gap:6px}
+.fx-tdot{appearance:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);background:var(--sheet);color:var(--muted);font:600 .8rem var(--f-mono);cursor:pointer}
+.fx-tdot.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.fx-tclose{appearance:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--sheet);color:var(--ink);font-size:1.1rem;cursor:pointer}
+figure.xfig.theater .fx-narrw{flex:none;margin:0;border:0;border-top:1px solid var(--line);border-radius:0;background:var(--sheet);padding:14px max(18px,env(safe-area-inset-right,0px)) max(14px,env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px 20px}
+figure.xfig.theater .fx-beat{font-size:1.18rem;line-height:1.5;min-height:2.6em;max-width:70ch}
+figure.xfig.theater .fx-bctl{margin:0;justify-content:flex-end}
+figure.xfig.theater .fx-bfull,figure.xfig.theater .fx-ball{display:none}
+@media (max-width:760px){
+  figure.xfig.theater .fx-narrw{grid-template-columns:1fr}
+  figure.xfig.theater .fx-beat{font-size:1.04rem;min-height:3.1em}
+  figure.xfig.theater .fx-bctl{justify-content:flex-start}
+  .fx-tdots{gap:4px}.fx-tdot{width:26px;height:26px}
+  .fx-tstep{font-size:.86rem}
+}
+@media (max-width:420px){figure.xfig.theater .fx-bctl .btn{padding:6px 10px;font-size:.86rem}figure.xfig.theater [data-bspeed]{display:none}}
+figure.xfig.theater .fx-body{align-items:stretch}
+figure.xfig.theater .fx-view{width:100%;align-self:stretch}
+/* telefon ținut orizontal (ecran scund): bare subțiri, ca desenul să primească aproape toată înălțimea */
+@media (max-height:520px){
+  figure.xfig.theater .fx-tbar{padding-top:max(4px,env(safe-area-inset-top,0px));padding-bottom:4px;gap:8px}
+  figure.xfig.theater .fx-tclose{width:32px;height:32px}
+  figure.xfig.theater .fx-tdot{width:24px;height:24px;font-size:.72rem}
+  figure.xfig.theater .fx-narrw{grid-template-columns:minmax(0,1fr) auto;padding-top:6px;padding-bottom:max(6px,env(safe-area-inset-bottom,0px));gap:6px 14px}
+  figure.xfig.theater .fx-beat{font-size:.92rem;line-height:1.35;min-height:0}
+  figure.xfig.theater .fx-bctl{justify-content:flex-end;gap:6px}
+  figure.xfig.theater .fx-bctl .btn{min-height:34px;padding:4px 10px;font-size:.84rem}
+  figure.xfig.theater [data-bspeed]{display:none}
+  figure.xfig.theater .fx-stage svg{padding-top:4px;padding-bottom:2px}
+}
 
 </style>
 <div id="app" lang="ro"></div>
@@ -6579,7 +6623,9 @@ const ART = {"circ":{"W":420,"H":432,"L":{"skin":"<path class=\"sb-halo\" d=\"M2
    Un pas e împărțit în momente. Când treci înainte cu un pas, se joacă primul moment, încet, apoi mișcarea se oprește
    cu textul pe ecran; „Următorul” joacă momentul următor, „Înapoi” îl reia pe cel dinainte. „Redă singur” trece singur
    mai departe, cu timp de citit între momente (după lungimea textului). La orice alt salt (înapoi, peste mai mulți pași,
-   „Compară”), piesele iau direct starea de la sfârșitul pasului. Fără mișcare dacă s-a cerut mișcare redusă. */
+   „Compară”), piesele iau direct starea de la sfârșitul pasului. Fără mișcare dacă s-a cerut mișcare redusă.
+   „Ecran complet”: figura ocupă tot ecranul (și ecranul complet al browserului, unde e permis), desenul cât mai mare,
+   explicația jos, ca un subtitlu; sus, pașii și închiderea. Tastele: → sau spațiu = următorul, ← = înapoi, Esc = închide. */
 FX.anim = (function () {
   const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   const SPEED = { slow: 1.8, normal: 1 };          // de câte ori mai lent decât cadrele din desen
@@ -6613,8 +6659,14 @@ FX.anim = (function () {
   // momentele pasului: [început, sfârșit, text]
   const beats = (AN, v) => { const C = AN.cap[v] || []; return C.map((c, i) => [c[0], i + 1 < C.length ? C[i + 1][0] : AN.dur[v], c[1]]); };
 
+  function bar(el) {
+    const X = el._an, spec = FX.specOf(el), c = spec.ctl || {}, t = el.querySelector('[data-tstep]'), d = el.querySelector('[data-tdots]');
+    if (t) t.innerHTML = `<b data-ui>Pasul ${X.v}</b> ${(c.fmt || String)(X.v)}`;
+    if (d) { let h = ''; for (let k = c.min || 0; k <= c.max; k++) h += `<button type="button" class="fx-tdot${k === X.v ? ' on' : ''}" data-bstep="${k}" aria-label="Pasul ${k}" aria-pressed="${k === X.v}">${k}</button>`; d.innerHTML = h; }
+  }
   function ui(el) {
     const X = el._an, box = el.querySelector('[data-narrw]'); if (!X || !box) return;
+    bar(el);
     const B = beats(X.AN, X.v), n = B.length, i = X.beat, done = X.phase === 'end';
     const note = (X.AN.note || {})[X.v], max0 = (FX.specOf(el).ctl || {}).max;
     box.hidden = !n && !note;
@@ -6693,9 +6745,40 @@ FX.anim = (function () {
     else { toEnd(el); X.fresh = true; ui(el); }
     if (!beats(AN, v).length && X.auto) X.wait = setTimeout(() => advance(el), Math.max(2600, ((AN.note || {})[v] || '').length * 55));
   }
+  /* ecranul complet: clasa .theater pe figură (merge oriunde) și, unde browserul permite, ecranul complet adevărat */
+  function openFull(el) {
+    const X = el._an; if (!X || el.classList.contains('theater')) return;
+    el.classList.add('theater'); document.documentElement.classList.add('fx-th-open');
+    if (el.requestFullscreen) el.requestFullscreen().then(() => { X.fs = true; }).catch(() => { X.fs = false; });
+    if (beats(X.AN, X.v).length && X.phase === 'end' && X.fresh && el.dataset.anim !== '0') playBeat(el, 0);
+    const nx = el.querySelector('[data-bnext]'); if (nx) nx.focus({ preventScroll: true });
+    ui(el);
+  }
+  function closeFull(el) {
+    const X = el._an; if (!el.classList.contains('theater')) return;
+    el.classList.remove('theater'); document.documentElement.classList.remove('fx-th-open');
+    if (X && X.fs && document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    if (X) X.fs = false;
+    el.scrollIntoView({ block: 'start' });
+  }
+  if (typeof document !== 'undefined') {
+    document.addEventListener('fullscreenchange', () => {
+      document.querySelectorAll('figure.xfig.theater').forEach(el => { if (el._an && el._an.fs && document.fullscreenElement !== el) { el._an.fs = false; closeFull(el); } });
+    });
+    document.addEventListener('keydown', e => {
+      const el = document.querySelector('figure.xfig.theater'); if (!el || !el._an) return;
+      if (e.target.closest && e.target.closest('input,textarea,select')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeFull(el); }
+      else if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); advance(el); }
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); const X = el._an; X.auto = false; playBeat(el, X.phase === 'play' || X.phase === 'end' ? X.beat : X.beat - 1); }
+    });
+  }
   if (typeof document !== 'undefined') document.addEventListener('click', e => {
-    const b = e.target.closest && e.target.closest('[data-bprev],[data-bnext],[data-bauto],[data-bspeed],[data-bstart]'); if (!b) return;
+    const b = e.target.closest && e.target.closest('[data-bprev],[data-bnext],[data-bauto],[data-bspeed],[data-bstart],[data-bfull],[data-bclose],[data-bstep]'); if (!b) return;
     const el = b.closest('figure.xfig'), X = el && el._an; if (!X) return;
+    if (b.hasAttribute('data-bfull')) { openFull(el); return; }
+    if (b.hasAttribute('data-bclose')) { closeFull(el); return; }
+    if (b.hasAttribute('data-bstep')) { X.auto = false; FX.setVar(el, +b.dataset.bstep); return; }
     if (b.hasAttribute('data-bstart')) { if (el.dataset.anim === '0') return; playBeat(el, 0); }
     else if (b.hasAttribute('data-bnext')) advance(el);
     else if (b.hasAttribute('data-bprev')) { X.auto = false; playBeat(el, X.phase === 'play' || X.phase === 'end' ? X.beat : X.beat - 1); }
@@ -6703,11 +6786,12 @@ FX.anim = (function () {
     else if (b.hasAttribute('data-bspeed')) { X.speed = X.speed === 'slow' ? 'normal' : 'slow'; ui(el); }
   });
   /* blocul de sub figură: momentul curent, butoanele, lista tuturor momentelor */
-  const html = () => `<div class="fx-narrw" data-narrw>
+  const html = () => `<div class="fx-tbar" data-tbar><span class="fx-tstep" data-tstep></span><div class="fx-tdots" data-tdots role="group" aria-label="Pașii"></div><button type="button" class="fx-tclose" data-bclose aria-label="Închide ecranul complet">✕</button></div>
+    <div class="fx-narrw" data-narrw>
     <p class="fx-beat" data-beat aria-live="polite"></p>
-    <div class="fx-bctl"><button type="button" class="btn fx-bstart" data-bstart>▶ Arată cum se întâmplă</button><button type="button" class="btn soft" data-bprev>◂ Înapoi</button><button type="button" class="btn" data-bnext>Următorul ▸</button><button type="button" class="btn soft" data-bauto aria-pressed="false">▶ Redă singur</button><button type="button" class="btn soft fx-bsp" data-bspeed>Viteză: încet</button></div>
+    <div class="fx-bctl"><button type="button" class="btn soft fx-bfull" data-bfull>⛶ Ecran complet</button><button type="button" class="btn fx-bstart" data-bstart>▶ Arată cum se întâmplă</button><button type="button" class="btn soft" data-bprev>◂ Înapoi</button><button type="button" class="btn" data-bnext>Următorul ▸</button><button type="button" class="btn soft" data-bauto aria-pressed="false">▶ Redă singur</button><button type="button" class="btn soft fx-bsp" data-bspeed>Viteză: încet</button></div>
     <details class="fx-ball"><summary data-ui>Toate momentele pasului</summary><ol class="fx-narr" data-narr></ol></details></div>`;
-  return { go, apply, stateOf, html };
+  return { go, apply, stateOf, html, openFull, closeFull };
 })();
 
 /* ===== Î1: modificările hemodinamice în hipertermia cu Tc sub 39°C (slide 12–13) =====

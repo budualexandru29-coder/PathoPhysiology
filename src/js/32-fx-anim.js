@@ -6,7 +6,9 @@
    Un pas e împărțit în momente. Când treci înainte cu un pas, se joacă primul moment, încet, apoi mișcarea se oprește
    cu textul pe ecran; „Următorul” joacă momentul următor, „Înapoi” îl reia pe cel dinainte. „Redă singur” trece singur
    mai departe, cu timp de citit între momente (după lungimea textului). La orice alt salt (înapoi, peste mai mulți pași,
-   „Compară”), piesele iau direct starea de la sfârșitul pasului. Fără mișcare dacă s-a cerut mișcare redusă. */
+   „Compară”), piesele iau direct starea de la sfârșitul pasului. Fără mișcare dacă s-a cerut mișcare redusă.
+   „Ecran complet”: figura ocupă tot ecranul (și ecranul complet al browserului, unde e permis), desenul cât mai mare,
+   explicația jos, ca un subtitlu; sus, pașii și închiderea. Tastele: → sau spațiu = următorul, ← = înapoi, Esc = închide. */
 FX.anim = (function () {
   const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   const SPEED = { slow: 1.8, normal: 1 };          // de câte ori mai lent decât cadrele din desen
@@ -40,8 +42,14 @@ FX.anim = (function () {
   // momentele pasului: [început, sfârșit, text]
   const beats = (AN, v) => { const C = AN.cap[v] || []; return C.map((c, i) => [c[0], i + 1 < C.length ? C[i + 1][0] : AN.dur[v], c[1]]); };
 
+  function bar(el) {
+    const X = el._an, spec = FX.specOf(el), c = spec.ctl || {}, t = el.querySelector('[data-tstep]'), d = el.querySelector('[data-tdots]');
+    if (t) t.innerHTML = `<b data-ui>Pasul ${X.v}</b> ${(c.fmt || String)(X.v)}`;
+    if (d) { let h = ''; for (let k = c.min || 0; k <= c.max; k++) h += `<button type="button" class="fx-tdot${k === X.v ? ' on' : ''}" data-bstep="${k}" aria-label="Pasul ${k}" aria-pressed="${k === X.v}">${k}</button>`; d.innerHTML = h; }
+  }
   function ui(el) {
     const X = el._an, box = el.querySelector('[data-narrw]'); if (!X || !box) return;
+    bar(el);
     const B = beats(X.AN, X.v), n = B.length, i = X.beat, done = X.phase === 'end';
     const note = (X.AN.note || {})[X.v], max0 = (FX.specOf(el).ctl || {}).max;
     box.hidden = !n && !note;
@@ -120,9 +128,40 @@ FX.anim = (function () {
     else { toEnd(el); X.fresh = true; ui(el); }
     if (!beats(AN, v).length && X.auto) X.wait = setTimeout(() => advance(el), Math.max(2600, ((AN.note || {})[v] || '').length * 55));
   }
+  /* ecranul complet: clasa .theater pe figură (merge oriunde) și, unde browserul permite, ecranul complet adevărat */
+  function openFull(el) {
+    const X = el._an; if (!X || el.classList.contains('theater')) return;
+    el.classList.add('theater'); document.documentElement.classList.add('fx-th-open');
+    if (el.requestFullscreen) el.requestFullscreen().then(() => { X.fs = true; }).catch(() => { X.fs = false; });
+    if (beats(X.AN, X.v).length && X.phase === 'end' && X.fresh && el.dataset.anim !== '0') playBeat(el, 0);
+    const nx = el.querySelector('[data-bnext]'); if (nx) nx.focus({ preventScroll: true });
+    ui(el);
+  }
+  function closeFull(el) {
+    const X = el._an; if (!el.classList.contains('theater')) return;
+    el.classList.remove('theater'); document.documentElement.classList.remove('fx-th-open');
+    if (X && X.fs && document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    if (X) X.fs = false;
+    el.scrollIntoView({ block: 'start' });
+  }
+  if (typeof document !== 'undefined') {
+    document.addEventListener('fullscreenchange', () => {
+      document.querySelectorAll('figure.xfig.theater').forEach(el => { if (el._an && el._an.fs && document.fullscreenElement !== el) { el._an.fs = false; closeFull(el); } });
+    });
+    document.addEventListener('keydown', e => {
+      const el = document.querySelector('figure.xfig.theater'); if (!el || !el._an) return;
+      if (e.target.closest && e.target.closest('input,textarea,select')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeFull(el); }
+      else if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); advance(el); }
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); const X = el._an; X.auto = false; playBeat(el, X.phase === 'play' || X.phase === 'end' ? X.beat : X.beat - 1); }
+    });
+  }
   if (typeof document !== 'undefined') document.addEventListener('click', e => {
-    const b = e.target.closest && e.target.closest('[data-bprev],[data-bnext],[data-bauto],[data-bspeed],[data-bstart]'); if (!b) return;
+    const b = e.target.closest && e.target.closest('[data-bprev],[data-bnext],[data-bauto],[data-bspeed],[data-bstart],[data-bfull],[data-bclose],[data-bstep]'); if (!b) return;
     const el = b.closest('figure.xfig'), X = el && el._an; if (!X) return;
+    if (b.hasAttribute('data-bfull')) { openFull(el); return; }
+    if (b.hasAttribute('data-bclose')) { closeFull(el); return; }
+    if (b.hasAttribute('data-bstep')) { X.auto = false; FX.setVar(el, +b.dataset.bstep); return; }
     if (b.hasAttribute('data-bstart')) { if (el.dataset.anim === '0') return; playBeat(el, 0); }
     else if (b.hasAttribute('data-bnext')) advance(el);
     else if (b.hasAttribute('data-bprev')) { X.auto = false; playBeat(el, X.phase === 'play' || X.phase === 'end' ? X.beat : X.beat - 1); }
@@ -130,9 +169,10 @@ FX.anim = (function () {
     else if (b.hasAttribute('data-bspeed')) { X.speed = X.speed === 'slow' ? 'normal' : 'slow'; ui(el); }
   });
   /* blocul de sub figură: momentul curent, butoanele, lista tuturor momentelor */
-  const html = () => `<div class="fx-narrw" data-narrw>
+  const html = () => `<div class="fx-tbar" data-tbar><span class="fx-tstep" data-tstep></span><div class="fx-tdots" data-tdots role="group" aria-label="Pașii"></div><button type="button" class="fx-tclose" data-bclose aria-label="Închide ecranul complet">✕</button></div>
+    <div class="fx-narrw" data-narrw>
     <p class="fx-beat" data-beat aria-live="polite"></p>
-    <div class="fx-bctl"><button type="button" class="btn fx-bstart" data-bstart>▶ Arată cum se întâmplă</button><button type="button" class="btn soft" data-bprev>◂ Înapoi</button><button type="button" class="btn" data-bnext>Următorul ▸</button><button type="button" class="btn soft" data-bauto aria-pressed="false">▶ Redă singur</button><button type="button" class="btn soft fx-bsp" data-bspeed>Viteză: încet</button></div>
+    <div class="fx-bctl"><button type="button" class="btn soft fx-bfull" data-bfull>⛶ Ecran complet</button><button type="button" class="btn fx-bstart" data-bstart>▶ Arată cum se întâmplă</button><button type="button" class="btn soft" data-bprev>◂ Înapoi</button><button type="button" class="btn" data-bnext>Următorul ▸</button><button type="button" class="btn soft" data-bauto aria-pressed="false">▶ Redă singur</button><button type="button" class="btn soft fx-bsp" data-bspeed>Viteză: încet</button></div>
     <details class="fx-ball"><summary data-ui>Toate momentele pasului</summary><ol class="fx-narr" data-narr></ol></details></div>`;
-  return { go, apply, stateOf, html };
+  return { go, apply, stateOf, html, openFull, closeFull };
 })();
