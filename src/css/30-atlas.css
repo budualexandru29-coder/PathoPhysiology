@@ -588,3 +588,143 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 .hk[data-st="0"] .hkn.n0,.hk[data-st="1"] .hkn.n1,.hk[data-st="2"] .hkn.n2,.hk[data-st="3"] .hkn.n3,.hk[data-st="4"] .hkn.n4,.hk[data-st="5"] .hkn.n5{display:revert}
 .hk-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
 .hk-rows .row[data-ch="1"] .ar{color:var(--red)}
+
+/* ---------- Î18/Î19/Î20: angina streptococică ---------- */
+.spx{--sp-muc:#eaa2a0;--sp-pal:#f0b8b2;--sp-phx:#cf7376;--sp-ton:#d9858a;--sp-uv:#e8999a}
+.spx[data-st="2"],.spx[data-st="3"],.spx[data-st="4"]{--sp-muc:#df6b66;--sp-pal:#e8877f;--sp-phx:#bd3f47;--sp-ton:#cc464b;--sp-uv:#d4545a}
+.spx[data-st="5"]{--sp-muc:#e69390;--sp-pal:#eea9a3;--sp-phx:#c95c62;--sp-ton:#d77579;--sp-uv:#e3898b}
+/* A. gura deschisă */
+.xfig svg .sp-face{fill:#e8b79a}
+.xfig svg .sp-lip{fill:#c25660;fill-rule:evenodd;stroke:#8f3540;stroke-width:.8}
+.xfig svg .sp-phx{fill:var(--sp-phx);transition:fill .8s}
+.xfig svg .sp-gran{fill:color-mix(in srgb,var(--sp-phx) 70%,#fff);opacity:.8;transition:fill .8s}
+.xfig svg .sp-fossa{fill:color-mix(in srgb,var(--sp-phx) 80%,#000);opacity:.55}
+.xfig svg .sp-pil{fill:none;stroke:var(--sp-muc);stroke-width:7;stroke-linecap:round;transition:stroke .8s}
+.xfig svg .sp-pil.p{stroke-width:5;stroke:color-mix(in srgb,var(--sp-muc) 85%,#000)}
+.xfig svg .sp-pal{fill:var(--sp-pal);stroke:color-mix(in srgb,var(--sp-pal) 70%,#000);stroke-width:.7;transition:fill .8s}
+.xfig svg .sp-raphe{fill:none;stroke:color-mix(in srgb,var(--sp-pal) 80%,#000);stroke-width:.8;opacity:.6}
+.xfig svg .sp-rug{fill:none;stroke:color-mix(in srgb,var(--sp-pal) 85%,#000);stroke-width:1;opacity:.5;stroke-linecap:round}
+.xfig svg .sp-uv{fill:var(--sp-uv);stroke:color-mix(in srgb,var(--sp-uv) 65%,#000);stroke-width:.7;transition:fill .8s}
+.xfig svg .sp-uvs{fill:none;stroke:color-mix(in srgb,var(--sp-uv) 80%,#000);stroke-width:.6;opacity:.6}
+.xfig svg .sp-tf{fill:var(--sp-ton);stroke:color-mix(in srgb,var(--sp-ton) 60%,#000);stroke-width:.8;transition:fill .8s}
+.xfig svg .sp-crypt{fill:none;stroke:color-mix(in srgb,var(--sp-ton) 50%,#000);stroke-width:1;stroke-linecap:round}
+.xfig svg .sp-exu{fill:#f3ecc6;stroke:#d1bf7c;stroke-width:.5}
+.xfig svg .sp-pet{fill:#9e1f2a}
+.xfig svg .sp-abs{fill:#c9383f;stroke:#7d1c22;stroke-width:.8}
+.xfig svg .sp-absc{fill:#e9d48a;opacity:.7}
+.xfig svg .sp-tg{fill:#dc8a8b;stroke:#a85a5f;stroke-width:.8}
+.xfig svg .sp-sulc{fill:none;stroke:#b25f67;stroke-width:1.2;stroke-linecap:round}
+.xfig svg .sp-pap{fill:#eaa8a6}
+.xfig svg .sp-th{fill:#f6f1e4;stroke:#c7bca3;stroke-width:.6}
+.spx .sp-ton{transform-box:fill-box;transform-origin:center;transition:transform .8s}
+.spx[data-st="2"] .sp-ton{transform:scale(1.16)}
+.spx[data-st="3"] .sp-ton,.spx[data-st="4"] .sp-ton{transform:scale(1.3)}
+.spx .sp-exg,.spx .sp-peg,.spx .sp-absg,.spx .sp-adh,.spx .sp-more,.spx .sp-tox,.spx .sp-ntw,.spx .sp-pus,.spx .sp-ck,.spx .sp-vir,.spx .sp-rm,.spx .sp-rs,.spx .sp-drops,.spx .sp-abl,.spx .sp-lnh,.spx .sp-lnp{opacity:0;transition:opacity .8s}
+.spx[data-st="3"] .sp-exg,.spx[data-st="4"] .sp-exg{opacity:1}
+.spx[data-st="2"] .sp-peg,.spx[data-st="3"] .sp-peg,.spx[data-st="4"] .sp-peg{opacity:1}
+.spx[data-st="4"] .sp-absg{opacity:1}
+.spx .sp-uvg{transition:transform .8s;transform-box:fill-box;transform-origin:top center}
+.spx[data-st="4"] .sp-uvg{transform:translateX(-5px) rotate(9deg)}
+.xfig svg .sp-spot{fill:none;stroke:var(--ink);stroke-width:1.2}
+.xfig svg .sp-call{fill:none;stroke:var(--ink);stroke-width:.8;opacity:.55}
+.xfig svg .sp-lens{fill:none;stroke:var(--ink);stroke-width:1.6}
+.xfig svg .sp-lens2{fill:none;stroke:var(--line);stroke-width:1}
+.xfig svg .sp-sb{fill:none;stroke:var(--ink);stroke-width:1.6}
+.xfig svg .sp-sbt{font:500 7px var(--f-mono);fill:var(--ink)}
+/* B. lupa */
+.xfig svg .sp-lp{fill:#f1d4de}
+.xfig svg .sp-lum{fill:#eef1f6}
+.xfig svg .sp-ep{stroke:#c9909e;stroke-width:.4}
+.xfig svg .sp-ep.l0{fill:#f4ccd2}.xfig svg .sp-ep.l1{fill:#efbdc6}.xfig svg .sp-ep.l2{fill:#e6abb7}
+.xfig svg .sp-epn{fill:#6f5a9c}.xfig svg .sp-epn.l2{fill:#56428a}
+.xfig svg .sp-bm{fill:none;stroke:#b26e84;stroke-width:1.1}
+.xfig svg .sp-gc{fill:#e8def0}
+.xfig svg .sp-cb circle{fill:#d3c7e6;stroke:#9c8bc4;stroke-width:.3}.xfig svg .sp-cb .n{fill:#8a76b6;stroke:none}.xfig svg .sp-cb .nl{fill:#3d2c6c}
+.xfig svg .sp-capw{fill:#e7a0ad;stroke:#b4687a;stroke-width:.6}
+.xfig svg .sp-capl{fill:#f7d7cc}
+.xfig svg .sp-capn{fill:#8d6aa8}
+.spx .sp-capg{transition:transform .8s}
+.spx[data-st="2"] .sp-capg,.spx[data-st="3"] .sp-capg,.spx[data-st="4"] .sp-capg{transform:scale(1.32)}
+.spx[data-st="5"] .sp-capg{transform:scale(1.12)}
+.xfig svg .sp-cap{fill:none;stroke:#e9e2f5;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.xfig svg .sp-fib{fill:none;stroke:#5a3aa0;stroke-width:.5;stroke-linecap:round}
+.xfig svg .sp-coc{fill:#5a3aa0;stroke:#36206b;stroke-width:.4}
+.xfig svg .sp-tx circle{fill:#f2b134;stroke:#a66b00;stroke-width:.4}
+.xfig svg .sp-nt .c{fill:#eef1f7;stroke:#7f8aa8;stroke-width:.6}
+.xfig svg .sp-nt .g circle{fill:#d4a6c0}
+.xfig svg .sp-nt .n{fill:#7b5fb0;stroke:#4c357f;stroke-width:.4}
+.xfig svg .sp-nt .br{fill:none;stroke:#5a4290;stroke-width:1.1}
+.xfig svg .sp-ep.dq{fill:#f4ccd2;opacity:.9}
+.xfig svg .sp-bal{fill:#f8eef3;stroke:#c99aa8;stroke-width:.5}
+.xfig svg .sp-baln{fill:#9a86bd}
+.xfig svg .sp-vi{fill:#2e8f86;stroke:#1b5f59;stroke-width:.4}
+.spx[data-st="1"] .sp-adh,.spx[data-st="2"] .sp-adh,.spx[data-st="3"] .sp-adh,.spx[data-st="4"] .sp-adh{opacity:1}
+.spx[data-st="2"] .sp-more,.spx[data-st="3"] .sp-more,.spx[data-st="4"] .sp-more,.spx[data-st="2"] .sp-tox,.spx[data-st="3"] .sp-tox,.spx[data-st="4"] .sp-tox,.spx[data-st="2"] .sp-ntw,.spx[data-st="3"] .sp-ntw,.spx[data-st="4"] .sp-ntw{opacity:1}
+.spx[data-st="3"] .sp-pus,.spx[data-st="4"] .sp-pus,.spx[data-st="3"] .sp-ck,.spx[data-st="4"] .sp-ck{opacity:1}
+.spx[data-st="5"] .sp-vir{opacity:1}
+/* C. capul din profil */
+.xfig svg .sp-skin{fill:#efc5aa}
+.xfig svg .sp-hedge{fill:none;stroke:#a26a52;stroke-width:1}
+.xfig svg .sp-scm{fill:#e6ac94;opacity:.55}
+.xfig svg .sp-jaw{fill:none;stroke:#c48d74;stroke-width:1;opacity:.8}
+.xfig svg .sp-ear{fill:#e8b498;stroke:#a26a52;stroke-width:.8}
+.xfig svg .sp-ear2{fill:none;stroke:#a26a52;stroke-width:.7}
+.xfig svg .sp-meat{fill:#7c4a3a}
+.xfig svg .sp-eye{fill:#fff;stroke:#6b4a3e;stroke-width:.8}
+.xfig svg .sp-brow{fill:none;stroke:#7a5040;stroke-width:1.4;stroke-linecap:round}
+.xfig svg .sp-nos{fill:none;stroke:#8a5646;stroke-width:1;stroke-linecap:round}
+.xfig svg .sp-lipc{fill:none;stroke:#b25a5f;stroke-width:1.3;stroke-linecap:round}
+.xfig svg .sp-sinus{fill:#cfe3ee;stroke:#7fa8bd;stroke-width:.6;opacity:.8;transition:fill .8s}
+.xfig svg .sp-phar{fill:#d98c8f;opacity:.45}
+.xfig svg .sp-tube{fill:none;stroke:#c98a8a;stroke-width:2.2;stroke-linecap:round;opacity:.8}
+.xfig svg .sp-mear{fill:#f0d7c6;stroke:#a26a52;stroke-width:.6;transition:fill .8s}
+.xfig svg .sp-tons{fill:#d4686e;stroke:#8f3a40;stroke-width:.5}
+.xfig svg .sp-absl{fill:#c9383f;stroke:#7d1c22;stroke-width:.6;opacity:.9}
+.xfig svg .sp-lnh{fill:#e2505a}
+.xfig svg .sp-lnb{fill:#b9a9d8;stroke:#6f5fa6;stroke-width:.6}
+.xfig svg .sp-lnp{fill:#e9d48a}
+.spx .sp-ln{transition:transform .8s}
+.spx[data-st="2"] .sp-ln,.spx[data-st="5"] .sp-ln{transform:scale(1.25)}
+.spx[data-st="3"] .sp-ln,.spx[data-st="4"] .sp-ln{transform:scale(1.5)}
+.spx[data-st="3"] .sp-lnh,.spx[data-st="4"] .sp-lnh{opacity:.45}
+.spx[data-st="4"] .sp-lnp{opacity:1}
+.xfig svg .sp-muc{fill:#cdbb4f;stroke:#8f7f22;stroke-width:.5}
+.xfig svg .sp-ser{fill:#cfeaf7;stroke:#5aa7cc;stroke-width:.5;opacity:.9}
+.spx[data-st="1"] .sp-rm,.spx[data-st="2"] .sp-rm,.spx[data-st="3"] .sp-rm,.spx[data-st="4"] .sp-rm{opacity:1}
+.spx[data-st="5"] .sp-rs{opacity:1}
+.xfig svg .sp-drop{fill:#9fb7c9;opacity:.75}
+.spx[data-st="1"] .sp-drops{opacity:1}
+.spx[data-st="4"] .sp-abl{opacity:1}
+.spx[data-st="4"] .sp-mear{fill:#d9473f}
+.spx[data-st="4"] .sp-sinus{fill:#e3cf73}
+/* D. la distanță */
+.xfig svg .sp-syn{fill:#f3c4c0;stroke:#c98d88;stroke-width:.6;transition:fill .8s}
+.xfig svg .sp-bone{fill:#efe4cc;stroke:#b8a57b;stroke-width:.7}
+.xfig svg .sp-cart{fill:none;stroke:#8fbfd2;stroke-width:1.4;stroke-linecap:round}
+.spx .sp-dist{opacity:.38;transition:opacity .8s}
+.spx[data-st="4"] .sp-dist{opacity:1}
+.spx[data-st="4"] .sp-syn{fill:#e3615b}
+.xfig svg .sp-card{fill:var(--sheet);stroke:var(--line);stroke-width:1}
+.xfig svg .sp-ti{font:600 7.5px var(--f-mono);fill:var(--ink)}
+.xfig svg .sp-t,.xfig svg .sp-cap2{font:500 7px var(--f-mono);fill:var(--muted)}
+.xfig svg .sp-t.l{fill:var(--ink)}
+.xfig svg .sp-t.b{fill:var(--red)}.xfig svg .sp-t.v{fill:var(--cold)}
+/* E. debutul */
+.xfig svg .sp-grid{fill:none;stroke:var(--line);stroke-width:.6}
+.xfig svg .sp-ax{fill:none;stroke:var(--muted);stroke-width:1}
+.xfig svg .sp-cv{fill:none;stroke-width:2;stroke-linecap:round;transition:opacity .8s}
+.xfig svg .sp-cv.b{stroke:var(--red)}.xfig svg .sp-cv.v{stroke:var(--cold)}
+.xfig svg .sp-bar.b{fill:#cdbb4f}.xfig svg .sp-bar.v{fill:#8fd0ee}
+.xfig svg .sp-on{fill:none;stroke:var(--red);stroke-width:.8;stroke-dasharray:2 2}
+.xfig svg .sp-wbc.ne{fill:#d27a9c}.xfig svg .sp-wbc.ly{fill:#4b3a8a}.xfig svg .sp-wbc.mo{fill:#a7b0c2}
+.xfig svg .sp-wbcf{fill:none;stroke:var(--line);stroke-width:.8}
+.spx .sp-cv,.spx .sp-bar,.spx .sp-on,.spx .sp-t.b,.spx .sp-t.v,.spx .sp-wbc,.spx .sp-wbcf{transition:opacity .8s}
+.spx[data-st="0"] .sp-cv,.spx[data-st="0"] .sp-bar,.spx[data-st="0"] .sp-on{opacity:.25}
+.spx:not([data-st="0"]):not([data-st="5"]) .v{opacity:.22}
+.spx[data-st="5"] .sp-cv.b,.spx[data-st="5"] .sp-bar.b,.spx[data-st="5"] .sp-on.b,.spx[data-st="5"] .sp-t.b{opacity:.22}
+.sp-svg.an-svg{max-width:580px}
+.spx .sp-only.v{display:none}
+.spx[data-st="5"] .sp-only.b{display:none}
+.spx[data-st="5"] .sp-only.v{display:revert}
+.sp-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
+.sp-rows .row[data-ch="1"] .ar{color:var(--red)}
