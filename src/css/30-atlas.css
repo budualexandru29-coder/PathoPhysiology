@@ -957,3 +957,117 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 .pyx .py-needle{transform-box:view-box}
 .py-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
 .py-rows .row[data-ch="1"] .ar{color:var(--red)}
+
+/* ---------- Î3: tipurile de hipertermie ---------- */
+.xfig svg .hm-card{fill:var(--sheet);stroke:var(--line);stroke-width:1}
+.xfig svg .hm-ex{fill:#f6ece6}
+.xfig svg .hm-cy{fill:#f3dfe3}
+.xfig svg .hm-mem{fill:none;stroke:#b4687a;stroke-width:2.4;stroke-linejoin:round}
+.xfig svg .hm-sr{fill:#cfe8e0;stroke:#5f9a8a;stroke-width:.7}
+.xfig svg .hm-lsr{fill:none;stroke:#9fd0c2;stroke-width:3.4;stroke-linecap:round}
+.xfig svg .hm-ca{fill:#2fa36a}
+.xfig svg .hm-ryr{fill:#c2325a;stroke:#7d1c3b;stroke-width:.4}
+.xfig svg .hm-ryrp{fill:none;stroke:#ffd23a;stroke-width:1.6;stroke-linecap:round;opacity:0;transition:opacity .8s}
+.xfig svg .hm-dhpr{fill:#2f6fd0}
+.xfig svg .hm-serca rect{fill:#e9b44c;stroke:#8a6200;stroke-width:.4}.xfig svg .hm-serca path{fill:none;stroke:#8a6200;stroke-width:.6}
+.xfig svg .hm-mf{fill:#f0d0d6}
+.xfig svg .hm-thick{fill:none;stroke:#6a4f8f;stroke-width:3.2;stroke-linecap:round}
+.xfig svg .hm-head{fill:none;stroke:#6a4f8f;stroke-width:.9}
+.xfig svg .hm-thin{fill:none;stroke:#c2325a;stroke-width:1.6;stroke-dasharray:1.6 .5}
+.xfig svg .hm-z{fill:none;stroke:#3a2a5a;stroke-width:2}
+.xfig svg .hm-mito ellipse{fill:#e9a8a0;stroke:#9d4f43;stroke-width:.7}.xfig svg .hm-mito path{fill:none;stroke:#9d4f43;stroke-width:.7}
+.xfig svg .hm-heat{fill:#ff9f43;opacity:0;transition:opacity .8s}
+.xfig svg .hm-ion circle{stroke-width:.5}.xfig svg .hm-ion path{fill:none;stroke:#fff;stroke-width:.8}
+.xfig svg .hm-ion.na circle{fill:#4f9fd6;stroke:#1f5f8a}.xfig svg .hm-ion.cl circle{fill:#5aa85a;stroke:#2a6a2a}.xfig svg .hm-ion.k circle{fill:#9b6fc4;stroke:#5a3a84}
+.xfig svg .hm-hal path{fill:none;stroke:#556070;stroke-width:.7}.xfig svg .hm-hal .c{fill:#3a4250}.xfig svg .hm-hal .f{fill:#9bd09a}.xfig svg .hm-hal .br{fill:#a5462e}.xfig svg .hm-hal .cl{fill:#6cbf4f}
+.xfig svg .hm-suc path{fill:none;stroke:#556070;stroke-width:1}.xfig svg .hm-suc .n{fill:#2f6fd0}.xfig svg .hm-suc .o{fill:#d8463c}
+.xfig svg .hm-dan path{fill:#f2c230;stroke:#9a6b00;stroke-width:.5}.xfig svg .hm-dan circle{fill:#d8463c}
+.xfig svg .hm-ml{font:500 8px var(--f-mono);fill:#9fe0c0}
+.xfig svg .hm-mv{font:600 13px var(--f-mono);fill:#7ef0b0;opacity:0;transition:opacity .5s}
+.xfig svg .hm-mrule{fill:none;stroke:#ffffff;stroke-opacity:.12;stroke-width:.8}
+.xfig svg .hm-arr{fill:#ff8a7a}
+.xfig svg .hm-dash{fill:none;stroke:#6a8a7a;stroke-width:1.6;stroke-linecap:round}
+/* B. mialgia termică */
+.xfig svg .hc-bg{fill:#f6ece6}
+.xfig svg .hc-epi{fill:#dca487;stroke:#9a6047;stroke-width:.5}
+.xfig svg .hc-der{fill:#f6ddd0}
+.xfig svg .hc-duct{fill:none;stroke:#2b7ea6;stroke-width:1.6}
+.xfig svg .hc-coil{fill:none;stroke:#2b7ea6;stroke-width:2}
+.xfig svg .hc-drop{fill:#cfeaf7;stroke:#5aa7cc;stroke-width:.6}
+.xfig svg .hc-glass{fill:#dcebf5;fill-opacity:.55;stroke:#7f9bb0;stroke-width:.8}
+.xfig svg .hc-water{fill:#9fd3ef;opacity:.75}
+.xfig svg .hc-gl{fill:none;stroke:#fff;stroke-width:.8;opacity:.7}
+.xfig svg .hc-vw{fill:#cf3b30;stroke:#7b1a14;stroke-width:.8}
+.xfig svg .hc-vl{fill:#f7d7cc}
+.xfig svg .hc-mus{fill:#c96b62;stroke:#8d3e37;stroke-width:.8}
+.xfig svg .hc-mus.sp{fill:#b44a44}
+.xfig svg .hc-fib{fill:none;stroke:#8d3e37;stroke-width:.6;opacity:.6}
+.xfig svg .hc-ten{fill:none;stroke:#e9dcc0;stroke-width:3.4;stroke-linecap:round}
+/* C. insolația */
+.xfig svg .in-bg{fill:#eef3f7}
+.xfig svg .in-skull{fill:#efe4cc;stroke:#b8a57b;stroke-width:.6}
+.xfig svg .in-dip{fill:#d9c9e0}
+.xfig svg .in-men{fill:#dcecf5}
+.xfig svg .in-edema{fill:#78aadc;opacity:0;transition:opacity .8s}
+.xfig svg .in-menf{fill:none;stroke:#5f9fd2;stroke-width:3.4;opacity:0;transition:opacity .8s}
+.xfig svg .in-ray{fill:none;stroke:#f2b134;stroke-width:1.4;stroke-dasharray:3 3;opacity:0;transition:opacity .8s;animation:in-ray 1.2s linear infinite}
+@keyframes in-ray{to{stroke-dashoffset:-12}}
+.xfig svg .in-shade{fill:#3d63ad;stroke:#1c3369;stroke-width:.8}
+.xfig svg .in-shs{fill:none;stroke:#556070;stroke-width:1.4}
+.xfig svg .in-sk{transition:fill .8s}
+/* D. arsurile */
+.xfig svg .bu-hyp{fill:#f5e2b2}
+.xfig svg .bu-der{fill:#f6ddd0}
+.xfig svg .bu-epi{fill:#dca487;stroke:#9a6047;stroke-width:.5}
+.xfig svg .bu-corn{fill:none;stroke:#efd2b4;stroke-width:2}
+.xfig svg .bu-loop{fill:none;stroke:#cf3b30;stroke-width:1.2}
+.xfig svg .bu-loopd{fill:none;stroke:#e0302a;stroke-width:2.8;opacity:.9}
+.xfig svg .bu-ery{fill:#e86a5a;opacity:.2}
+.xfig svg .bu-ed{fill:#4a9bd0}
+.xfig svg .bu-fluid{fill:#f6e7a6;stroke:#c9b35a;stroke-width:.6;opacity:.95}
+.xfig svg .bu-nec{fill:#5a3a2e;stroke:#2e1a14;stroke-width:.8}
+.xfig svg .bu-necd{fill:#2e1a14;opacity:.6}
+.xfig svg .bu-thr{fill:none;stroke:#1a1010;stroke-width:3;opacity:.85}
+.xfig svg .bu-uv{fill:none;stroke:#9b5fc0;stroke-width:1.2;opacity:0;transition:opacity .8s}
+/* stările: 0 normal, 1 ușor, 2 moderat, 3 sever, 4 tratament */
+.hmx .hm-trig,.hmx .hm-caOut,.hmx .hm-kOut,.hmx .hm-dang,.hmx .hm-arrg .hm-arr,.hmx .hc-dropg,.hmx .hc-glassg,.hmx .hc-rbcx,.hmx .hc-sp,.hmx .in-raysg,.hmx .in-sung,.hmx .in-shadeg,.hmx .bu-g1,.hmx .bu-g2,.hmx .bu-g3,.hmx .bu-uvg{opacity:0;transition:opacity .8s}
+.hmx .hm-caSR,.hmx .hm-dashg,.hmx .hc-ions,.hmx .hc-rel{transition:opacity .8s}
+.hmx .hm-hl,.hmx .hm-hr{transition:transform 1s}
+.hmx[data-st="1"] .hm-trig,.hmx[data-st="2"] .hm-trig,.hmx[data-st="3"] .hm-trig{opacity:1}
+.hmx[data-st="1"] .hm-caOut,.hmx[data-st="2"] .hm-caOut,.hmx[data-st="3"] .hm-caOut{opacity:1}
+.hmx[data-st="1"] .hm-caSR,.hmx[data-st="2"] .hm-caSR,.hmx[data-st="3"] .hm-caSR{opacity:.3}
+.hmx[data-st="1"] .hm-ryrp,.hmx[data-st="2"] .hm-ryrp,.hmx[data-st="3"] .hm-ryrp{opacity:1}
+.hmx[data-st="1"] .hm-hl,.hmx[data-st="2"] .hm-hl,.hmx[data-st="3"] .hm-hl{transform:translateX(7px)}
+.hmx[data-st="1"] .hm-hr,.hmx[data-st="2"] .hm-hr,.hmx[data-st="3"] .hm-hr{transform:translateX(-7px)}
+.hmx[data-st="1"] .hm-heat{opacity:.3}.hmx[data-st="2"] .hm-heat{opacity:.55}.hmx[data-st="3"] .hm-heat{opacity:.85}
+.hmx[data-st="2"] .hm-kOut,.hmx[data-st="3"] .hm-kOut{opacity:1}
+.hmx[data-st="4"] .hm-dang{opacity:1}
+.hmx[data-st="0"] .hm-mv.v0,.hmx[data-st="1"] .hm-mv.v1,.hmx[data-st="2"] .hm-mv.v2,.hmx[data-st="3"] .hm-mv.v3,.hmx[data-st="4"] .hm-mv.v4{opacity:1}
+.hmx[data-st="1"] .hm-arr.fc,.hmx[data-st="2"] .hm-arr,.hmx[data-st="3"] .hm-arr{opacity:1}
+.hmx[data-st="2"] .hm-dashg,.hmx[data-st="3"] .hm-dashg{opacity:0}
+.hmx[data-st="1"] .hm-dash:first-child{opacity:0}
+.hmx[data-st="3"] .hm-mv{fill:#ff8a7a}
+.hmx[data-st="1"] .hc-dropg,.hmx[data-st="2"] .hc-dropg,.hmx[data-st="3"] .hc-dropg,.hmx[data-st="1"] .hc-glassg,.hmx[data-st="2"] .hc-glassg,.hmx[data-st="3"] .hc-glassg{opacity:1}
+.hmx[data-st="2"] .hc-rbcx,.hmx[data-st="3"] .hc-rbcx{opacity:1}
+.hmx[data-st="2"] .hc-ions,.hmx[data-st="3"] .hc-ions{opacity:.25}
+.hmx[data-st="2"] .hc-rel,.hmx[data-st="3"] .hc-rel{opacity:0}
+.hmx[data-st="2"] .hc-sp,.hmx[data-st="3"] .hc-sp{opacity:1}
+.hmx[data-st="1"] .in-raysg,.hmx[data-st="2"] .in-raysg,.hmx[data-st="3"] .in-raysg{opacity:1}
+.hmx[data-st="1"] .in-ray,.hmx[data-st="2"] .in-ray,.hmx[data-st="3"] .in-ray{opacity:1}
+.hmx:not([data-st="0"]) .in-sung{opacity:1}
+.hmx[data-st="4"] .in-shadeg{opacity:1}
+.hmx[data-st="1"] .in-sk,.hmx[data-st="2"] .in-sk,.hmx[data-st="3"] .in-sk{fill:#f0a88e}
+.hmx .in-brain{transition:transform .8s}
+.hmx[data-st="2"] .in-brain,.hmx[data-st="3"] .in-brain{transform:scale(1.035)}
+.hmx[data-st="2"] .in-edema,.hmx[data-st="3"] .in-edema{opacity:.28}
+.hmx[data-st="3"] .in-menf{opacity:.85}
+.hmx[data-st="1"] .bu-uvg,.hmx[data-st="2"] .bu-uvg,.hmx[data-st="3"] .bu-uvg{opacity:1}
+.hmx[data-st="1"] .bu-uv,.hmx[data-st="2"] .bu-uv,.hmx[data-st="3"] .bu-uv{opacity:.8}
+.hmx[data-st="1"] .bu-g1,.hmx[data-st="2"] .bu-g1{opacity:1}
+.hmx[data-st="2"] .bu-g2{opacity:1}
+.hmx[data-st="3"] .bu-g3{opacity:1}.hmx[data-st="4"] .bu-g3{opacity:.4}
+.hm-svg.an-svg{max-width:580px}
+.xfig[data-anim="0"] .hm-svg *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.hm-svg *{animation:none!important}}
+.hm-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
+.hm-rows .row[data-ch="1"] .ar{color:var(--red)}
