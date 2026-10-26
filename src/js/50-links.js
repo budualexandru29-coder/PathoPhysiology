@@ -49,6 +49,10 @@
   Q[8].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'balance') { b[1] = 'tgen'; b[2] = { q: 8 }; } });
   delete FIGS.balance; delete FIGMETA.balance;
 })();
+/* Î9: figura efectelor locale ale frigului, după cascadă */
+(function () {
+  const L = Q[9].learn, i = L.findIndex(b => b[0] === 'flow' && b[1] === 'coldLocal'); L.splice(i + 1, 0, ['fig', 'coldloc', { q: 9 }]);
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });

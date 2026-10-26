@@ -1157,3 +1157,75 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 @media (prefers-reduced-motion:reduce){.tg-svg *{animation:none!important}}
 .tg-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
 .tg-rows .row[data-ch="1"] .ar{color:var(--red)}
+
+/* ---------- Î9: efectele locale ale frigului ---------- */
+.xfig svg .cl-card{fill:var(--sheet);stroke:var(--line);stroke-width:1}
+.xfig svg .cl-bgA{fill:#eef3f7}
+.xfig svg .cl-skin{fill:#efc5aa}
+.xfig svg .cl-edge{fill:none;stroke:#a26a52;stroke-width:1}
+.xfig svg .cl-tint{fill:#ffffff;opacity:0;transition:fill .8s,opacity .8s}
+.xfig svg .cl-nail{fill:#f6d8d0;stroke:#c49a8a;stroke-width:.6}
+.xfig svg .cl-lun{fill:none;stroke:#fff;stroke-width:.8;opacity:.8}
+.xfig svg .cl-fold,.xfig svg .cl-crease{fill:none;stroke:#c48d74;stroke-width:.8}
+.xfig svg .cl-ice{fill:none;stroke:#9fdcf5;stroke-width:.7;stroke-linecap:round}
+.xfig svg .cl-bl{fill:#f6e7a6;stroke:#c9b35a;stroke-width:.6;opacity:.92}
+.xfig svg .cl-blh{fill:#fff;opacity:.5}
+.xfig svg .cl-nec{fill:#2e1a14;opacity:.92}
+.xfig svg .cl-dem{fill:none;stroke:#c2325a;stroke-width:2.4;stroke-linecap:round}
+.xfig svg .cl-air{fill:#eef3f7}
+.xfig svg .cl-hyp{fill:#f5e2b2}
+.xfig svg .cl-fat{fill:#f1d27e;stroke:#c79b3c;stroke-width:.5}
+.xfig svg .cl-fatn{fill:#8a6a9c}
+.xfig svg .cl-der{fill:#f6ddd0}
+.xfig svg .cl-coll{fill:none;stroke:#e1bfa8;stroke-width:1.2;opacity:.6}
+.xfig svg .cl-fb .c{fill:#ead2c2;stroke:#b98d74;stroke-width:.5}.xfig svg .cl-fb .n{fill:#9a7fb8}
+.xfig svg .cl-epi{fill:#dca487;stroke:#9a6047;stroke-width:.5}
+.xfig svg .cl-corn{fill:none;stroke:#efd2b4;stroke-width:3}
+.xfig svg .cl-kn{fill:#7a5a8c;opacity:.6}
+.xfig svg .cl-capw{fill:none;stroke:#b4687a;stroke-width:3.4;transition:stroke-width .8s}
+.xfig svg .cl-cap{fill:none;stroke:#e8857a;stroke-width:2;transition:stroke-width .8s,stroke .8s}
+.xfig svg .cl-hi{fill:#8d3f7c}
+.xfig svg .cl-ed{fill:#4a9bd0}
+.xfig svg .cl-fluid{fill:#f6e7a6;stroke:#c9b35a;stroke-width:.6}
+.xfig svg .cl-thr .m{fill:#8a2a3a;stroke:#4a0f1a;stroke-width:.5}.xfig svg .cl-thr .p{fill:#d9a3c9}.xfig svg .cl-thr .f{fill:none;stroke:#f3e3a6;stroke-width:.6}
+.xfig svg .cl-necz{fill:#5a3a2e;opacity:.88}
+.xfig svg .cl-pyk{fill:#1a1010}
+.xfig svg .cl-fatnec{fill:#e9e3d0;stroke:#a89878;stroke-width:.6}
+.xfig svg .cl-sap{fill:#fff;stroke:#c9c0a8;stroke-width:.4}
+.xfig svg .cl-nv{fill:none;stroke:#d9a62e;stroke-width:1.8;stroke-linecap:round}
+.xfig svg .cl-spot{fill:none;stroke:var(--ink);stroke-width:1.2}
+.xfig svg .cl-call{fill:none;stroke:var(--ink);stroke-width:.7;opacity:.5}
+.xfig svg .cl-ti{font:600 7.5px var(--f-mono);fill:var(--ink)}
+.xfig svg .cl-t{font:500 6.5px var(--f-mono);fill:var(--muted)}
+.xfig svg .cl-seg.g1{fill:#9fd3ef}.xfig svg .cl-seg.g2{fill:#f2c230}.xfig svg .cl-seg.g3{fill:#5a3a2e}
+.xfig svg .cl-segt{font:600 6.6px var(--f-mono);fill:#17202b}.xfig svg .cl-segt.g3{fill:#fff}
+.xfig svg .cl-ax{fill:none;stroke:var(--muted);stroke-width:1}
+.xfig svg .cl-ptr{fill:var(--red)}
+.clx .cl-ptrg{transition:transform .8s}
+/* stările: 0 normal, 1 frig, 2 îngheț, 3 reîncălzire, 4 expunere prelungită */
+.clx .cl-frost,.clx .cl-blg,.clx .cl-necg,.clx .cl-roul,.clx .cl-iceg,.clx .cl-hig,.clx .cl-edg,.clx .cl-thrg,.clx .cl-necg2,.clx .cl-blg2{opacity:0;transition:opacity .8s}
+.clx .cl-flow{transition:opacity .8s}
+.clx .cl-artg{transition:transform .8s}
+.clx .cl-fb{transition:transform .8s}
+.clx[data-st="1"] .cl-tint{fill:#f4f7fa;opacity:.75}
+.clx[data-st="2"] .cl-tint{fill:#f7fbff;opacity:.92}
+.clx[data-st="3"] .cl-tint{fill:#e0584e;opacity:.55}
+.clx[data-st="4"] .cl-tint{fill:#9a7a90;opacity:.55}
+.clx[data-st="2"] .cl-frost{opacity:1}
+.clx[data-st="3"] .cl-blg{opacity:1}
+.clx[data-st="4"] .cl-necg{opacity:1}
+.clx[data-st="1"] .cl-artg,.clx[data-st="2"] .cl-artg,.clx[data-st="4"] .cl-artg{transform:scaleY(.55)}
+.clx[data-st="3"] .cl-artg{transform:scaleY(1.25)}
+.clx[data-st="1"] .cl-cap,.clx[data-st="2"] .cl-cap,.clx[data-st="4"] .cl-cap{stroke-width:.8;stroke:#c9a0a0}
+.clx[data-st="1"] .cl-capw,.clx[data-st="2"] .cl-capw,.clx[data-st="4"] .cl-capw{stroke-width:1.8}
+.clx[data-st="3"] .cl-cap{stroke-width:2.8;stroke:#e0302a}
+.clx[data-st="1"] .cl-roul,.clx[data-st="2"] .cl-roul,.clx[data-st="4"] .cl-roul{opacity:1}
+.clx[data-st="1"] .cl-flow,.clx[data-st="2"] .cl-flow,.clx[data-st="4"] .cl-flow{opacity:0}
+.clx[data-st="2"] .cl-iceg{opacity:1}
+.clx[data-st="2"] .cl-fb{transform:scale(.72)}
+.clx[data-st="3"] .cl-hig,.clx[data-st="3"] .cl-edg,.clx[data-st="3"] .cl-blg2{opacity:1}
+.clx[data-st="4"] .cl-thrg,.clx[data-st="4"] .cl-necg2{opacity:1}
+.cl-svg.an-svg{max-width:560px}
+.clx[data-st="0"] .cl-ptrg{opacity:0}
+.cl-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
+.cl-rows .row[data-ch="1"] .ar{color:var(--red)}
