@@ -59,7 +59,7 @@ export function brainLat({ origin = [0, 0], s = 1, cls = "", mirror = false } = 
     [[58, 52.2], [64, 60], [72, 66.5]], [[76, 48.9], [86, 56.5], [98, 60]], [[101, 40.5], [113, 44], [126, 47]],
   ].map(t);
   return {
-    svg, mca,
+    svg, mca, outline: smooth(cer, true),
     defs: `<clipPath id="__U__-blc"><path d="${smooth(cer, true)}"/></clipPath>`,
     anchors: { carotid: t([[27, 82]])[0], jug: t([[104, 89]])[0], stemEnd: t([[87.2, 99.5]])[0], center: t([[70, 38]])[0], box: { x: origin[0], y: origin[1], w: 140 * s, h: 115 * s } },
   };
