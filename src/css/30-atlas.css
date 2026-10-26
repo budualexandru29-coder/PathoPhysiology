@@ -1597,3 +1597,12 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 .xfig svg .pl.b .pl-t{font-weight:700}
 .pyx.pro .sum{transition:opacity .5s}
 .pyx.pro[data-st="0"] .sum,.pyx.pro[data-st="1"] .sum{opacity:.5}
+.xfig svg .pa-path{fill:none;stroke:#7d8690;stroke-width:.8;stroke-dasharray:2.4 2}
+.xfig svg .pa-arh{fill:#7d8690}
+.xfig svg .pa-pulse{fill:rgba(255,214,64,.9);stroke:#fff;stroke-width:.8}
+.xfig svg .ph-p{fill:#f2a33a;stroke:#8a5a10;stroke-width:.4}
+.xfig svg .ph-t{font:700 3.2px var(--f-body);fill:#fff}
+@keyframes ckflow{from{transform:translateX(-46px)}to{transform:translateX(0)}}
+.xfig svg .ckflow{animation:ckflow 5s linear infinite}
+.xfig[data-anim="0"] svg .ckflow{animation:none}
+@media (prefers-reduced-motion:reduce){.xfig svg .ckflow{animation:none}}

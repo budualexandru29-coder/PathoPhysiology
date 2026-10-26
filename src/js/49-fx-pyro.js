@@ -62,11 +62,11 @@
     note: 'Planșa merge pe pași: fiecare pas arată doar ce e nou. Sus, membrana unui macrofag la scară moleculară (bara de 10 nm): bacteriile, LPS, receptorii, semnalul spre nucleu și citokinele care ies; în colț, macrofagul întreg (bara de 10 µm). Jos, efectele pirogenilor endogeni, câte trei scene pe pas, cu celulele la aceeași scară.',
     src: 'Febra (LP), slide 6–8, 18–19; Cursul 3 (Termoreglarea), slide 58–62; Cursul 2 (Inflamația), slide 41–42',
     neutral: 0,
-    ctl: { type: 'range', label: 'Pasul', min: 0, max: 5, step: 1, init: 1, fmt: v => ST[v], play: { ms: 3200, label: 'Redă pașii' }, peek: 'Compară cu fără pirogen' },
+    ctl: { type: 'range', label: 'Pasul', min: 0, max: 5, step: 1, init: 1, fmt: v => ST[v], play: { ms: 11000, label: 'Redă pașii' }, peek: 'Compară cu fără pirogen' },
     initV: () => 1,
     hints: {
       predict: 'Alege un pas, bifează ce s-a întâmplat deja, apoi apasă „Dezvăluie”.',
-      explore: 'Mută pasul: fiecare pas arată doar ce e nou. Apasă o etichetă din figură sau un rând de mai jos: vezi textul din LP și punctul din barem.',
+      explore: 'Mută pasul înainte: piesele se mișcă și lista de sub figură spune ce se întâmplă. „Arată cum se întâmplă” reia mișcarea. Apasă o etichetă sau un rând: vezi textul din LP și punctul din barem.',
     },
     predict: { kind: 'pick', prompt: (S, lab) => `${lab}: ce s-a întâmplat deja?` },
     tour: [
@@ -112,6 +112,7 @@
       s += `<defs>${U(A.defs)}</defs>` + L.titles + U(L.panelA) + L.insLabels + U(L.panelB);
       A.labs.forEach(l => { const [x, y, w, h] = l.box; s += H.spart(l.p, `<rect class="pl-hitb" x="${x}" y="${y}" width="${w}" height="${h}"/>${l.s}`, vis(l.v)); });
       s += '</svg>';
+      s += `<div class="fx-narrw"><div class="fx-narrh"><span class="sl" data-ui>Ce se întâmplă</span><button type="button" class="btn soft fx-replay" data-replay>▶ Arată cum se întâmplă</button></div><ol class="fx-narr" data-narr aria-live="polite"></ol></div>`;
       const cut = s.length;
       s += `<ul class="circ-rows fv-rows py-rows" aria-label="Ce arată figura">${ROWS.map(([id, n]) => `<li><button type="button" class="fxp row" data-p="${id}"><span class="bdg" data-ui title="pasul ${n}">${n}</span><span class="rt"><span class="rl">${H.lab('l' + id, P[id].t)}</span><span class="rd" data-ui>${DEV[id]}</span></span><span class="ar" aria-hidden="true"></span></button></li>`).join('')}</ul>`;
       s += `<div class="circ-sym"><span class="sl" data-ui>Explicații</span>${['x1', 'x2', 'x5', 'x3', 'x4'].map(id => `<button type="button" class="fxp sym ctxs" data-p="${id}">${P[id].t}</button>`).join('')}</div></div>`;
@@ -120,6 +121,8 @@
     update(el, S) {
       const v = Math.max(0, Math.min(5, Math.round(S.vv)));
       el.querySelectorAll('.pyx').forEach(r => { r.dataset.st = v; });
+      const root = el.querySelector('.pyx.pro'), svg = root && root.querySelector('svg');
+      if (svg) { FX.anim.go(el, root, svg, A.anim, v); el._replay = () => FX.anim.go(el, root, svg, A.anim, el._av, true); }
       el.querySelectorAll('.py-rows .row').forEach(b => { const on = FX.isOn(P[b.dataset.p], { v }); b.dataset.ch = on ? 1 : 0; b.querySelector('.ar').textContent = on ? '●' : '·'; });
       el.querySelectorAll('.py-leg .sym').forEach(b => b.classList.toggle('lit', FX.isOn(P[b.dataset.p], { v })));
     },
