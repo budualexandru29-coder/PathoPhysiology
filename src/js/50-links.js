@@ -62,6 +62,10 @@
   const L = Q[13].learn, i = L.findIndex(b => b[0] === 'flow' && b[1] === 'noninf'); L.splice(i + 1, 0, ['fig', 'noninf', { q: 13 }]);
   const M = Q[14].learn, j = M.findIndex(b => b[0] === 'tbl'); M.splice(j + 1, 0, ['fig', 'noninf', { q: 14, v: 1 }]);
 })();
+/* Î21: figura cauzelor inflamației, după schema statică a cauzelor (care rămâne ca rezumat) */
+(function () {
+  const L = Q[21].learn, i = L.findIndex(b => b[0] === 'fig' && b[1] === 'inflamCauses'); L.splice(i + 1, 0, ['fig', 'inflcause', { q: 21 }]);
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });

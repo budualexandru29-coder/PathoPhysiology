@@ -1386,3 +1386,79 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 .nix .ni-only{display:none}
 .nix[data-st="0"] .ni-only.o0,.nix[data-st="1"] .ni-only.o1,.nix[data-st="2"] .ni-only.o2,.nix[data-st="3"] .ni-only.o3,.nix .ni-only.oall{display:revert}
 @media (prefers-reduced-motion:reduce){.nix .ni-ckv .ck{animation:none!important}}
+/* ===== Î21: cauzele inflamației (art/inflcause.mjs) ===== */
+.xfig svg .ic-card{fill:var(--sheet);stroke:var(--line);stroke-width:1}
+.xfig svg .ic-air{fill:#eef3f6}
+.xfig svg .ic-lb{font:500 6.2px var(--f-mono);fill:var(--muted)}
+.xfig svg .ic-pa .ic-lb{fill:#5d4f60}.xfig svg .ic-pa .ic-lb.cap{font:600 6.8px var(--f-mono);fill:#3d3040}
+.xfig svg .ic-pa .ic-lb.ep{fill:#3d3040}.xfig svg .ic-pa .ic-lb.in{fill:#fff;font-weight:600}.xfig svg .ic-pa .ic-lb.dim{fill:#6d7f8c}
+.xfig svg .ic-lb.ti{font:600 7.2px var(--f-mono);fill:var(--ink)}
+.xfig svg .ic-lb.tt{font:600 6.4px var(--f-mono);fill:var(--ink)}.xfig svg .ic-lb.sm{font:500 5.6px var(--f-mono)}
+.xfig svg .ic-epib{fill:#f1d6cb}
+.xfig svg .ic-corn{fill:none;stroke:#e2b9a4;stroke-width:.9}
+.xfig svg .ic-kg{fill:#ecc9bb;stroke:#c99a88;stroke-width:.4}.xfig svg .ic-kgg{fill:#5b3f6e}
+.xfig svg .ic-ks{fill:#f3d9cf;stroke:#c99a88;stroke-width:.45}.xfig svg .ic-kb{fill:#ecc2b6;stroke:#c08b78;stroke-width:.45}
+.xfig svg .ic-kn{fill:#8d6aa8;stroke:#5b3f7d;stroke-width:.3}
+.xfig svg .ic-bm{fill:none;stroke:#b98a70;stroke-width:1.3}
+.xfig svg .ic-ct{fill:#f8e9e6}
+.xfig svg .ic-coll{fill:none;stroke:#e6c3b6;stroke-width:2.2;opacity:.8}
+.xfig svg .ic-lum{fill:#f2c1bb}
+.xfig svg .ic-vw{fill:none;stroke:#c97a70;stroke-width:2.2}
+.xfig svg .ic-gap rect{fill:#f8e9e6}
+.xfig svg .ic-ed circle{fill:#8cc6e6}
+.xfig svg .ic-hist{fill:#b55a9c}
+.xfig svg .ic-ne .c{fill:#eef1f7;stroke:#7f8aa8;stroke-width:.7}.xfig svg .ic-ne .n{fill:#7b5fb0;stroke:#4c357f;stroke-width:.3}.xfig svg .ic-ne .nb{fill:none;stroke:#4c357f;stroke-width:.8;stroke-linecap:round}
+.xfig svg .ic-bac{fill:none;stroke:#3f7a3a;stroke-width:2.6;stroke-linecap:round}.xfig svg .ic-bac.b{stroke:#2f6a2a}
+.xfig svg .ic-coc{fill:#6a3f9a;stroke:#3f2366;stroke-width:.4}
+.xfig svg .ic-hy{fill:none;stroke:#b08a3a;stroke-width:3;stroke-linecap:round}.xfig svg .ic-hys{fill:none;stroke:#6e5418;stroke-width:.6}
+.xfig svg .ic-yst{fill:#d8b860;stroke:#8a6e20;stroke-width:.5}
+.xfig svg .ic-kinf{fill:#e0b4c8;stroke:#a5718a;stroke-width:.5}.xfig svg .ic-kinn{fill:#6a3f8a}
+.xfig svg .ic-vp{fill:#2e8f86;stroke:#1b5f59;stroke-width:.3}
+.xfig svg .ic-worm{fill:none;stroke:#c2a080;stroke-width:4.6;stroke-linecap:round}.xfig svg .ic-wormi{fill:none;stroke:#8a6a4a;stroke-width:.6;stroke-dasharray:1.4 1.4}.xfig svg .ic-wormh{fill:#8a6a4a}
+.xfig svg .ic-pol .sp{fill:none;stroke:#b8860b;stroke-width:.8}.xfig svg .ic-pol .ex{fill:#f2c94c;stroke:#a87a10;stroke-width:.7}.xfig svg .ic-pol .in{fill:#f7dd8a}.xfig svg .ic-pol .po{fill:#c99a20}
+.xfig svg .ic-polp{fill:#d9a520}
+.xfig svg .ic-asb{fill:none;stroke:#7d8a96;stroke-width:1;stroke-linecap:round}
+.xfig svg .ic-abody .ax{fill:none;stroke:#7d8a96;stroke-width:.8}.xfig svg .ic-abody ellipse{fill:#c08a3a;stroke:#7a5218;stroke-width:.4}
+.xfig svg .ic-sil{fill:#e9eef2;stroke:#7d8a96;stroke-width:.6}
+.xfig svg .ic-dust{fill:#2a2a2e}
+.xfig svg .ic-gas path{fill:none;stroke:#7d9aa8;stroke-width:1;stroke-linecap:round}
+.xfig svg .ic-cut{fill:#fbf2ef;stroke:#a5413a;stroke-width:.9}
+.xfig svg .ic-drop{fill:#b9e07a;stroke:#5f8a1e;stroke-width:.6}.xfig svg .ic-burn{fill:#e8d0a0;stroke:#a08040;stroke-width:.5;opacity:.85}
+.xfig svg .ic-flame{fill:#f39c34;stroke:#c0581a;stroke-width:.6}
+.xfig svg .ic-uv path{fill:none;stroke:#8a4fd0;stroke-width:1.1;stroke-linecap:round}.xfig svg .ic-xr path{fill:none;stroke:#3f6fa8;stroke-width:1;stroke-dasharray:3 2}
+.xfig svg .ic-necc{fill:#f3dbe2;stroke:#b48a96;stroke-width:.5}.xfig svg .ic-pyk{fill:#3e2f50}.xfig svg .ic-krx{fill:none;stroke:#3e2f50;stroke-width:1.2;stroke-linecap:round}.xfig svg .ic-lys{fill:#c5b3d8;opacity:.7}
+.xfig svg .ic-damp{fill:#7cc25a}
+.xfig svg .ic-tst{fill:#f0dce0;stroke:#d3b3ba;stroke-width:.6}.xfig svg .ic-bmgap{fill:none;stroke:#f1d6cb;stroke-width:2.2}
+.xfig svg .ic-tu{fill:#e9c7d6;stroke:#a5718a;stroke-width:.6}.xfig svg .ic-tun{fill:#5a3f8a;stroke:#3a2766;stroke-width:.5}.xfig svg .ic-tunl{fill:#2a1b48}
+.xfig svg .ic-mit .sp{fill:none;stroke:#7a6a90;stroke-width:.4}.xfig svg .ic-mit .ch{fill:none;stroke:#2a1b48;stroke-width:2.2;stroke-linecap:round}
+.xfig svg .ic-ly .c{fill:#dfe6f3;stroke:#7f8aa8;stroke-width:.4}.xfig svg .ic-ly .n{fill:#3e4f86}
+.xfig svg .ic-toph{fill:#f2ecdf;stroke:#c9b98e;stroke-width:.6}
+.xfig svg .ic-urate{fill:none;stroke:#d9b81f;stroke-width:1;stroke-linecap:round}
+.xfig svg .ic-giant{fill:#e9cfe0;stroke:#a5718a;stroke-width:.6}.xfig svg .ic-gn{fill:#7a5fa8;stroke:#4c357f;stroke-width:.3}
+.xfig svg .ic-chol{fill:#f6fbfd;stroke:#7fa3b8;stroke-width:.7;fill-opacity:.85}
+.xfig svg .ic-ox path{fill:#fdfbea;stroke:#8a8a5a;stroke-width:.6}.xfig svg .ic-ox .x{fill:none;stroke:#8a8a5a;stroke-width:.4}
+.xfig svg .ic-cap circle{fill:#4a5fa8;opacity:.75}
+.xfig svg .ic-tile .fr{fill:var(--sheet2);stroke:var(--line);stroke-width:1;transition:stroke .5s,fill .5s}
+.xfig svg .ic-grp{fill:none;stroke:var(--muted);stroke-width:1}
+.xfig svg .ic-blob{fill:#c9c2b8;stroke:#8a8070;stroke-width:.6}.xfig svg .ic-fbr path{fill:none;stroke:#e0c060;stroke-width:1.2;stroke-linecap:round}
+.xfig svg .ic-phs{fill:#f5f0e0;stroke:#5c7f96;stroke-width:.5}
+.xfig svg .ic-ncoll{fill:none;stroke:#e1a99a;stroke-width:1.6;stroke-linecap:round}
+.xfig svg .ic-sprout{fill:none;stroke:#d8463c;stroke-width:3;stroke-linecap:round}.xfig svg .ic-sprt{fill:#d8463c}
+.icx .ic-c,.icx .ic-hyper,.icx .ic-gap,.icx .ic-ed,.icx .ic-nr,.icx .ic-msout,.icx .ic-msin,.icx .ic-tile{transition:opacity .6s}
+.icx .ic-c,.icx .ic-hyper,.icx .ic-gap,.icx .ic-ed,.icx .ic-nr,.icx .ic-msout{opacity:0}
+.icx[data-st="1"] .ic-c.c1,.icx[data-st="2"] .ic-c.c2,.icx[data-st="3"] .ic-c.c3,.icx[data-st="4"] .ic-c.c4,.icx[data-st="5"] .ic-c.c5{opacity:1}
+.icx:not([data-st="0"]) .ic-hyper,.icx:not([data-st="0"]) .ic-gap,.icx:not([data-st="0"]) .ic-nr,.icx:not([data-st="0"]) .ic-msout{opacity:1}
+.icx:not([data-st="0"]) .ic-ed{opacity:.75}.icx:not([data-st="0"]) .ic-msin{opacity:0}
+.icx:not([data-st="0"]) .ic-tile{opacity:.5}
+.icx[data-st="1"] .ic-tile.k1,.icx[data-st="2"] .ic-tile.k2,.icx[data-st="3"] .ic-tile.k3,.icx[data-st="4"] .ic-tile.k4,.icx[data-st="5"] .ic-tile.k5{opacity:1}
+.icx[data-st="1"] .ic-tile.k1 .fr,.icx[data-st="2"] .ic-tile.k2 .fr,.icx[data-st="3"] .ic-tile.k3 .fr,.icx[data-st="4"] .ic-tile.k4 .fr,.icx[data-st="5"] .ic-tile.k5 .fr{stroke:var(--red);stroke-width:1.6}
+.icx .ic-nr .i{animation:ic-mig 3.2s ease-in-out infinite}
+@keyframes ic-mig{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.ic-svg.an-svg{max-width:560px}
+.ic-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
+.ic-rows .row[data-ch="1"] .ar{color:var(--red)}
+.icx .ic-only{display:none}
+.icx[data-st="0"] .ic-only.o0,.icx[data-st="1"] .ic-only.o1,.icx[data-st="2"] .ic-only.o2,.icx[data-st="3"] .ic-only.o3,.icx[data-st="4"] .ic-only.o4,.icx[data-st="5"] .ic-only.o5,.icx .ic-only.oall,.icx:not([data-st="0"]) .ic-only.on{display:revert}
+@media (prefers-reduced-motion:reduce){.icx .ic-nr .i{animation:none!important}}
+.xfig svg .ic-heat{fill:none;stroke:#f39c34;stroke-width:.9;stroke-dasharray:2 2;opacity:.8}
+.xfig svg .ic-cap0{fill:none;stroke:#d8463c;stroke-width:5;stroke-linecap:round}
