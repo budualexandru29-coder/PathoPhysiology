@@ -9,6 +9,11 @@
   Q[2].learn = Q[2].learn.filter(b => !(b[0] === 'fig' && b[1] === 'braincool'));
   delete FIGS.braincool; delete FIGMETA.braincool;
 })();
+/* Î11: figura interactivă a febrei intră înaintea curbei statice a fazelor */
+(function () {
+  const i = Q[11].learn.findIndex(b => b[0] === 'flow' && b[1] === 'feverCascade');
+  Q[11].learn.splice(i + 1, 0, ['fig', 'fever', { q: 11 }]);
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });

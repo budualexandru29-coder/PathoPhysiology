@@ -9,8 +9,9 @@ import * as circ from "./circ.mjs";
 import * as head from "./head.mjs";
 import * as cold from "./cold.mjs";
 import * as thermo from "./thermo.mjs";
+import * as fever from "./fever.mjs";
 
-const FIGS = { circ, head, cold, thermo };
+const FIGS = { circ, head, cold, thermo, fever };
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "src/js/31-art.generated.js");
