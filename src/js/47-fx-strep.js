@@ -93,6 +93,7 @@
     neutral: 0,
     ctl: { type: 'range', label: 'Etapa', min: 0, max: 5, step: 1, init: 3, fmt: v => ST[v], play: { ms: 2600, label: 'Redă angina' }, peek: 'Compară cu faringele normal' },
     initV: () => 3,
+    tourStart: o => (o && o.q === 20 ? 6 : 0),
     hints: {
       predict: 'Alege o etapă, bifează ce crezi că se vede, apoi apasă „Dezvăluie”.',
       explore: 'Mută cursorul. Apasă amigdala, o celulă din lupă, un ganglion sau graficul ori un rând de mai jos: vezi textul din LP și punctul din barem.',

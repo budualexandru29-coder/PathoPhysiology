@@ -57,6 +57,11 @@
 (function () {
   const L = Q[12].learn, i = L.findIndex(b => b[0] === 'cols'); L.splice(i + 1, 0, ['fig', 'fevcons', { q: 12 }]);
 })();
+/* Î13/Î14: figura febrei non-infecțioase; în Î13 după fluxul „noninf”, în Î14 după tabelul tipurilor, deschisă pe „drug fever” */
+(function () {
+  const L = Q[13].learn, i = L.findIndex(b => b[0] === 'flow' && b[1] === 'noninf'); L.splice(i + 1, 0, ['fig', 'noninf', { q: 13 }]);
+  const M = Q[14].learn, j = M.findIndex(b => b[0] === 'tbl'); M.splice(j + 1, 0, ['fig', 'noninf', { q: 14, v: 1 }]);
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });

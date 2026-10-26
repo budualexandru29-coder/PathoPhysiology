@@ -144,7 +144,7 @@ FX.get = function (el) {
   let S = FX.st.get(el);
   if (!S) {
     const spec = FX.specs[el.dataset.fx];
-    S = FX.initState(spec, { v: el.dataset.v, stop: el.dataset.stop });
+    S = FX.initState(spec, { v: el.dataset.v, stop: el.dataset.stop, q: el.dataset.q ? +el.dataset.q : undefined });
     S.mode = el.dataset.mode || (spec.tour ? 'tour' : 'explore');
     FX.st.set(el, S);
   }

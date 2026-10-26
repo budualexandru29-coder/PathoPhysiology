@@ -19,8 +19,9 @@ import * as hyper from "./hyper.mjs";
 import * as tgen from "./tgen.mjs";
 import * as coldloc from "./coldloc.mjs";
 import * as fevcons from "./fevcons.mjs";
+import * as noninf from "./noninf.mjs";
 
-const FIGS = { circ, head, cold, thermo, fever, inflam, hodgkin, strep, apr, pyro, hyper, tgen, coldloc, fevcons };
+const FIGS = { circ, head, cold, thermo, fever, inflam, hodgkin, strep, apr, pyro, hyper, tgen, coldloc, fevcons, noninf };
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "src/js/31-art.generated.js");
