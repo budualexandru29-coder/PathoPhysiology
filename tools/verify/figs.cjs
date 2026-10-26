@@ -2,6 +2,7 @@
 // Pentru fiecare figură: erori JS, toate modurile se deschid, depășiri pe telefon (390 px), capturi în ambele teme
 // și cu simularea deuteranopiei/protanopiei, plus dimensiunile celulelor raportate la hematie (rigla internă:
 // diametrul hematiei 7,5–7,8 µm; Junqueira ed. 13, cap. 12; Ross & Pawlina ed. 7, cap. 10).
+// Celulele din biblioteca comună se măsoară direct în µm, din scara pe care o poartă (data-k).
 // Folosire: node tools/verify/figs.cjs [index.html] [--out shots/audit] [--only circ,fever] [--no-shots]
 const fs = require('fs');
 const path = require('path');
@@ -28,6 +29,19 @@ const SEL = {
   mono: '.ni-mono .c',
   mast: '.ms-cell, .ap-mast',
   mac: '.mac-b',
+};
+// celulele din biblioteca comună (art/parts/cells.mjs) își poartă scara (data-k, px/µm): dimensiunea se citește direct în µm
+const UM = {
+  'lc-rbc': [7.5, 7.8, 'hematie 7,5–7,8 µm (Junqueira p. 251; Ross p. 291)', '.lc-rbcb'],
+  'lc-neut': [10, 15, 'neutrofil 10–15 µm (Ross p. 296; Junqueira p. 254)', '.lc-cyt'],
+  'lc-eo': [10, 15, 'eozinofil ≈ neutrofil (Ross p. 301)', '.lc-cyt'],
+  'lc-baso': [12, 15, 'bazofil 12–15 µm (Junqueira p. 256)', '.lc-cyt'],
+  'lc-ly': [6, 18, 'limfocit mic ≈ hematia, mijlociu/mare 9–18 µm (Junqueira p. 258)', '.lc-cyt'],
+  'lc-mono': [12, 20, 'monocit 12–20 µm (Junqueira p. 259–260)', '.lc-cyt'],
+  'lc-mac': [10, 30, 'macrofag 10–30 µm (Junqueira p. 113)', '.lc-cyt'],
+  'lc-mast': [7, 20, 'mastocit 7–20 µm (Junqueira p. 115–116)', '.lc-cyt'],
+  'lc-plasma': [20, 20, 'plasmocit ~20 µm (Ross p. 203)', '.lc-cyt'],
+  'lc-plt': [2, 4, 'trombocit 2–4 µm (Junqueira p. 261)', '.lc-pltb'],
 };
 // simularea daltonismului (matricele Machado et al. 2009, severitate 1.0)
 const CVD = {
@@ -70,6 +84,18 @@ const CVD = {
           }
           return o;
         }, SEL);
+        r.um = await fig.evaluate((f, UM) => {
+          const svg = f.querySelector('.fx-stage svg'), o = {};
+          for (const g of svg.querySelectorAll('g.lc[data-k]')) {
+            const t = [...g.classList].find(c => UM[c]); if (!t) continue;
+            const el = g.querySelector(UM[t][3]); if (!el) continue;
+            const bb = el.getBBox(), um = Math.max(bb.width, bb.height) / +g.dataset.k;
+            const [lo, hi] = UM[t], ok = um >= lo * 0.8 && um <= hi * 1.2;
+            const e = o[t] = o[t] || { n: 0, bad: 0, min: 1e9, max: 0, range: [+(lo * 0.8).toFixed(1), +(hi * 1.2).toFixed(1)], src: UM[t][2] };
+            e.n++; if (!ok) e.bad++; e.min = Math.min(e.min, +um.toFixed(1)); e.max = Math.max(e.max, +um.toFixed(1));
+          }
+          return o;
+        }, UM);
       }
       if (shots) {
         await fig.evaluate(f => f.querySelector('[data-fxa="mode"][data-m="explore"]').click());
@@ -100,8 +126,10 @@ const CVD = {
       const q = v.med / rbc, [lo, hi, src] = RATIO[k];
       r.ratio[k] = { ratio: +q.toFixed(2), range: [+(lo * 0.8).toFixed(2), +(hi * 1.2).toFixed(2)], ok: q >= lo * 0.8 && q <= hi * 1.2, src };
     }
+    const umBad = Object.entries(r.um || {}).filter(([, v]) => v.bad).map(([k, v]) => `${k} ${v.bad}/${v.n} în afara ${v.range[0]}–${v.range[1]} µm (${v.min}–${v.max})`);
+    const umTxt = Object.keys(r.um || {}).length ? `; biblioteca: ${Object.entries(r.um).map(([k, v]) => `${k.slice(3)} ${v.n}`).join(', ')}${umBad.length ? ' — SCARĂ: ' + umBad.join('; ') : ' — toate în ±20%'}` : '';
     const bad = Object.entries(r.ratio).filter(([, v]) => !v.ok).map(([k, v]) => `${k} ${v.ratio}× (ținta ${v.range[0]}–${v.range[1]}×)`);
-    console.log(`${key} (Î${n}): erori ${r.errors.length}; moduri ${r.modes.filter(x => x.endsWith(':ok')).length}/${r.modes.length}; lățime pe telefon ${r.overflow}px; celule ${Object.keys(r.cells).join(',') || '—'}${rbc ? '' : ' (fără hematie de referință)'}${bad.length ? '; SCARĂ: ' + bad.join('; ') : ''}`);
+    console.log(`${key} (Î${n}): erori ${r.errors.length}; moduri ${r.modes.filter(x => x.endsWith(':ok')).length}/${r.modes.length}; lățime pe telefon ${r.overflow}px; celule ${Object.keys(r.cells).join(',') || '—'}${rbc ? '' : ' (fără hematie de referință)'}${bad.length ? '; SCARĂ: ' + bad.join('; ') : ''}${umTxt}`);
   }
   await b.close();
   fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify(report, null, 1));

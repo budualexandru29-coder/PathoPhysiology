@@ -52,6 +52,8 @@ figure.xfig{
 /* bara de scară */
 .xfig svg .lc-bar path{fill:none;stroke:var(--ink);stroke-width:1.1;stroke-linecap:butt;vector-effect:non-scaling-stroke}
 .xfig svg .lc-bar text{font:600 9px var(--f-mono, ui-monospace, monospace);fill:var(--muted)}
+/* bara pe un desen deschis la culoare (aceeași în ambele teme) */
+.xfig svg .lc-bar.dk path{stroke:#2b313a}.xfig svg .lc-bar.dk text{fill:#3d4652}
 
 /* moleculele: lanțurile grele albastru închis, cele ușoare albastru deschis; domeniile variabile mai deschise */
 .xfig svg .lm-d{stroke:rgba(20,30,60,.55);stroke-width:.4;vector-effect:non-scaling-stroke}

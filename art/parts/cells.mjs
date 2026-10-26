@@ -47,9 +47,9 @@ export function rbc(x, y, k, { d = SIZE.rbc, edge = false, angle = 0, cls = "" }
   if (edge) {
     // profil: 2,6 µm la margine, 0,75 µm în centru
     const t = 1.3 * k, c = 0.375 * k, a = angle * 180 / Math.PI;
-    return `<g class="lc lc-rbc e ${cls}" transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(a)})"><path class="lc-rbcb" d="M${f1(-r)} 0C${f1(-r)} ${f1(-t)} ${f1(-r * 0.55)} ${f1(-t)} ${f1(-r * 0.3)} ${f1(-c)}C${f1(-r * 0.1)} ${f1(-c * 0.8)} ${f1(r * 0.1)} ${f1(-c * 0.8)} ${f1(r * 0.3)} ${f1(-c)}C${f1(r * 0.55)} ${f1(-t)} ${f1(r)} ${f1(-t)} ${f1(r)} 0C${f1(r)} ${f1(t)} ${f1(r * 0.55)} ${f1(t)} ${f1(r * 0.3)} ${f1(c)}C${f1(r * 0.1)} ${f1(c * 0.8)} ${f1(-r * 0.1)} ${f1(c * 0.8)} ${f1(-r * 0.3)} ${f1(c)}C${f1(-r * 0.55)} ${f1(t)} ${f1(-r)} ${f1(t)} ${f1(-r)} 0Z"/></g>`;
+    return `<g class="lc lc-rbc e ${cls}" data-k="${+k.toFixed(3)}" transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(a)})"><path class="lc-rbcb" d="M${f1(-r)} 0C${f1(-r)} ${f1(-t)} ${f1(-r * 0.55)} ${f1(-t)} ${f1(-r * 0.3)} ${f1(-c)}C${f1(-r * 0.1)} ${f1(-c * 0.8)} ${f1(r * 0.1)} ${f1(-c * 0.8)} ${f1(r * 0.3)} ${f1(-c)}C${f1(r * 0.55)} ${f1(-t)} ${f1(r)} ${f1(-t)} ${f1(r)} 0C${f1(r)} ${f1(t)} ${f1(r * 0.55)} ${f1(t)} ${f1(r * 0.3)} ${f1(c)}C${f1(r * 0.1)} ${f1(c * 0.8)} ${f1(-r * 0.1)} ${f1(c * 0.8)} ${f1(-r * 0.3)} ${f1(c)}C${f1(-r * 0.55)} ${f1(t)} ${f1(-r)} ${f1(t)} ${f1(-r)} 0Z"/></g>`;
   }
-  return `<g class="lc lc-rbc ${cls}"><circle class="lc-rbcb" cx="${f1(x)}" cy="${f1(y)}" r="${f1(r)}"/><circle class="lc-rbcc" cx="${f1(x - r * 0.06)}" cy="${f1(y - r * 0.06)}" r="${f1(r * 0.42)}"/></g>`;
+  return `<g class="lc lc-rbc ${cls}" data-k="${+k.toFixed(3)}"><circle class="lc-rbcb" cx="${f1(x)}" cy="${f1(y)}" r="${f1(r)}"/><circle class="lc-rbcc" cx="${f1(x - r * 0.06)}" cy="${f1(y - r * 0.06)}" r="${f1(r * 0.42)}"/></g>`;
 }
 
 /** Neutrofilul: 3–5 lobi legați prin punți subțiri de cromatină, granule fine. shape: puncte de contur (celulă care migrează). */
@@ -62,7 +62,7 @@ export function neutrophil(x, y, k, { d = SIZE.neut, lobes = 4, seed = 1, shape 
   const bridges = L.slice(1).map((p, i) => `M${P2(L[i])}L${P2(p)}`).join("");
   const nuc = L.map(([lx, ly, rr, a]) => `<ellipse class="lc-nuc" cx="${f1(lx)}" cy="${f1(ly)}" rx="${f1(rr * 1.1)}" ry="${f1(rr * 0.78)}" transform="rotate(${f1(a * 57.3 + (R() - 0.5) * 30)} ${f1(lx)} ${f1(ly)})"/>`).join("");
   const d0 = smooth(pts, true);
-  return `<g class="lc lc-neut ${cls}"><path class="lc-cyt n" d="${d0}"/>${granules(pts, Math.round(d * 6), 0.13 * k, R, [], "lc-gn")}<path class="lc-br iso-line" d="${bridges}"/>${nuc}${vol(d0)}</g>`;
+  return `<g class="lc lc-neut ${cls}" data-k="${+k.toFixed(3)}"><path class="lc-cyt n" d="${d0}"/>${granules(pts, Math.round(d * 6), 0.13 * k, R, [], "lc-gn")}<path class="lc-br iso-line" d="${bridges}"/>${nuc}${vol(d0)}</g>`;
 }
 
 /** Eozinofilul: nucleu bilobat, granule mari roșu-portocalii (~0,5 µm) care umplu citoplasma. */
@@ -72,14 +72,14 @@ export function eosinophil(x, y, k, { d = SIZE.eo, seed = 2, shape = null, cls =
   const L1 = [x - c * off, y - s * off], L2 = [x + c * off, y + s * off];
   const avoid = [[L1[0], L1[1], lr], [L2[0], L2[1], lr]];
   const d0 = smooth(pts, true);
-  return `<g class="lc lc-eo ${cls}"><path class="lc-cyt e" d="${d0}"/>${granules(pts, Math.round(d * 9), 0.25 * k, R, avoid, "lc-ge")}<path class="lc-br iso-line" d="M${P2(L1)}L${P2(L2)}"/><ellipse class="lc-nuc" cx="${f1(L1[0])}" cy="${f1(L1[1])}" rx="${f1(lr)}" ry="${f1(lr * 0.82)}"/><ellipse class="lc-nuc" cx="${f1(L2[0])}" cy="${f1(L2[1])}" rx="${f1(lr)}" ry="${f1(lr * 0.82)}"/>${vol(d0)}</g>`;
+  return `<g class="lc lc-eo ${cls}" data-k="${+k.toFixed(3)}"><path class="lc-cyt e" d="${d0}"/>${granules(pts, Math.round(d * 9), 0.25 * k, R, avoid, "lc-ge")}<path class="lc-br iso-line" d="M${P2(L1)}L${P2(L2)}"/><ellipse class="lc-nuc" cx="${f1(L1[0])}" cy="${f1(L1[1])}" rx="${f1(lr)}" ry="${f1(lr * 0.82)}"/><ellipse class="lc-nuc" cx="${f1(L2[0])}" cy="${f1(L2[1])}" rx="${f1(lr)}" ry="${f1(lr * 0.82)}"/>${vol(d0)}</g>`;
 }
 
 /** Bazofilul: nucleu bilobat sau în S, acoperit de granule mari, violet închis. */
 export function basophil(x, y, k, { d = SIZE.baso, seed = 3, cls = "" } = {}) {
   const R = rng(seed), r = d * k / 2, pts = outline(x, y, r, seed, 0.04), d0 = smooth(pts, true);
   const nuc = `<path class="lc-nuc" d="${smooth([[x - r * 0.5, y - r * 0.1], [x - r * 0.2, y - r * 0.38], [x + r * 0.15, y - r * 0.2], [x + r * 0.05, y + r * 0.1], [x + r * 0.42, y + r * 0.2], [x + r * 0.2, y + r * 0.42], [x - r * 0.15, y + r * 0.25], [x - r * 0.45, y + r * 0.2]], true)}"/>`;
-  return `<g class="lc lc-baso ${cls}"><path class="lc-cyt b" d="${d0}"/>${nuc}${granules(pts, Math.round(d * 4.5), 0.38 * k, R, [], "lc-gb")}${vol(d0)}</g>`;
+  return `<g class="lc lc-baso ${cls}" data-k="${+k.toFixed(3)}"><path class="lc-cyt b" d="${d0}"/>${nuc}${granules(pts, Math.round(d * 4.5), 0.38 * k, R, [], "lc-gb")}${vol(d0)}</g>`;
 }
 
 /** Limfocitul: mic (≈ hematia, nucleu dens aproape cât celula) sau mijlociu (mai multă citoplasmă). ring: receptor desenat pe margine (B: IgM; T: TCR). */
@@ -90,14 +90,14 @@ export function lymphocyte(x, y, k, { d = SIZE.lysm, seed = 4, kind = "", cls = 
   // receptorii de antigen pe membrană (schematici, mult mai mari decât sunt): B = IgM de membrană (Y), T = TCR (două bețe)
   let rec = "";
   if (kind) for (let i = 0; i < 6; i++) { const a = i * Math.PI / 3 + 0.3, px = x + Math.cos(a) * r, py = y + Math.sin(a) * r, ox = Math.cos(a), oy = Math.sin(a), L = Math.max(1.6, 0.5 * k); rec += kind === "B" ? `<path class="lc-rec b iso-line" d="M${f1(px)} ${f1(py)}l${f1(ox * L)} ${f1(oy * L)}m0 0l${f1(ox * L * 0.6 - oy * L * 0.5)} ${f1(oy * L * 0.6 + ox * L * 0.5)}m${f1(-(ox * L * 0.6 - oy * L * 0.5))} ${f1(-(oy * L * 0.6 + ox * L * 0.5))}l${f1(ox * L * 0.6 + oy * L * 0.5)} ${f1(oy * L * 0.6 - ox * L * 0.5)}"/>` : `<path class="lc-rec t iso-line" d="M${f1(px - oy * 0.4)} ${f1(py + ox * 0.4)}l${f1(ox * L)} ${f1(oy * L)}M${f1(px + oy * 0.4)} ${f1(py - ox * 0.4)}l${f1(ox * L)} ${f1(oy * L)}"/>`; }
-  return `<g class="lc lc-ly ${active ? "act" : ""} ${cls}"><path class="lc-cyt l" d="${d0}"/><circle class="lc-nuc dense" cx="${f1(nx)}" cy="${f1(y)}" r="${f1(nr)}"/>${chrom}${rec}${vol(d0)}</g>`;
+  return `<g class="lc lc-ly ${active ? "act" : ""} ${cls}" data-k="${+k.toFixed(3)}"><path class="lc-cyt l" d="${d0}"/><circle class="lc-nuc dense" cx="${f1(nx)}" cy="${f1(y)}" r="${f1(nr)}"/>${chrom}${rec}${vol(d0)}</g>`;
 }
 
 /** Monocitul: nucleu reniform sau în potcoavă, cromatină fină, citoplasmă gri-albăstruie cu câteva vacuole. */
 export function monocyte(x, y, k, { d = SIZE.mono, seed = 5, shape = null, cls = "", rot = 0 } = {}) {
   const R = rng(seed), r = d * k / 2, pts = shape || outline(x, y, r, seed, 0.06), d0 = smooth(pts, true);
   const nuc = kidney(x + r * 0.08, y, r * 0.48, r * 0.34, rot);
-  return `<g class="lc lc-mono ${cls}"><path class="lc-cyt m" d="${d0}"/>${nuc}${granules(pts, 5, 0.45 * k, R, [[x, y, r * 0.5]], "lc-vac")}${granules(pts, 8, 0.15 * k, R, [[x, y, r * 0.5]], "lc-az")}${vol(d0)}</g>`;
+  return `<g class="lc lc-mono ${cls}" data-k="${+k.toFixed(3)}"><path class="lc-cyt m" d="${d0}"/>${nuc}${granules(pts, 5, 0.45 * k, R, [[x, y, r * 0.5]], "lc-vac")}${granules(pts, 8, 0.15 * k, R, [[x, y, r * 0.5]], "lc-az")}${vol(d0)}</g>`;
 }
 // nucleu reniform: elipsă cu o scobitură (hilul) pe o latură
 function kidney(x, y, rx, ry, rot = 0, dent = 0.55) {
@@ -111,7 +111,7 @@ function kidney(x, y, rx, ry, rot = 0, dent = 0.55) {
 export function macrophage(x, y, k, { d = SIZE.mac, seed = 6, shape = null, cls = "", rot = 0, eat = "" } = {}) {
   const R = rng(seed), r = d * k / 2, pts = shape || outline(x, y, r, seed, 0.12, 16), d0 = smooth(pts, true);
   const nx = x - Math.cos(rot) * r * 0.3, ny = y - Math.sin(rot) * r * 0.3;
-  return `<g class="lc lc-mac ${cls}"><path class="lc-cyt mac" d="${d0}"/>${kidney(nx, ny, r * 0.34, r * 0.24, rot + 0.4)}${granules(pts, 7, 0.5 * k, R, [[nx, ny, r * 0.4]], "lc-lys")}${granules(pts, 3, 0.9 * k, R, [[nx, ny, r * 0.42]], "lc-vac")}${eat}${vol(d0)}</g>`;
+  return `<g class="lc lc-mac ${cls}" data-k="${+k.toFixed(3)}"><path class="lc-cyt mac" d="${d0}"/>${kidney(nx, ny, r * 0.34, r * 0.24, rot + 0.4)}${granules(pts, 7, 0.5 * k, R, [[nx, ny, r * 0.4]], "lc-lys")}${granules(pts, 3, 0.9 * k, R, [[nx, ny, r * 0.42]], "lc-vac")}${eat}${vol(d0)}</g>`;
 }
 
 /** Mastocitul: oval, nucleu central rotund, citoplasma plină de granule metacromatice (0,3–2 µm). out: granulele eliberate (degranulare). */
@@ -121,7 +121,7 @@ export function mastCell(x, y, k, { d = SIZE.mast, seed = 7, cls = "", degran = 
   const inside_ = granules(pts, Math.round(d * 7 * (1 - degran * 0.6)), 0.3 * k, R, [[x, y, nr]], "lc-gm");
   let out = "";
   if (degran) for (let i = 0; i < Math.round(d * 1.6 * degran); i++) { const a = R() * 6.28, q = r * (1.08 + R() * 0.7); out += `<circle class="lc-gm out" cx="${f1(x + Math.cos(a) * q)}" cy="${f1(y + Math.sin(a) * q * 0.85)}" r="${f1(0.3 * k * (0.7 + R() * 0.6))}"/>`; }
-  return `<g class="lc lc-mast ${cls}"><path class="lc-cyt ms" d="${d0}"/>${inside_}<ellipse class="lc-nuc" cx="${f1(x)}" cy="${f1(y)}" rx="${f1(nr)}" ry="${f1(nr * 0.9)}"/>${out}${vol(d0)}</g>`;
+  return `<g class="lc lc-mast ${cls}" data-k="${+k.toFixed(3)}"><path class="lc-cyt ms" d="${d0}"/>${inside_}<ellipse class="lc-nuc" cx="${f1(x)}" cy="${f1(y)}" rx="${f1(nr)}" ry="${f1(nr * 0.9)}"/>${out}${vol(d0)}</g>`;
 }
 
 /** Plasmocitul: ovoid, nucleu excentric cu heterocromatina în „cadran de ceas”, zona clară a aparatului Golgi lângă nucleu, citoplasmă bazofilă. */
@@ -130,13 +130,13 @@ export function plasmaCell(x, y, k, { d = SIZE.plasma, seed = 8, cls = "", rot =
   const pts = outline(0, 0, r, seed, 0.04).map(([px, py]) => [x + px * c - py * 0.72 * s, y + px * s + py * 0.72 * c]), d0 = smooth(pts, true);
   const nx = x + c * r * 0.38, ny = y + s * r * 0.38, nr = r * 0.38;
   const clock = Array.from({ length: 7 }, (_, i) => { const a = i / 7 * Math.PI * 2; return `<circle class="lc-hc" cx="${f1(nx + Math.cos(a) * nr * 0.68)}" cy="${f1(ny + Math.sin(a) * nr * 0.68)}" r="${f1(nr * 0.17)}"/>`; }).join("") + `<circle class="lc-hc" cx="${f1(nx)}" cy="${f1(ny)}" r="${f1(nr * 0.16)}"/>`;
-  return `<g class="lc lc-plasma ${cls}"><path class="lc-cyt p" d="${d0}"/><ellipse class="lc-golgi" cx="${f1(nx - c * nr * 1.15)}" cy="${f1(ny - s * nr * 1.15)}" rx="${f1(nr * 0.5)}" ry="${f1(nr * 0.72)}" transform="rotate(${f1(rot * 57.3)} ${f1(nx - c * nr * 1.15)} ${f1(ny - s * nr * 1.15)})"/><circle class="lc-nuc pl" cx="${f1(nx)}" cy="${f1(ny)}" r="${f1(nr)}"/>${clock}${vol(d0)}</g>`;
+  return `<g class="lc lc-plasma ${cls}" data-k="${+k.toFixed(3)}"><path class="lc-cyt p" d="${d0}"/><ellipse class="lc-golgi" cx="${f1(nx - c * nr * 1.15)}" cy="${f1(ny - s * nr * 1.15)}" rx="${f1(nr * 0.5)}" ry="${f1(nr * 0.72)}" transform="rotate(${f1(rot * 57.3)} ${f1(nx - c * nr * 1.15)} ${f1(ny - s * nr * 1.15)})"/><circle class="lc-nuc pl" cx="${f1(nx)}" cy="${f1(ny)}" r="${f1(nr)}"/>${clock}${vol(d0)}</g>`;
 }
 
 /** Trombocitul: fragment discoid, granulomerul central. */
 export function platelet(x, y, k, { d = SIZE.plt, cls = "", angle = 0 } = {}) {
   const r = d * k / 2;
-  return `<g class="lc lc-plt ${cls}"><ellipse class="lc-pltb" cx="${f1(x)}" cy="${f1(y)}" rx="${f1(r)}" ry="${f1(r * 0.62)}" transform="rotate(${f1(angle * 57.3)} ${f1(x)} ${f1(y)})"/><circle class="lc-pltg" cx="${f1(x)}" cy="${f1(y)}" r="${f1(r * 0.32)}"/></g>`;
+  return `<g class="lc lc-plt ${cls}" data-k="${+k.toFixed(3)}"><ellipse class="lc-pltb" cx="${f1(x)}" cy="${f1(y)}" rx="${f1(r)}" ry="${f1(r * 0.62)}" transform="rotate(${f1(angle * 57.3)} ${f1(x)} ${f1(y)})"/><circle class="lc-pltg" cx="${f1(x)}" cy="${f1(y)}" r="${f1(r * 0.32)}"/></g>`;
 }
 
 /** Bara de scară: o linie de lungime µm·k, cu capete marcate, și eticheta. */
