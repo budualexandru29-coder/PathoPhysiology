@@ -463,3 +463,128 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 @keyframes if-roll{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 .xfig[data-anim="0"] .inf-svg *{animation-play-state:paused!important}
 @media (prefers-reduced-motion:reduce){.inf-svg *{animation:none!important}}
+
+/* ---------- Î16/Î17: limfomul Hodgkin ---------- */
+/* ganglionul */
+.xfig svg .hk-cap{fill:none;stroke:#d48a9f;stroke-width:2.6;stroke-linejoin:round}
+.xfig svg .hk-sinus{fill:none;stroke:#f3e6ef;stroke-width:2.2;opacity:.9}
+.xfig svg .hk-cortex{fill:#5a4896}
+.xfig svg .hk-para{fill:#7564ad}
+.xfig svg .hk-med{fill:#eadcec}
+.xfig svg .hk-cord{fill:none;stroke:#8a78bb;stroke-width:5.5;stroke-linecap:round}
+.xfig svg .hk-mant{fill:#433580}
+.xfig svg .hk-gc{fill:#a996d1}.xfig svg .hk-gc.sm{fill:#8f7cc0}
+.xfig svg .hk-trab{fill:none;stroke:#d48a9f;stroke-width:1.1;opacity:.8}
+.xfig svg .hk-hv{fill:none;stroke-linecap:round}
+.xfig svg .hk-hv.a{stroke:#7b1a14}.xfig svg .hk-hv.v{stroke:#1c3369}.xfig svg .hk-hv.l{stroke:#5f8f6a}
+.xfig svg .hk-hv-l{fill:none;stroke-linecap:round}
+.xfig svg .hk-hv-l.a{stroke:#cf3b30}.xfig svg .hk-hv-l.v{stroke:#3d63ad}.xfig svg .hk-hv-l.l{stroke:#d9eedb}
+.xfig svg .hk-cut.a{fill:#cf3b30}.xfig svg .hk-cut.v{fill:#3d63ad}.xfig svg .hk-cut.l{fill:#9cc7a2}
+.xfig svg .hk-cutl{fill:#4a1410}.xfig svg .hk-cutl.v{fill:#1c3369}.xfig svg .hk-cutl.l{fill:#e9f5ea}
+.xfig svg .hk-valve{fill:none;stroke:#5f8f6a;stroke-width:.7;stroke-linejoin:round}
+.xfig svg .hk-lymtis{fill:#7d68b0}
+.xfig svg .hk-lymtis.mc{fill:#8d6fa9}.xfig svg .hk-lymtis.lr{fill:#6c5aa6}.xfig svg .hk-lymtis.ld{fill:#d8aebe}.xfig svg .hk-lymtis.lp{fill:#6a5aa4}
+.xfig svg .hk-nod.ns{fill:#8b73b5}.xfig svg .hk-nod.lr{fill:#3f327c}.xfig svg .hk-nod.lp{fill:#4a3c88;stroke:#3a2e72;stroke-width:.6}
+.xfig svg .hk-band{fill:none;stroke:#efb5c6;stroke-width:5.5;stroke-linecap:round;stroke-linejoin:round}
+.xfig svg .hk-fibl{fill:none;stroke:#efc3d0;stroke-width:1.2;stroke-linecap:round}
+.xfig svg .hk-sp.lac{fill:#f7eef4}.xfig svg .hk-sp.eo{fill:#e5603f}.xfig svg .hk-sp.rs{fill:#e9d4ea;stroke:#c2325a;stroke-width:.5}
+.xfig svg .hk-sp.pl{fill:#a58cc8}.xfig svg .hk-sp.ly{fill:#3e2f6e}.xfig svg .hk-sp.lpc{fill:#d9cdea}
+.hk .hk-ns{opacity:0;transition:opacity .8s}
+.hk[data-st="0"] .hk-ns.n0,.hk[data-st="1"] .hk-ns.n1,.hk[data-st="2"] .hk-ns.n2,.hk[data-st="3"] .hk-ns.n3,.hk[data-st="4"] .hk-ns.n4,.hk[data-st="5"] .hk-ns.n5{opacity:1}
+.hk .hk-cap{transition:stroke-width .8s}
+.hk[data-st="1"] .hk-cap{stroke-width:4.4}
+.xfig svg .hk-spot{fill:none;stroke:var(--ink);stroke-width:1.2}
+.xfig svg .hk-call{fill:none;stroke:var(--ink);stroke-width:.8;opacity:.55}
+.xfig svg .hk-lens{fill:none;stroke:var(--ink);stroke-width:1.6}
+.xfig svg .hk-lens2{fill:none;stroke:var(--line);stroke-width:1}
+/* lupa (hematoxilină–eozină) */
+.xfig svg .hk-str{fill:#f3dde5}
+.xfig svg .hk-ret{fill:none;stroke:#e2b7c6;stroke-width:.8;opacity:.8}
+.xfig svg .hk-ly .c{fill:#cdc3e0;stroke:#8f80b8;stroke-width:.4}
+.xfig svg .hk-ly .n{fill:#3e2f6e}
+.xfig svg .hk-ly .k{fill:#261b4d}
+.xfig svg .hk-ly.t .c{fill:#d7cdea;stroke:#6f5fa6;stroke-width:.6}
+.xfig svg .hk-eo .c{fill:#f2b19c;stroke:#c45a40;stroke-width:.5}
+.xfig svg .hk-eo .g circle{fill:#e2553a}
+.xfig svg .hk-eo .n{fill:#5a3f8f;stroke:#3a2766;stroke-width:.4}
+.xfig svg .hk-eo .br{fill:none;stroke:#5a3f8f;stroke-width:1.4}
+.xfig svg .hk-pl .c{fill:#a68ccb;stroke:#6c56a0;stroke-width:.5}
+.xfig svg .hk-pl .hof{fill:#e4daf0}
+.xfig svg .hk-pl .n{fill:#cbbfe2;stroke:#3f2f72;stroke-width:.8}
+.xfig svg .hk-pl .k circle{fill:#3f2f72}
+.xfig svg .hk-hi .c{fill:#f2d9d6;stroke:#bf8f99;stroke-width:.5}
+.xfig svg .hk-hi .n{fill:#8d78b2;stroke:#5b4788;stroke-width:.5}
+.xfig svg .hk-hi .v{fill:#fbf1f1;stroke:#d9b8bf;stroke-width:.3}
+.xfig svg .hk-fb .c{fill:#eebccb;stroke:#c98aa0;stroke-width:.4}
+.xfig svg .hk-fb .n{fill:#6a4c8c}
+.xfig svg .hk-coll{fill:#eeb3c4;stroke:#d48a9f;stroke-width:.6}
+.xfig svg .hk-collf{fill:none;stroke:#d98aa0;stroke-width:.7;opacity:.8}
+.xfig svg .hk-collf.ld{stroke:#e2a3b6;stroke-width:1.1;opacity:.75}
+.xfig svg .hk-fdc{fill:none;stroke:#b7a4cf;stroke-width:.6;opacity:.7}
+.xfig svg .hk-rs .c{fill:#e3c8df;stroke:#a77fa6;stroke-width:.6}
+.xfig svg .hk-rs .hn{fill:#d4c4e6;stroke:#43337f;stroke-width:1.4}
+.xfig svg .hk-rs .hs circle{fill:#7c6aa8;opacity:.55}
+.xfig svg .hk-rs .halo{fill:#f8f2f8}
+.xfig svg .hk-rs .nl{fill:#c2325a;stroke:#8c1c3b;stroke-width:.4}
+.xfig svg .hk-lp .hn{fill:#ddd1ec;stroke:#4a3a88;stroke-width:1.1}
+.xfig svg .hk-lp .fold{fill:none;stroke:#4a3a88;stroke-width:.8;stroke-linecap:round}
+.xfig svg .hk-lp .nl{fill:#a64a74;stroke:none}
+.xfig svg .hk-lac .lac{fill:#fbf6f8;stroke:#e2c2cf;stroke-width:.5}
+.xfig svg .hk-lac .str{fill:none;stroke:#d8b2c6;stroke-width:.7}
+.xfig svg .hk-chk{fill:#2fa36a}
+.xfig svg .hk-vw{fill:#e7a0ad;stroke:#b4687a;stroke-width:.6}
+.xfig svg .hk-vl{fill:#f7d7cc}
+.xfig svg .hk-ven{fill:#9e7fb7;stroke:#6a4f8d;stroke-width:.3}
+.xfig svg .hk-sb{fill:none;stroke:var(--ink);stroke-width:1.6}
+.xfig svg .hk-sbt{font:500 7px var(--f-mono);fill:var(--ink)}
+.hk .hk-lsub,.hk .hk-pyr,.hk .ckb,.hk .hk-cv,.hk .hk-drops,.hk .hk-bn,.hk .hk-org{transition:opacity .8s}
+.hk .hk-lsub{opacity:0}
+.hk[data-st="0"] .hk-lsub.l0,.hk[data-st="1"] .hk-lsub.l1,.hk[data-st="2"] .hk-lsub.l2,.hk[data-st="3"] .hk-lsub.l3,.hk[data-st="4"] .hk-lsub.l4,.hk[data-st="5"] .hk-lsub.l5{opacity:1}
+.hk[data-st="0"] .hk-pyr,.hk[data-st="0"] .hk-ckb{opacity:0}
+.hk[data-st="5"] .hk-pyr,.hk[data-st="5"] .hk-ckb{opacity:.35}
+.hk .hk-pyr .ck,.hk .hk-ckb .ck{animation:fv-pulse 1.6s ease-in-out infinite}
+.hk .hk-pyr .b,.hk .hk-ckb .c1,.hk .hk-ckb .c3{animation-delay:.6s}
+/* corpul */
+.xfig svg .hk-card{fill:var(--sheet);stroke:var(--line);stroke-width:1}
+.xfig svg .hk-body{fill:#ece4f0;stroke:#a596bb;stroke-width:1}
+.xfig svg .hk-brain{fill:#ead0cf;stroke:#bf9a99;stroke-width:.6}
+.xfig svg .hk-hyp{fill:#f2c230;stroke:#9a6b00;stroke-width:.8}
+.xfig svg .hk-trach{fill:none;stroke:#b9b1c9;stroke-width:2.4;stroke-linecap:round}
+.xfig svg .hk-heart{fill:#e1b4b6;stroke:#b78489;stroke-width:.6;opacity:.85}
+.xfig svg .hk-liver{fill:#b0574d;stroke:#7a332b;stroke-width:.7}
+.xfig svg .hk-spleen{fill:#8d4a66;stroke:#5c2c41;stroke-width:.7}
+.xfig svg .hk-ao{fill:none;stroke:#cf3b30;stroke-width:1.6;stroke-linecap:round;opacity:.8}
+.xfig svg .hk-bone{fill:#efe4cc;stroke:#b8a57b;stroke-width:.7}
+.xfig svg .hk-marrow{fill:none;stroke:#c75a52;stroke-width:2.2;stroke-linecap:round;opacity:.8}
+.xfig svg .hk-mar circle{fill:#c75a52}
+.xfig svg .hk-bn{fill:#b9a9d8;stroke:#6f5fa6;stroke-width:.6}
+.hk:not([data-st="0"]) .hk-bn.big{fill:#6a4fa6;stroke:#3a2772;transform-box:fill-box;transform-origin:center;transform:scale(1.5)}
+.hk .hk-bn{transition:fill .8s,transform .8s}
+.hk .hk-org{opacity:0}
+.hk:not([data-st="0"]) .hk-org{opacity:1}
+.xfig svg .hk-org circle{fill:#6a4fa6;stroke:#f5eefa;stroke-width:.4}
+/* simptomele B */
+.xfig svg .hk-grid{fill:none;stroke:var(--line);stroke-width:.6}
+.xfig svg .hk-thr{fill:none;stroke:var(--red);stroke-width:1;stroke-dasharray:3 2}
+.xfig svg .hk-ax{fill:none;stroke:var(--muted);stroke-width:1}
+.xfig svg .hk-t,.xfig svg .hk-u{font:500 7px var(--f-mono);fill:var(--muted)}
+.xfig svg .hk-thl{font:600 7px var(--f-mono);fill:var(--red)}
+.xfig svg .hk-cv{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.xfig svg .hk-cv.b1{stroke:var(--red)}
+.xfig svg .hk-night{fill:color-mix(in srgb,var(--ink) 12%,var(--sheet))}
+.xfig svg .hk-drop{fill:#69bfe3;stroke:#2b7ea6;stroke-width:.5}
+.hk[data-st="0"] .hk-cv.b1,.hk[data-st="0"] .hk-drops{opacity:0}
+.hk:not([data-st="0"]) .hk-cv.b0{opacity:0}
+.hk-svg.an-svg{max-width:580px}
+.xfig[data-anim="0"] .hk-svg *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.hk-svg *{animation:none!important}}
+.xfig svg .hk-ti{font:600 7.5px var(--f-mono);fill:var(--ink)}
+.xfig svg .hk-cord.br{stroke-width:3.6}
+.xfig svg .hk-msin{fill:#f6eef6}
+.xfig svg .hk-bone.pel{fill-rule:evenodd}
+.xfig svg .hk-lac .hn{fill:#d4c4e6;stroke:#43337f;stroke-width:1.2}
+.xfig svg .hk-lac .fold{fill:none;stroke:#43337f;stroke-width:.8;stroke-linecap:round}
+.hk .hkn{display:none}
+.hk[data-st="0"] .hkn.n0,.hk[data-st="1"] .hkn.n1,.hk[data-st="2"] .hkn.n2,.hk[data-st="3"] .hkn.n3,.hk[data-st="4"] .hkn.n4,.hk[data-st="5"] .hkn.n5{display:revert}
+.hk-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
+.hk-rows .row[data-ch="1"] .ar{color:var(--red)}

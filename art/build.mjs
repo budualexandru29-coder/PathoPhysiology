@@ -11,8 +11,9 @@ import * as cold from "./cold.mjs";
 import * as thermo from "./thermo.mjs";
 import * as fever from "./fever.mjs";
 import * as inflam from "./inflam.mjs";
+import * as hodgkin from "./hodgkin.mjs";
 
-const FIGS = { circ, head, cold, thermo, fever, inflam };
+const FIGS = { circ, head, cold, thermo, fever, inflam, hodgkin };
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "src/js/31-art.generated.js");

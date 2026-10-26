@@ -51,6 +51,7 @@ Toate sunt desenate ca planșe de atlas: organe cu volum, vase cu perete și lum
 | Î5 | Stadiile hipotermiei | Creier, ochi cu reflexul pupilar, inimă cu ECG (bradicardie, unda J), plămâni, cadranul consumului de O₂ (×1–×6), glicemia, pielea cu piloerecție și celula cu cristale de gheață |
 | Î7 | Termoliza | Radiația, convecția, conducția și evaporarea la suprafața pielii, în cinci situații: aer liniștit, vânt, apă rece, mediu peste 35 °C, căldură umedă |
 | Î11, Î10 | Febra | Bacterii și macrofag în țesut, citokinele IL-1, TNF-α, IL-6, OVLT, COX-2 și PGE₂ pe neuronul hipotalamic, cu curba punctului de reglare în cele trei faze |
+| Î16, Î17 | Limfomul Hodgkin | Ganglionul limfatic în secțiune și o lupă pe micromediul tumoral, la scară, în culorile colorației hematoxilină–eozină: celula Reed–Sternberg, fondul inflamator reactiv, cele cinci subtipuri; organele afectate, citokinele pirogene spre hipotalamus și simptomele B |
 | Î27, Î22 | Inflamația acută | Capilarul în secțiune: vasodilatație, exudat, marginație, rulare pe selectine, aderare prin integrine, diapedeză, chemotaxie și fagocitoză |
 
 Figurile sunt construite după Cursul 1 (Starea de boală), Cursul 2 (Inflamația) și Cursul 3 (Termoreglarea) ale disciplinei.
