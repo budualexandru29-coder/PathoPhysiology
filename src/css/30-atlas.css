@@ -728,3 +728,120 @@ figure.xfig{--an-soft:#efc9b4;--an-soft-d:#b98a72;--an-air:#d6e9f2;--an-cart:#cf
 .spx[data-st="5"] .sp-only.v{display:revert}
 .sp-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
 .sp-rows .row[data-ch="1"] .ar{color:var(--red)}
+
+/* ---------- Î22: reacțiile de fază acută și complementul ---------- */
+.xfig svg .ap-card{fill:var(--sheet);stroke:var(--line);stroke-width:1}
+.xfig svg .ap-cardl{fill:none;stroke:var(--line);stroke-width:1}
+/* A. mastocitul */
+.xfig svg .ap-ct{fill:#f6e6dc}
+.xfig svg .ap-coll{fill:none;stroke:#e1bfa8;stroke-width:1.4;opacity:.7}
+.xfig svg .ap-mast{fill:#e9c6dd;stroke:#9a5a86;stroke-width:.8}
+.xfig svg .ap-gr{fill:#8d3f7c}
+.xfig svg .ap-mnuc{fill:#6e5a9e;stroke:#4e3f7a;stroke-width:.5}
+.xfig svg .ap-ab .fc,.xfig svg .ap-ab .fab{fill:none;stroke-width:1.5;stroke-linecap:round}
+.xfig svg .ap-ab.e .fc,.xfig svg .ap-ab.e .fab{stroke:#2f6fd0}.xfig svg .ap-ab.e .tip{fill:#2f6fd0}
+.xfig svg .ap-ab.g .fc,.xfig svg .ap-ab.g .fab{stroke:#1f8a6a}.xfig svg .ap-ab.g .tip{fill:#1f8a6a}
+.xfig svg .ap-fcr{fill:none;stroke:#9a5a86;stroke-width:2.2;stroke-linecap:round}
+.xfig svg .ap-ag{fill:#f29a3a;stroke:#a35a10;stroke-width:.5}
+.xfig svg .ap-ch{fill:#3fb8a8;stroke:#1d7469;stroke-width:.4}
+.xfig svg .ap-ca{fill:#2fa36a}
+.xfig svg .ap-exo{fill:none;stroke:#8d3f7c;stroke-width:1.6}
+.xfig svg .ap-hi{fill:#8d3f7c}
+.xfig svg .ap-vl{fill:#f7d7cc}
+.xfig svg .ap-vw{fill:none;stroke:#9d4f43;stroke-width:2.4}
+.xfig svg .ap-enuc{fill:#8f6aa8}
+.xfig svg .ap-exu{fill:#4a9bd0}
+.xfig svg .ap-nv{fill:none;stroke:#d9a62e;stroke-width:2.2;stroke-linecap:round}
+.xfig svg .ap-nvt{fill:#d9a62e}
+.xfig svg .ap-nap{fill:none;stroke:#fff6c8;stroke-width:1.4;stroke-dasharray:3 9;stroke-linecap:round;animation:ap-ap 1s linear infinite}
+@keyframes ap-ap{to{stroke-dashoffset:-24}}
+.xfig svg .ap-strip{fill:#fbf6f2;stroke:#d9c3b6;stroke-width:.8;opacity:.95}
+.xfig svg .ap-ph{fill:#f2c230;stroke:#9a6b00;stroke-width:.4}
+.xfig svg .ap-tl{fill:none;stroke:#b89a4a;stroke-width:.6}
+.xfig svg .ap-pla{fill:#2fa36a;stroke:#1d6b46;stroke-width:.6}
+.xfig svg .ap-plas{fill:none;stroke:#1d6b46;stroke-width:.8}
+.xfig svg .ap-aa path{fill:none;stroke:#7a2a26;stroke-width:1;stroke-linejoin:round}
+.xfig svg .ap-aa .o,.xfig svg .ap-lt .o,.xfig svg .ap-paf .h2{fill:#d8463c}
+.xfig svg .ap-arr{fill:none;stroke:#9a8a80;stroke-width:.8;stroke-dasharray:2 2}
+.xfig svg .ap-enz.cox{fill:#f2c230;stroke:#9a6b00;stroke-width:.5}
+.xfig svg .ap-enz.lox{fill:#9b7fd4;stroke:#5a3f94;stroke-width:.5}
+.xfig svg .ap-lt path{fill:none;stroke:#2f7d5a;stroke-width:1;stroke-linejoin:round}
+.xfig svg .ap-paf .h{fill:#3fb8a8;stroke:#1d7469;stroke-width:.4}
+.xfig svg .ap-paf path{fill:none;stroke:#7a6a40;stroke-width:1}
+/* B. complementul */
+.xfig svg .ap-plasma{fill:#fbeee6}
+.xfig svg .ap-peri{fill:#f4ead8}
+.xfig svg .ap-cyto{fill:#efe6f2}
+.xfig svg .ap-ph.b{fill:#e6b46a;stroke:#9a6b00;stroke-width:.3}
+.xfig svg .ap-tl.b{stroke:#b89a4a}
+.xfig svg .ap-pgn{fill:none;stroke:#c9a26a;stroke-width:.9}
+.xfig svg .ap-lps{fill:none;stroke:#9d3b36;stroke-width:.9;stroke-linejoin:round}
+.xfig svg .ap-rib{fill:#b9a3c9}
+.xfig svg .ap-bq path{fill:none;stroke:#7a5fb0;stroke-width:1}
+.xfig svg .ap-bq circle{fill:#9b7fd4;stroke:#5a3f94;stroke-width:.3}
+.xfig svg .ap-bq.mbl path{stroke:#2b7ea6}.xfig svg .ap-bq.mbl circle{fill:#69bfe3;stroke:#2b7ea6}
+.xfig svg .ap-man{fill:#7fc3e6;stroke:#2b7ea6;stroke-width:.4}
+.xfig svg .ap-conv .bb{fill:#e07a3a;stroke:#8a3f10;stroke-width:.4}
+.xfig svg .ap-fr.c3a{fill:#9b5fc0;stroke:#5a2f80;stroke-width:.3}
+.xfig svg .ap-fr.c5a{fill:#2fa36a;stroke:#1d6b46;stroke-width:.3}
+.xfig svg .ap-mac .c9{fill:#c2325a;stroke:#7d1c3b;stroke-width:.4}
+.xfig svg .ap-mac .c9r{fill:none;stroke:#c2325a;stroke-width:3;stroke-linecap:round}
+.xfig svg .ap-mac .c5b{fill:#e08a1e;stroke:#8a4a00;stroke-width:.4}
+.xfig svg .ap-mac .c678{fill:#e9b44c;stroke:#8a6200;stroke-width:.3}
+.xfig svg .ap-ion.na{fill:#3f8fd0}.xfig svg .ap-ion.ca{fill:#2fa36a}
+.xfig svg .ap-ntc{fill:#eef1f7;stroke:#7f8aa8;stroke-width:.8}
+.xfig svg .ap-ntn{fill:#7b5fb0;stroke:#4c357f;stroke-width:.4}
+.xfig svg .ap-ntb{fill:none;stroke:#5a4290;stroke-width:1.4}
+/* C. ficatul, sângele, creierul */
+.xfig svg .ap-livbg{fill:#c98f7d}
+.xfig svg .ap-hep{fill:#e3a48f;stroke:#a8664f;stroke-width:.6}
+.xfig svg .ap-hepn{fill:#7a5a9c}.xfig svg .ap-hepl{fill:#3d2c6c}
+.xfig svg .ap-sin{fill:#f7d7cc}
+.xfig svg .ap-send{fill:none;stroke:#b4687a;stroke-width:1.3}
+.xfig svg .ap-crp circle{fill:#e05a8a;stroke:#8f1f4a;stroke-width:.4}
+.xfig svg .ap-fbg path{fill:none;stroke:#b5651d;stroke-width:1.4}.xfig svg .ap-fbg circle{fill:#e08a1e;stroke:#8a4a00;stroke-width:.3}
+.xfig svg .ap-sep{fill:none;stroke:var(--line);stroke-width:1}
+.xfig svg .ap-smbg{fill:#f6ece6}
+.xfig svg .ap-rbc{fill:#e7a29a;stroke:#c47a72;stroke-width:.4}.xfig svg .ap-rbcc{fill:#f3cbc4}
+.xfig svg .ap-wc{fill:#e9e1f0;stroke:#9f8fbf;stroke-width:.5}
+.xfig svg .ap-wn{fill:none;stroke:#5a3f8f;stroke-width:1}
+.xfig svg .ap-wnl{fill:#6b4fa0}
+.xfig svg .ap-wband{fill:none;stroke:#6b4fa0;stroke-width:3.2;stroke-linecap:round}
+.xfig svg .ap-wmeta{fill:#8a72b8;stroke:#5a3f8f;stroke-width:.5}
+.xfig svg .ap-lens{fill:none;stroke:var(--ink);stroke-width:1.4}
+.xfig svg .ap-lens2{fill:none;stroke:var(--line);stroke-width:1}
+.xfig svg .ap-hyp{fill:#f2c230;stroke:#9a6b00;stroke-width:.6}
+/* D. graficele */
+.xfig svg .ap-ti{font:600 7.5px var(--f-mono);fill:var(--ink)}
+.xfig svg .ap-t{font:500 7px var(--f-mono);fill:var(--muted)}
+.xfig svg .ap-lab{font:600 7px var(--f-mono)}
+.xfig svg .ap-lab.crp{fill:#d0457a}.xfig svg .ap-lab.fib{fill:#c46a10}.xfig svg .ap-lab.alb{fill:var(--cold)}
+.xfig svg .ap-grid{fill:none;stroke:var(--line);stroke-width:.6}
+.xfig svg .ap-ax{fill:none;stroke:var(--muted);stroke-width:1}
+.xfig svg .ap-cv{fill:none;stroke-width:2;stroke-linecap:round}
+.xfig svg .ap-cv.crp{stroke:#e05a8a}.xfig svg .ap-cv.fib{stroke:#e08a1e}.xfig svg .ap-cv.alb{stroke:var(--cold)}
+.xfig svg .ap-ref{fill:color-mix(in srgb,var(--ok) 14%,var(--sheet))}
+.xfig svg .ap-area.all{fill:color-mix(in srgb,#8a72b8 40%,var(--sheet));stroke:#6b4fa0;stroke-width:1}
+.xfig svg .ap-area.band{fill:#6b4fa0;opacity:.85}
+.xfig svg .ap-cur{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:3 2}
+.apx .ap-curg{transition:transform .8s}
+/* stările */
+.apx .ap-xl,.apx .ap-cag,.apx .ap-exog,.apx .ap-histg,.apx .ap-exug,.apx .ap-napg,.apx .ap-cpath,.apx .ap-frg,.apx .ap-macg,.apx .ap-ckl,.apx .ap-crpg g,.apx .ap-fbgg g,.apx .ap-wbc.ls,.apx .ap-wbc.n1{opacity:0;transition:opacity .8s}
+.apx:not([data-st="0"]) .ap-xl,.apx:not([data-st="0"]) .ap-cag,.apx:not([data-st="0"]) .ap-exog,.apx:not([data-st="0"]) .ap-histg,.apx:not([data-st="0"]) .ap-exug,.apx:not([data-st="0"]) .ap-napg,.apx:not([data-st="0"]) .ap-cpath,.apx:not([data-st="0"]) .ap-frg,.apx:not([data-st="0"]) .ap-macg{opacity:1}
+.apx .ap-stripg,.apx .ap-nt{opacity:.4;transition:opacity .8s}
+.apx:not([data-st="0"]) .ap-stripg,.apx:not([data-st="0"]) .ap-nt{opacity:1}
+.apx .ap-ven{transition:transform .8s}
+.apx:not([data-st="0"]) .ap-ven{transform:scaleX(1.35)}
+.apx[data-st="2"] .ap-ckl,.apx[data-st="3"] .ap-ckl,.apx[data-st="4"] .ap-ckl{opacity:1}
+.apx[data-st="2"] .ap-crpg .k0,.apx[data-st="3"] .ap-crpg g,.apx[data-st="4"] .ap-crpg .k0,.apx[data-st="4"] .ap-crpg .k1{opacity:1}
+.apx[data-st="3"] .ap-fbgg .k0,.apx[data-st="4"] .ap-fbgg g{opacity:1}
+.apx[data-st="3"] .ap-wbc.ls,.apx[data-st="3"] .ap-wbc.n1,.apx[data-st="4"] .ap-wbc.n1{opacity:1}
+.apx[data-st="4"] .ap-wbc.ls{opacity:.45}
+.apx .ap-hyp{transition:fill .8s}
+.apx[data-st="2"] .ap-hyp,.apx[data-st="3"] .ap-hyp,.apx[data-st="4"] .ap-hyp{fill:#e8553e;animation:fv-pulse 1.6s ease-in-out infinite}
+.apx .ap-ckl .ck{animation:fv-pulse 1.6s ease-in-out infinite}
+.ap-svg.an-svg{max-width:580px}
+.xfig[data-anim="0"] .ap-svg *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.ap-svg *{animation:none!important}}
+.ap-rows .row{grid-template-columns:28px minmax(0,1fr) 20px}
+.ap-rows .row[data-ch="1"] .ar{color:var(--red)}

@@ -32,6 +32,10 @@
   const L19 = Q[19].learn, i = L19.findIndex(b => b[0] === 'flow' && b[1] === 'strepMech'); L19.splice(i + 1, 0, ['fig', 'strep', { q: 19 }]);
   const L20 = Q[20].learn, j = L20.findIndex(b => b[0] === 'tbl'); L20.splice(j + 1, 0, ['fig', 'strep', { q: 20, v: 5 }]);
 })();
+/* Î22: figura reacției de fază acută și a complementului, după tabelul reacțiilor generale */
+(function () {
+  const L = Q[22].learn, i = L.findIndex(b => b[0] === 'tbl'); L.splice(i + 1, 0, ['fig', 'apr', { q: 22 }]);
+})();
 /* Î7: schema statică a termolizei e înlocuită de figura interactivă „thermolysis” */
 (function () {
   Q[7].learn.forEach(b => { if (b[0] === 'fig' && b[1] === 'termoliza') { b[1] = 'thermolysis'; b[2] = { q: 7 }; } });
